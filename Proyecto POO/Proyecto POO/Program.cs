@@ -12,6 +12,8 @@ namespace Proyecto_POO
         {
             wena los cabros soy ronca
             wena cabros de fbk
+
+            ronca sirve el liveshare?
         }
     }
 }
