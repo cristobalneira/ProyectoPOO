@@ -8,10 +8,24 @@ namespace Proyecto_POO
         private string Sexo;
         private string Nacionalidad;
         private int Edad;
-        private enum Profesion { };
-
-        public Persona()
+        private enum Profesion
         {
+            Cantante = 1,
+            Compositor = 2,
+            Director = 3,
+            Actor = 4,
+            Locutor = 5,
+        };
+
+//Nose como funcionan los enum
+
+        public Persona(string nombre, string apellido, string sexo, string nacionalidad, int edad)
+        {
+            Nombre = nombre;
+            Apellido = apellido;
+            Sexo = sexo;
+            Nacionalidad = nacionalidad;
+            Edad = edad;
         }
 
         public string Informacion_Persona()
