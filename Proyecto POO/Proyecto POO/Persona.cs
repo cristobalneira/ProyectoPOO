@@ -3,8 +3,8 @@ namespace Proyecto_POO
 {
     public class Persona
     {
-        private string Nombre;
-        private string Apellido;
+        public string Nombre;
+        public string Apellido;
         private string Sexo;
         private string Nacionalidad;
         private int Edad;
@@ -15,9 +15,8 @@ namespace Proyecto_POO
             Director = 3,
             Actor = 4,
             Locutor = 5,
-        };
+        }
 
-//Nose como funcionan los enum
 
         public Persona(string nombre, string apellido, string sexo, string nacionalidad, int edad)
         {

@@ -1,10 +1,9 @@
 ﻿using System;
-
 namespace Proyecto_POO
 {
-    public class Imagen
+    public class Interaccion_Usuario
     {
-        public Imagen()
+        public Interaccion_Usuario()
         {
         }
     }

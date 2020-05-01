@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace Proyecto_POO
 {
-    public class Cancion
+    public class Cancion : Archivo
     {
         private List<Persona> Cantante;
         private List<Persona> Compositor;
@@ -24,7 +24,6 @@ namespace Proyecto_POO
             HeavyMetal = 10,
             Clasica = 11,
             IndieRock = 12,
-
         };
 
         public Cancion(List<Persona> cantante, List<Persona> compositor, string album, string letra)

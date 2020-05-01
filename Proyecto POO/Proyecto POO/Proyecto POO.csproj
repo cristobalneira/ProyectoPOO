@@ -50,6 +50,10 @@
     <Compile Include="Video.cs" />
     <Compile Include="Podcast.cs" />
     <Compile Include="Image.cs" />
+    <Compile Include="AudioLibro.cs" />
+    <Compile Include="Archivo.cs" />
+    <Compile Include="Interaccion_Usuario.cs" />
+    <Compile Include="Pelicula.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
