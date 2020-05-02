@@ -1,5 +1,5 @@
 ﻿using System;
-
+using WMPLib;
 namespace Proyecto_POO
 {
     public abstract class Archivo
@@ -21,6 +21,7 @@ namespace Proyecto_POO
             Pausa=1,
             Reproduciendose=2,
         }; //??
+        public string URL;
 
         public void Editar_Informacion()
         {
