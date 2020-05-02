@@ -1,4 +1,5 @@
 ﻿using System;
+
 namespace Proyecto_POO
 {
     public abstract class Archivo
