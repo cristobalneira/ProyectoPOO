@@ -1,5 +1,5 @@
 ﻿using System;
-using WMPLib;
+using System.Media;
 namespace Proyecto_POO
 {
     public abstract class Archivo
@@ -16,11 +16,8 @@ namespace Proyecto_POO
         public DateTime año;
         public TimeSpan duracion;
         public double ranking;
-        public enum Estado
-        {
-            Pausa=1,
-            Reproduciendose=2,
-        }; //??
+        public int Estado;
+        
         public string URL;
 
         public void Editar_Informacion()

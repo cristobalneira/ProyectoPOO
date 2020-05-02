@@ -46,12 +46,12 @@ namespace Proyecto_POO
             for (int i = 0; i < actores.Count; i++)
             {
                 Persona persona = actores[i];
-                actoreS += persona.Nombre + " "+ persona.Apellido+ ", ";
+                actoreS += persona.Nombre_y_Apellido+ ", ";
             }
             for (int i = 0; i < directores.Count; i++)
             {
                 Persona persona = directores[i];
-                directoreS += persona.Nombre + " " + persona.Apellido + ", ";
+                directoreS += persona.Nombre_y_Apellido + ", ";
             }
             string a = "Titulo: " + Titulo + ", Actores: "+actoreS+ ", Directores: " +directoreS+", Estudio "+estudio+", Genero: , Ano: "+ano+", Duracion: "+duracion+", Ranking: "+ranking+".";
             return a;

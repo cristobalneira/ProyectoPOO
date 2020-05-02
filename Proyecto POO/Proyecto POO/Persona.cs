@@ -4,9 +4,8 @@ namespace Proyecto_POO
 {
     public class Persona
     {
-        public string Nombre;
-        public string Apellido;
-        private string Sexo;
+        public string Nombre_y_Apellido;
+        public int Sexo; 
         private string Nacionalidad;
         private int Edad;
         private enum Profesion
@@ -15,14 +14,13 @@ namespace Proyecto_POO
             Compositor = 2,
             Director = 3,
             Actor = 4,
-            Locutor = 5,
+            Locutor = 5
         }
 
 
-        public Persona(string nombre, string apellido, string sexo, string nacionalidad, int edad)
+        public Persona(string nombre_y_apellido,int sexo, string nacionalidad, int edad)
         {
-            Nombre = nombre;
-            Apellido = apellido;
+            Nombre_y_Apellido = nombre_y_apellido;
             Sexo = sexo;
             Nacionalidad = nacionalidad;
             Edad = edad;

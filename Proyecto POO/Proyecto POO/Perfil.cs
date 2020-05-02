@@ -75,7 +75,7 @@ namespace Proyecto_POO
             a += "\nPersonas seguidas: ";
             foreach (var item in Personas_Seguidas)
             {
-                a += i_5 + item.Nombre;
+                a += i_5 + item.Nombre_y_Apellido;
                 i_5 += 1;
             }
             int i_6 = 1;
