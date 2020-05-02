@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Media;
 
 namespace Proyecto_POO
 {
@@ -25,13 +26,15 @@ namespace Proyecto_POO
             Clasica = 11,
             IndieRock = 12,
         };
+        
 
-        public Cancion(List<Persona> cantante, List<Persona> compositor, string album, string letra)
+        public Cancion(List<Persona> cantante, List<Persona> compositor, string album, string letra, string url)
         {
             List<Persona> Cantante = cantante;
             List<Persona> Compositor = compositor;
             Album = album;
             Letra = letra;
+            URL = url;
         }
          public string Informacion_Cancion()
         {
