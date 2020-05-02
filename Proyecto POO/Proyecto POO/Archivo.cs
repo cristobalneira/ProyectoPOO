@@ -3,7 +3,7 @@ namespace Proyecto_POO
 {
     public abstract class Archivo
     {
-        public string titulo;
+        public string Titulo;
         public enum Categoria
         {
             Cancion,
