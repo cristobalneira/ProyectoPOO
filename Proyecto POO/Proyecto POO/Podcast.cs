@@ -1,9 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
+using WMPLib;
 
 namespace Proyecto_POO
 {
-    public class Podcast : Archivo
+    public class Podcast
     {
         private List<Persona> Locutor;
         private string Imagen;
