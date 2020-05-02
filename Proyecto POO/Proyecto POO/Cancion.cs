@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using WMPLib;
 
 namespace Proyecto_POO
 {
@@ -26,15 +25,13 @@ namespace Proyecto_POO
             Clasica = 11,
             IndieRock = 12,
         };
-        
 
-        public Cancion(List<Persona> cantante, List<Persona> compositor, string album, string letra, string url)
+        public Cancion(List<Persona> cantante, List<Persona> compositor, string album, string letra)
         {
             List<Persona> Cantante = cantante;
             List<Persona> Compositor = compositor;
             Album = album;
             Letra = letra;
-            URL = url;
         }
          public string Informacion_Cancion()
         {

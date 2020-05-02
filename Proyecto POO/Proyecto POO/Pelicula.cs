@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using WMPLib;
 namespace Proyecto_POO
 {
     public class Pelicula : Archivo
@@ -33,10 +32,10 @@ namespace Proyecto_POO
         }
         public Pelicula(string titulo, string estudio, int ano, TimeSpan duracion) //falta genero
         {
-            this.Titulo = titulo;
+            this.titulo = titulo;
             this.estudio = estudio;
             this.ano = ano;
-            this.Titulo = titulo;
+            this.titulo = titulo;
             this.ano = ano;
         }
         public string Informacion_Pelicula()//falta genero en print
@@ -53,7 +52,7 @@ namespace Proyecto_POO
                 Persona persona = directores[i];
                 directoreS += persona.Nombre + " " + persona.Apellido + ", ";
             }
-            string a = "Titulo: " + Titulo + ", Actores: "+actoreS+ ", Directores: " +directoreS+", Estudio "+estudio+", Genero: , Ano: "+ano+", Duracion: "+duracion+", Ranking: "+ranking+".";
+            string a = "Titulo: " + titulo + ", Actores: "+actoreS+ ", Directores: " +directoreS+", Estudio "+estudio+", Genero: , Ano: "+ano+", Duracion: "+duracion+", Ranking: "+ranking+".";
             return a;
         }
     }

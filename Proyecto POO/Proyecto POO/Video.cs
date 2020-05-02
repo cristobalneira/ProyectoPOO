@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using WMPLib;
 namespace Proyecto_POO
 {
     public class Video : Archivo
