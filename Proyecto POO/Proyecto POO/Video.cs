@@ -1,8 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Media;
 namespace Proyecto_POO
 {
-    public class Video
+    public class Video : Archivo
     {
         private List<Persona> Actores;
         private List<Persona> Directores;

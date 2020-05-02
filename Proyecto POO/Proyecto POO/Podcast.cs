@@ -1,9 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Media;
 
 namespace Proyecto_POO
 {
-    public class Podcast
+    public class Podcast : Archivo
     {
         private List<Persona> Locutor;
         private string Imagen;
