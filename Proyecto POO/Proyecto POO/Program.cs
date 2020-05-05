@@ -24,11 +24,12 @@ namespace Proyecto_POO
             
             Persona Coolio = new Persona("Coolio", (int)Sexo.Hombre, "Estadounidense", 56);
             Console.WriteLine((Sexo)Coolio.Sexo);
-
+            
 
             Spotflix.Reproducir(Spotflix.Canciones);
             //Cancion Coolio_gangstas_paradise = new Cancion(Coolio gangstas paradise1)
             Console.ReadLine();
         }
     }
+    
 }

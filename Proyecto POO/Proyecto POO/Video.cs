@@ -5,10 +5,11 @@ namespace Proyecto_POO
 {
     public class Video
     {
-        private List<Persona> Actores;
-        private List<Persona> Directores;
-        private string Estudio;
-        private string Descripcion;
+        public List<Persona> Actores;
+        public List<Persona> Directores;
+        public string Estudio;
+        public int Resolucion;
+        public string Descripcion;
         private enum Clasificacion
         {
             //audiencia general con atracctivo infantil
@@ -22,13 +23,8 @@ namespace Proyecto_POO
             //Solo adultos, con sexo explicito, lenguaje procaz o alto grado de violencia
             D = 4,
         };
-        private enum Resolucion
-        {
-            Baja = 360,
-            Normal = 480,
-            Alta = 720,
-            HD = 1080,
-        };
+        
+        
         private enum Genero
         {
             Comedia = 1,
@@ -44,11 +40,12 @@ namespace Proyecto_POO
 
         };
 
-        public Video(List<Persona> actores, List<Persona> directores, string estudio, string descripcion)
+        public Video(List<Persona> actores, List<Persona> directores, string estudio,int resolucion, string descripcion)
         {
             List<Persona> Actores = actores;
             List<Persona> Directores = directores;
             Estudio = estudio;
+            Resolucion = resolucion;
             Descripcion = descripcion;
 
         }

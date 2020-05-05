@@ -9,26 +9,8 @@ namespace Proyecto_POO
         public List<Persona> directores;
         public string estudio;
         public string descripcion;
-        public enum resolucion
-        {
-            Muybaja = 144,
-            Baja= 360,
-            Media =480,
-            Alta=720,
-            Muyalta=1080,
-        }
-        public int ano;
-        private enum Genero
-        {
-            Comedia = 1,
-            Accion = 2,
-            Aventura = 3,
-            Dramatica = 4,
-            Terror = 5,
-            Musicales = 6,
-            CienciaFiccion = 7,
-            Guerras = 8,
-            Crimen = 9,
+        public int resolucion;
+        
             Romance = 10,
         }
         public Pelicula(string titulo, string estudio, int ano, TimeSpan duracion) //falta genero

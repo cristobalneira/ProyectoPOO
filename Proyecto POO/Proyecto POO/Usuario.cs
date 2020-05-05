@@ -24,20 +24,8 @@ namespace Proyecto_POO
         public string Pais;
         public string Email;
         public string Contraseña;
-        public enum Tipo_de_Membresia
-        {
-            Gratis,
-            Premium
-        }
+        public int Tipo_de_Membresia;
 
-        
-        //Metodos:
-        public string Informacion_de_Usuario()
-        {
-            string a = "Nombre: " + Nombre + "\nApellido: " + Apellido + "\nEdad: " + Edad + "\nPais: " + Pais + "\nEmail: " + Email 
-                + "\nContraseña: " + Contraseña;
-            return (a);
-        }
         public string Editar_Informacion(string nombre, string apellido, int edad, string pais, string email, string contraseña)
         {
             Nombre = nombre;
@@ -46,11 +34,37 @@ namespace Proyecto_POO
             Pais = pais;
             Email = email;
             Contraseña = contraseña;
-            return ("Datos actualizados");
-            
+            Tipo_de_Membresia = tipo_de_membresia; 
+        
         }
+        
+      
     
+}
 
+    
+}
 
-    }
+    
+}
+
+    
+}
+
+    
+}
+
+    
+}
+
+    
+}
+
+    
+}
+
+    
+}
+
+    
 }

@@ -17,17 +17,8 @@ namespace Proyecto_POO
             Crimen = 9,
             Romance = 10,
         }
-        public enum idioma
-        {
-            Ingles, Español, Chino
-        }
-        public Persona lector;
+        public int idioma;
 
-        public AudioLibro(Persona lector)
-        {
-            this.lector = lector;
-        }
-        public void Informacion_AudioLibro()
         {
             //Console.WriteLine("AudioLibro: {0}, Categoria: {1}, Idioma: {2}, Duracion: {3}, Lector: {4}.", titulo, Categoria??, idioma??, duracion, lector);
         }
