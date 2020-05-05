@@ -15,32 +15,28 @@ namespace Proyecto_POO
         public string Nombre;
         public string Apellido;
         public int Edad;
-        public enum Sexo
-        {
-            Hombre,
-            Mujer,
-            Otro
-        }
+        public int Sexo;
         public string Pais;
         public string Email;
         public string Contraseña;
         public int Tipo_de_Membresia;
 
-        public string Editar_Informacion(string nombre, string apellido, int edad, string pais, string email, string contraseña)
+        //Constructor:
+        public Usuario(string nombre, string apellido, int edad, int sexo, string pais, string email, string contraseña, int tipo_de_Membresia)
         {
             Nombre = nombre;
             Apellido = apellido;
             Edad = edad;
+            Sexo = sexo;
             Pais = pais;
             Email = email;
             Contraseña = contraseña;
-            Tipo_de_Membresia = tipo_de_membresia; 
-        
+            Tipo_de_Membresia = tipo_de_Membresia;
         }
-        
-      
-    
-}
+        //Editar Info:
+
+        //Mostrar Info:
+    }
 
     
 }

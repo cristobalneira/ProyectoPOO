@@ -11,12 +11,7 @@ namespace Proyecto_POO
     public class Perfil : Usuario
     {
         public string Nombre_perfil;
-        public enum Tipo_de_Perfil 
-        {
-            Artista,
-            Publico,
-            Privado
-        }
+        public int Tipo_de_Perfil; 
         public Playlist Fav_Canciones;
         public Playlist Fav_Videos;
         public Playlist Fav_Podcast;
@@ -28,7 +23,10 @@ namespace Proyecto_POO
         public List<Persona> Personas_Seguidas;
         public List<Archivo> En_Cola;
 
-        public Perfil(string nombre, string apellido, int edad, string pais, string email, string contraseña, string nombre_perfil)
+        public Perfil(string nombre, string apellido, int edad, string pais, string email, string contraseña, string nombre_perfil,
+            int tipo_de_Perfil, Playlist fav_Canciones, Playlist fav_Videos, Playlist fav_Podcast, Playlist fav_AudioLibro,
+            List<Playlist> playlists_Propias, List<Playlist> playlists_de_Otros, List<Perfil> seguidos, List<Perfil> seguidores,
+            List<Persona> personas_Seguidas, List<Archivo> en_Cola)
         {
             Nombre = nombre;
             Apellido = apellido;
@@ -37,7 +35,20 @@ namespace Proyecto_POO
             Email = email;
             Contraseña = contraseña;
             Nombre_perfil = nombre_perfil;
+            Tipo_de_Perfil = tipo_de_Perfil;
+            Fav_Canciones = fav_Canciones;
+            Fav_Videos = fav_Videos;
+            Fav_Podcast = fav_Podcast;
+            Fav_AudioLibro = fav_AudioLibro;
+            Playlists_Propias = playlists_Propias;
+            Playlists_de_Otros = playlists_de_Otros;
+            Seguidos = seguidos;
+            Seguidores = seguidores;
+            Personas_Seguidas = personas_Seguidas;
+            En_Cola = en_Cola;
         }
+
+
         public string Informacio_de_Perfil()
         {
             string a = "Nombre de perfil: " + Nombre_perfil + "\nCanciones favoritas: " + Fav_Canciones.Informacion_Playlist()
