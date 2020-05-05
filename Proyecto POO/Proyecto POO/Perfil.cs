@@ -8,8 +8,9 @@ using WMPLib;
 
 namespace Proyecto_POO
 {
-    public class Perfil : Usuario
+    public class Perfil
     {
+        public Usuario Usuario_Asociado;
         public string Nombre_perfil;
         public int Tipo_de_Perfil; 
         public Playlist Fav_Canciones;
@@ -23,17 +24,11 @@ namespace Proyecto_POO
         public List<Persona> Personas_Seguidas;
         public List<Archivo> En_Cola;
 
-        public Perfil(string nombre, string apellido, int edad, string pais, string email, string contraseña, string nombre_perfil,
-            int tipo_de_Perfil, Playlist fav_Canciones, Playlist fav_Videos, Playlist fav_Podcast, Playlist fav_AudioLibro,
+        public Perfil(Usuario usuario_asociado, string nombre_perfil,int tipo_de_Perfil, Playlist fav_Canciones, Playlist fav_Videos, Playlist fav_Podcast, Playlist fav_AudioLibro,
             List<Playlist> playlists_Propias, List<Playlist> playlists_de_Otros, List<Perfil> seguidos, List<Perfil> seguidores,
             List<Persona> personas_Seguidas, List<Archivo> en_Cola)
         {
-            Nombre = nombre;
-            Apellido = apellido;
-            Edad = edad;
-            Pais = pais;
-            Email = email;
-            Contraseña = contraseña;
+            Usuario_Asociado = usuario_asociado;
             Nombre_perfil = nombre_perfil;
             Tipo_de_Perfil = tipo_de_Perfil;
             Fav_Canciones = fav_Canciones;
