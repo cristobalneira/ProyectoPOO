@@ -15,6 +15,9 @@ namespace Proyecto_POO
         public string Tipo;
         public TimeSpan Duracion;
 
+        public int hola;
+
+
         public string Informacion_Playlist()
         {
             string a = "Nombre playlist: " + Nombre;
