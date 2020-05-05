@@ -19,8 +19,8 @@ namespace Proyecto_POO
         }
         public int idioma;
 
-        {
+        public int hola;
             //Console.WriteLine("AudioLibro: {0}, Categoria: {1}, Idioma: {2}, Duracion: {3}, Lector: {4}.", titulo, Categoria??, idioma??, duracion, lector);
-        }
+        
     }
 }
