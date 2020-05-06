@@ -12,7 +12,6 @@ namespace Proyecto_POO
         public string Descripcion;
         public int Clasificacion;
         public string Genero;
-        Console.WriteLine("hola");
         //Contructor:
         public Video(string titulo, int categoria, DateTime año, TimeSpan duracion, double ranking,
             int estado, string url, List<Persona> actor, List<Persona> director, string estudio, int resolucion, string descripcion,
