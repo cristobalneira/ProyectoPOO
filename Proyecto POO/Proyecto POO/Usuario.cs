@@ -21,7 +21,6 @@ namespace Proyecto_POO
         public string Email;
         public string Contraseña;
         public int Tipo_de_Membresia;
-        Hola
         //Constructor:
 
         public Usuario(string nombre, string apellido, DateTime fecha_de_nacimiento , int sexo, string pais, string email, string contraseña, int tipo_de_Membresia)
