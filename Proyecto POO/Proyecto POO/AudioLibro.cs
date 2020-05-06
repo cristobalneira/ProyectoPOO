@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using WMPLib;
 namespace Proyecto_POO
@@ -26,22 +27,6 @@ namespace Proyecto_POO
             Genero = genero;
             Idioma = idioma;
             Lector = lector;
-        }
-        //Editar informacion:
-        public string Editar_infromacion(List<string> info_audiolibro)
-        {
-            Titulo = info_audiolibro[0];
-            Categoria = Convert.ToInt32(info_audiolibro[1]);
-            Año = Convert.ToDateTime(info_audiolibro[2]);
-            Duracion = info_audiolibro[3];
-            Ranking = info_audiolibro[4];
-            Estado = info_audiolibro[5];
-            URL = info_audiolibro[6];
-            Genero = info_audiolibro[7];
-            Idioma = info_audiolibro[8];
-            Lector = info_audiolibro[9];
-            string a = "Cambios actualizados";
-            return a;
         }
         public string Informacion_Audiolibro()
         {

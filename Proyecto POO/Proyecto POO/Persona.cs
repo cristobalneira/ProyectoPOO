@@ -4,6 +4,20 @@ namespace Proyecto_POO
 {
     public class Persona
     {
+        public enum enum_Sexo// De la persona/usuario.
+        {
+            Hombre = 1,
+            Mujer = 2
+        }
+        public enum enum_Profesion
+        {
+            Cantante = 1,
+            Compositor = 2,
+            Actor = 3,
+            Director = 4,
+            Locutor = 5,
+            Lector = 6
+        }
         //Atributos
 
         public string Nombre_y_Apellido;
@@ -25,8 +39,8 @@ namespace Proyecto_POO
 
         public string Informacion_Persona()
         {
-            string datos = "Nombre: " + Nombre_y_Apellido + "\nSexo: " + Sexo + "\nNacionalidad: " + Nacionalidad +
-                "\nFecha de nacimiento: " + Fecha_De_Nacimiento + "\nProfesion: " + Profesion;
+            string datos = "Nombre: " + Nombre_y_Apellido + "\nSexo: " + (enum_Sexo)Sexo + "\nNacionalidad: " + Nacionalidad +
+                "\nFecha de nacimiento: " + Fecha_De_Nacimiento.ToString("dd, MMMM, yyyy") + "\nProfesion: " + (enum_Profesion)Profesion;
             return datos;
         }
 
