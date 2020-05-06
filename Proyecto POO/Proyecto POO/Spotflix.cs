@@ -9,11 +9,11 @@ namespace Proyecto_POO
 {
     public static class Spotflix
     {
-        public static Playlist Canciones;
-        public static Playlist Videos;
-        public static Playlist Peliculas;
-        public static Playlist Podcast;
-        public static Playlist Audiolibros;
+        public static Playlist Canciones = new Playlist("Canciones", new List<Archivo>(),10, "Cancion", new TimeSpan(0,4,0));
+        public static Playlist Videos = new Playlist("Videos", new List<Archivo>(), 10, "Video", new TimeSpan(0, 4, 0));
+        public static Playlist Peliculas = new Playlist("Peliculas", new List<Archivo>(), 10, "Pelicula", new TimeSpan(0, 4, 0));
+        public static Playlist Podcast = new Playlist("Podcast", new List<Archivo>(), 10, "Podcast", new TimeSpan(0, 4, 0));
+        public static Playlist Audiolibros = new Playlist("Audiolibros", new List<Archivo>(), 10, "Audiolibro", new TimeSpan(0, 4, 0));
 
         //Metodos:
 
