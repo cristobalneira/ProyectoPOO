@@ -46,7 +46,7 @@ namespace Proyecto_POO
 
         public string Informacio_de_Perfil()
         {
-            string a = "Nombre de perfil: " + Nombre_perfil + "\nCanciones favoritas: " + Fav_Canciones.Informacion_Playlist()
+            string a ="Nombre Usuario: " +Usuario_Asociado.Nombre + " " + Usuario_Asociado.Apellido + "\nNombre de perfil: " + Nombre_perfil + "\nCanciones favoritas: " + Fav_Canciones.Informacion_Playlist()
                 + "\nVideos favoritos: " + Fav_Videos.Informacion_Playlist() + "\nPodcast favoritos: " + Fav_Podcast.Informacion_Playlist()
                 + "\nAudiolibros favoritos: " + Fav_AudioLibro.Informacion_Playlist();
             a += "\nPlaylists propias: ";

@@ -6,40 +6,29 @@ namespace Proyecto_POO
 {
     public class Cancion : Archivo
     {
-        private List<Persona> Cantante;
-        private List<Persona> Compositor;
-        private string Album;
-        private string Imagen;
-        private string Letra;
-        private enum Genero
-        {
-            Pop = 1,
-            Rock = 2,
-            Country = 3,
-            Electronica = 4,
-            Jazz = 5,
-            Dubstep = 6,
-            RythmAndBlues = 7,
-            Techno = 8,
-            HipHop = 9,
-            HeavyMetal = 10,
-            Clasica = 11,
-            IndieRock = 12,
-        };
-        
+        public List<Persona> Cantante;
+        public List<Persona> Compositor;
+        public string Album;
+        public string Imagen;
+        public string Letra;
+        public string Genero;
 
-        public Cancion(List<Persona> cantante, List<Persona> compositor, string album, string letra, string url)
+        public Cancion(string titulo, int categoria, DateTime año, TimeSpan duracion, double ranking,
+            int estado, string url, List<Persona> cantante, List<Persona> compositor, string album, string imagen, string letra, string genero)
         {
-            List<Persona> Cantante = cantante;
-            List<Persona> Compositor = compositor;
-            Album = album;
-            Letra = letra;
+            Titulo = titulo;
+            Categoria = categoria;
+            Año = año;
+            Duracion = duracion;
+            Ranking = ranking;
+            Estado = estado;
             URL = url;
+            Cantante = cantante;
+            Compositor = compositor;
+            Album = album;
+            Imagen = imagen;
+            Letra = letra;
+            Genero = genero;
         }
-         public string Informacion_Cancion()
-        {
-            return " ";
-        }
-
     }
 }

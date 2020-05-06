@@ -3,55 +3,35 @@ using System.Collections.Generic;
 using WMPLib;
 namespace Proyecto_POO
 {
-    public class Video
+    public class Video : Archivo
     {
         public List<Persona> Actores;
         public List<Persona> Directores;
         public string Estudio;
         public int Resolucion;
         public string Descripcion;
-        private enum Clasificacion
-        {
-            //audiencia general con atracctivo infantil
-            AA = 0,
-            //Todo publico
-            A = 1,
-            //Adolescente de 12 años en adelante
-            B = 2,
-            //Mayores de 18 años
-            C = 3,
-            //Solo adultos, con sexo explicito, lenguaje procaz o alto grado de violencia
-            D = 4,
-        };
-        
-        
-        private enum Genero
-        {
-            Comedia = 1,
-            Accion = 2,
-            Aventura = 3,
-            Dramatica = 4,
-            Terror = 5,
-            Musicales = 6,
-            CienciaFiccion = 7,
-            Guerras = 8,
-            Crimen = 9,
-            Romance = 10,
+        public int Clasificacion;
+        public string Genero;
 
-        };
-
-        public Video(List<Persona> actores, List<Persona> directores, string estudio,int resolucion, string descripcion)
+        public Video(string titulo, int categoria, DateTime año, TimeSpan duracion, double ranking,
+            int estado, string url, List<Persona> actores, List<Persona> directores, string estudio, int resolucion, string descripcion,
+            int clasificacion, string genero)
         {
-            List<Persona> Actores = actores;
-            List<Persona> Directores = directores;
+
+            Titulo = titulo;
+            Categoria = categoria;
+            Año = año;
+            Duracion = duracion;
+            Ranking = ranking;
+            Estado = estado;
+            URL = url;
+            Actores = actores;
+            Directores = directores;
             Estudio = estudio;
             Resolucion = resolucion;
             Descripcion = descripcion;
-
-        }
-        public string Informacion_Video()
-        {
-            return " ";
+            Clasificacion = clasificacion;
+            Genero = genero;
         }
     }
 }

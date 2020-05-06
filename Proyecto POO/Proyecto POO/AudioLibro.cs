@@ -4,24 +4,26 @@ namespace Proyecto_POO
 {
     public class AudioLibro : Archivo
     {
-        private enum Genero
+        public string Genero;
+        public int Idioma;
+        public Persona Lector;
+
+        public AudioLibro(string titulo, int categoria, DateTime año, TimeSpan duracion, double ranking,
+            int estado, string url, string genero, int idioma, Persona lector)
         {
-            Comedia = 1,
-            Accion = 2,
-            Aventura = 3,
-            Dramatica = 4,
-            Terror = 5,
-            Musicales = 6,
-            CienciaFiccion = 7,
-            Guerras = 8,
-            Crimen = 9,
-            Romance = 10,
+            Titulo = titulo;
+            Categoria = categoria;
+            Año = año;
+            Duracion = duracion;
+            Ranking = ranking;
+            Estado = estado;
+            URL = url;
+            Genero = genero;
+            Idioma = idioma;
+            Lector = lector;
         }
-        public int idioma;
 
+        //Console.WriteLine("AudioLibro: {0}, Categoria: {1}, Idioma: {2}, Duracion: {3}, Lector: {4}.", titulo, Categoria??, idioma??, duracion, lector);
 
-
- //Console.WriteLine("AudioLibro: {0}, Categoria: {1}, Idioma: {2}, Duracion: {3}, Lector: {4}.", titulo, Categoria??, idioma??, duracion, lector);
-        
     }
 }

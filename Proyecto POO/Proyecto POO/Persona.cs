@@ -6,29 +6,18 @@ namespace Proyecto_POO
     {
         public string Nombre_y_Apellido;
         public int Sexo; 
-        private string Nacionalidad;
-        private int Edad;
-        private enum Profesion
-        {
-            Cantante = 1,
-            Compositor = 2,
-            Director = 3,
-            Actor = 4,
-            Locutor = 5
-        }
+        public string Nacionalidad;
+        public DateTime Edad;
+        public int Profesion;
 
-
-        public Persona(string nombre_y_apellido,int sexo, string nacionalidad, int edad)
+        public Persona(string nombre_y_Apellido, int sexo, string nacionalidad, DateTime edad, int profesion)
         {
-            Nombre_y_Apellido = nombre_y_apellido;
+            Nombre_y_Apellido = nombre_y_Apellido;
             Sexo = sexo;
             Nacionalidad = nacionalidad;
             Edad = edad;
+            Profesion = profesion;
         }
 
-        public string Informacion_Persona()
-        {
-            return " ";
-        }
     }
 }

@@ -15,8 +15,14 @@ namespace Proyecto_POO
         public string Tipo;
         public TimeSpan Duracion;
 
-        public int hola;
-
+        public Playlist(string nombre, List<Archivo> objetos, double calificacion, string tipo, TimeSpan duracion)
+        {
+            Nombre = nombre;
+            Objetos = objetos;
+            Calificacion = calificacion;
+            Tipo = tipo;
+            Duracion = duracion;
+        }
 
         public string Informacion_Playlist()
         {

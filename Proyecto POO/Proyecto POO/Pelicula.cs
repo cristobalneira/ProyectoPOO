@@ -5,37 +5,52 @@ namespace Proyecto_POO
 {
     public class Pelicula : Archivo
     {
-        public List <Persona> actores;
-        public List<Persona> directores;
-        public string estudio;
-        public string descripcion;
-        public int resolucion;
+        public List <Persona> Actores;
+        public List<Persona> Directores;
+        public string Estudio;
+        public string Descripcion;
+        public int Resolucion;
+        public int Clasificacion;
+        public string Genero;
+
         
-            Romance = 10,
-        }
-        public Pelicula(string titulo, string estudio, int ano, TimeSpan duracion) //falta genero
+
+        public Pelicula(string titulo, int categoria, DateTime año, TimeSpan duracion, double ranking,
+            int estado, string url, List<Persona> actores, List<Persona> directores, string estudio,
+            string descripcion, int resolucion, int clasificacion, string genero)
         {
-            this.Titulo = titulo;
-            this.estudio = estudio;
-            this.ano = ano;
-            this.Titulo = titulo;
-            this.ano = ano;
+            Titulo = titulo;
+            Categoria = categoria;
+            Año = año;
+            Duracion = duracion;
+            Ranking = ranking;
+            Estado = estado;
+            URL = url;
+            Actores = actores;
+            Directores = directores;
+            Estudio = estudio;
+            Descripcion = descripcion;
+            Resolucion = resolucion;
+            Clasificacion = clasificacion;
+            Genero = genero;
+            
         }
+
         public string Informacion_Pelicula()//falta genero en print
 		{
             string actoreS = "";
             string directoreS = "";
-            for (int i = 0; i < actores.Count; i++)
+            for (int i = 0; i < Actores.Count; i++)
             {
-                Persona persona = actores[i];
+                Persona persona = Actores[i];
                 actoreS += persona.Nombre_y_Apellido+ ", ";
             }
-            for (int i = 0; i < directores.Count; i++)
+            for (int i = 0; i < Directores.Count; i++)
             {
-                Persona persona = directores[i];
+                Persona persona = Directores[i];
                 directoreS += persona.Nombre_y_Apellido + ", ";
             }
-            string a = "Titulo: " + Titulo + ", Actores: "+actoreS+ ", Directores: " +directoreS+", Estudio "+estudio+", Genero: , Ano: "+ano+", Duracion: "+duracion+", Ranking: "+ranking+".";
+            string a = "Titulo: " + Titulo + ", Actores: "+actoreS+ ", Directores: " +directoreS+", Estudio "+Estudio+", Genero: , Ano: "+ Año+", Duracion: "+Duracion+", Ranking: "+Ranking+".";
             return a;
         }
     }

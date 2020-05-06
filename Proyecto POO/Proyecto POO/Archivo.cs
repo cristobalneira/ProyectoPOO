@@ -5,24 +5,12 @@ namespace Proyecto_POO
     public abstract class Archivo
     {
         public string Titulo;
-        public enum Categoria
-        {
-            Cancion,
-            Video,
-            Podcast,
-            Pelicula,
-            AudioLibro
-        };
-        public DateTime año;
-        public TimeSpan duracion;
-        public double ranking;
+        public int Categoria;
+        public DateTime Año;
+        public TimeSpan Duracion;
+        public double Ranking;
         public int Estado;
-        
         public string URL;
 
-        public void Editar_Informacion()
-        {
-            //? Con parametros 
-        }
     }
 }

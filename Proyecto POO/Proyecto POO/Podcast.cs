@@ -4,36 +4,26 @@ using WMPLib;
 
 namespace Proyecto_POO
 {
-    public class Podcast
+    public class Podcast : Archivo
     {
-        private List<Persona> Locutor;
-        private string Imagen;
-        private enum Genero
+        public List<Persona> Locutor;
+        public string Imagen;
+        public string Genero;
+
+        public Podcast(string titulo, int categoria, DateTime año, TimeSpan duracion, double ranking,
+            int estado, string url, List<Persona> locutor, string imagen, string genero)
         {
-            //chistes, historias divertidas
-            Comedia = 0,
-            //canciones, peliculas entre otros de los años 70, 80, 90
-            Epocas = 1,
-            //historias del mundo
-            Historia = 2,
-            //historias de viaje
-            Bitacora = 3,
-            //economia del mundo 
-            Economia = 4,
-            //noticias de los artistas mas famosos
-            Artistas = 5,
-
-        };
-
-        public Podcast(List<Persona> locutor)
-        {
-
-            List<Persona> Locutor = locutor;
+            Titulo = titulo;
+            Categoria = categoria;
+            Año = año;
+            Duracion = duracion;
+            Ranking = ranking;
+            Estado = estado;
+            URL = url;
+            Locutor = locutor;
+            Imagen = imagen;
+            Genero = genero;
         }
 
-        public string Informacion_Podcast()
-        {
-            return " ";
-        }
     }
 }
