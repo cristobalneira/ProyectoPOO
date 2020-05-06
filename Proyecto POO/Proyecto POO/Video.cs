@@ -55,5 +55,37 @@ namespace Proyecto_POO
             a += "\nGenero :" + Genero;
             return a;
         }
+        public string Editar_Informacion(Video v)
+        {
+            string titulo = v.Titulo;
+            Titulo = titulo;
+            int categoria = v.Categoria;
+            Categoria = categoria;
+            DateTime año = v.Año;
+            Año = año;
+            TimeSpan duracion = v.Duracion;
+            Duracion = duracion;
+            double ranking = v.Ranking;
+            Ranking = ranking;
+            int estado = v.Estado;
+            Estado = estado;
+            string url = v.URL;
+            URL = url;
+            List<Persona> actor=v.Actor;
+            Actor = actor;
+            List<Persona> director=v.Director;
+            Director = director;
+            string estudio=v.Estudio;
+            Estudio = estudio;
+            int resolucion=v.Resolucion;
+            Resolucion = resolucion;
+            string descripcion=v.Descripcion;
+            Descripcion = descripcion;
+            int clasificacion=v.Clasificacion;
+            Clasificacion = clasificacion;
+            string genero=v.Genero;
+            Genero = genero;
+            return "Cambios actualizados";
+        }
     }
 }

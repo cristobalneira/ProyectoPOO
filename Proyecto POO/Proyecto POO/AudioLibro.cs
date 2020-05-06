@@ -28,20 +28,30 @@ namespace Proyecto_POO
             Lector = lector;
         }
         //Editar informacion:
-        public string Editar_infromacion(List<string> info_audiolibro)
+        public string Editar_infromacion(AudioLibro AL)
         {
-            Titulo = info_audiolibro[0];
-            Categoria = Convert.ToInt32(info_audiolibro[1]);
-            Año = Convert.ToDateTime(info_audiolibro[2]);
-            Duracion = info_audiolibro[3];
-            Ranking = info_audiolibro[4];
-            Estado = info_audiolibro[5];
-            URL = info_audiolibro[6];
-            Genero = info_audiolibro[7];
-            Idioma = info_audiolibro[8];
-            Lector = info_audiolibro[9];
-            string a = "Cambios actualizados";
-            return a;
+            string titulo = AL.Titulo;
+            Titulo = titulo;
+            int categoria = AL.Categoria;
+            Categoria = categoria;
+            DateTime año = AL.Año;
+            Año = año;
+            TimeSpan duracion = AL.Duracion;
+            Duracion = duracion;
+            double ranking = AL.Ranking;
+            Ranking = ranking;
+            int estado=AL.Estado;
+            Estado = estado;
+            string url =AL.URL;
+            URL = url;
+
+            string genero = AL.Genero;
+            Genero = genero;
+            int idioma = AL.Idioma;
+            Idioma = idioma;
+            Persona lector = AL.Lector;
+            Lector = lector;
+            return "Cambios actualizados";
         }
         public string Informacion_Audiolibro()
         {
@@ -49,7 +59,5 @@ namespace Proyecto_POO
                 "\nDuracion: " + Duracion + "\nRanking: " + Ranking + "\nGenero: " + Genero + "\nIdioma: " + Idioma + "\nLector: " + Lector;
             return datos;
         }
-       
-
     }
 }
