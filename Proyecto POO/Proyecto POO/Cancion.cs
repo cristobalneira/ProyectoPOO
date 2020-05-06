@@ -12,7 +12,7 @@ namespace Proyecto_POO
         public string Imagen;
         public string Letra;
         public string Genero;
-
+        //Constructor:
         public Cancion(string titulo, int categoria, DateTime año, TimeSpan duracion, double ranking,
             int estado, string url, List<Persona> cantante, List<Persona> compositor, string album, string imagen, string letra, string genero)
         {
@@ -30,5 +30,27 @@ namespace Proyecto_POO
             Letra = letra;
             Genero = genero;
         }
+        //Informacion_Cancion:
+        public string Informacion_Cancion()
+        {
+            string a = "Titulo: " + Titulo + "\nCategoria: " + Categoria + "\nAño: " + Año + "\nDuracion: " + Duracion + "\nRanking: " + Ranking;
+            a+= "\nCantante(s) :";
+            int i_1 = 1;
+            foreach (var item in Cantante)
+            {
+                a +=i_1+". :" + item.Nombre_y_Apellido;
+                i_1+=1;
+            }
+            a += "\nCompositor(es): ";
+            int i_2 = 1;
+            foreach (var item in Compositor)
+            {
+                a += i_2 + ". :" + item.Nombre_y_Apellido;
+                i_2 += 1;
+            }
+            a += "\nAlbum :" + Album + "\nImagen :" + Imagen + "\nLetra :" + Letra + "\nGenero :" + Genero;
+            return a;
+        }
+    
     }
 }
