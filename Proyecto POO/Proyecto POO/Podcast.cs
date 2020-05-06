@@ -43,6 +43,31 @@ namespace Proyecto_POO
 
             return datos;
         }
+        public string Editar_Informacion(Podcast p)
+        {
+            string titulo = p.Titulo;
+            Titulo = titulo;
+            int categoria = p.Categoria;
+            Categoria = categoria;
+            DateTime año = p.Año;
+            Año = año;
+            TimeSpan duracion = p.Duracion;
+            Duracion = duracion;
+            double ranking = p.Ranking;
+            Ranking = ranking;
+            int estado = p.Estado;
+            Estado = estado;
+            string url = p.URL;
+            URL = url;
+            List<Persona> locutor=p.Locutor;
+            Locutor = locutor;
+            string imagen=p.Imagen;
+            Imagen = imagen;
+            string genero=p.Genero;
+            Genero = genero;
+            return "Cambios actualizados";
+
+        }
 
     }
 }

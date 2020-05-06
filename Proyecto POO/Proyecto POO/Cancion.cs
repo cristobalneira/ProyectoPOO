@@ -51,6 +51,37 @@ namespace Proyecto_POO
             a += "\nAlbum: " + Album + "\nImagen: " + Imagen + "\nLetra: " + Letra + "\nGenero: " + Genero;
             return a;
         }
-    
+        public string Editar_Informacion(Cancion c)
+        {
+            string titulo = c.Titulo;
+            Titulo = titulo;
+            int categoria = c.Categoria;
+            Categoria = categoria;
+            DateTime año = c.Año;
+            Año = año;
+            TimeSpan duracion = c.Duracion;
+            Duracion = duracion;
+            double ranking = c.Ranking;
+            Ranking = ranking;
+            int estado = c.Estado;
+            Estado = estado;
+            string url = c.URL;
+            URL = url;
+            List<Persona> cantante = c.Cantante;
+            Cantante = cantante;
+            List<Persona> compositor = c.Compositor;
+            Compositor = compositor;
+            string album= c.Album;
+            Album = album;
+            string imagen=c.Imagen;
+            Imagen = imagen;
+            string letra=c.Letra;
+            Letra = letra;
+            string genero=c.Genero;
+            Genero = genero;
+            return "Cambios actualizados";
+        }
+        
+
     }
 }
