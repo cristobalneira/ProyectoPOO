@@ -12,9 +12,10 @@ namespace Proyecto_POO
     public class Usuario
     {
         //Atributos:
+
         public string Nombre;
         public string Apellido;
-        public int Edad;
+        public DateTime Fecha_De_Nacimiento;
         public int Sexo;
         public string Pais;
         public string Email;
@@ -22,45 +23,30 @@ namespace Proyecto_POO
         public int Tipo_de_Membresia;
 
         //Constructor:
-        public Usuario(string nombre, string apellido, int edad, int sexo, string pais, string email, string contraseña, int tipo_de_Membresia)
+
+        public Usuario(string nombre, string apellido, DateTime fecha_de_nacimiento , int sexo, string pais, string email, string contraseña, int tipo_de_Membresia)
         {
             Nombre = nombre;
             Apellido = apellido;
-            Edad = edad;
+            Fecha_De_Nacimiento = fecha_de_nacimiento;
             Sexo = sexo;
             Pais = pais;
             Email = email;
             Contraseña = contraseña;
             Tipo_de_Membresia = tipo_de_Membresia;
         }
-        //Editar Info:
-
         //Mostrar Info:
+
+        public string Informacion_Usuario()
+        {
+            string datos = "Nombre: " + Nombre + " " + Apellido + "\nFecha de nacimiento: " + Fecha_De_Nacimiento +
+                "\nSexo: " + Sexo + "\nPais: " + Pais + "\nEmail: " + Email + "\nContraseña: " + Contraseña +
+                "\nTipo de membresia: " + Tipo_de_Membresia;
+            return datos;
+        }
+
+        //Editar Info:
     }
-
-    
-}
-
-    
-}
-
-    
-}
-
-    
-}
-
-    
-}
-
-    
-}
-
-    
-}
-
-    
-}
 
     
 }

@@ -25,5 +25,24 @@ namespace Proyecto_POO
             Genero = genero;
         }
 
+        public string Informacion_Podcast()
+        {
+            string datos = "Titulo: " + Titulo + "\nCategoria: " + Categoria + "\nAño: " + Año + "\nDuracion: " + Duracion +
+                "\nRanking: " + Ranking;
+
+            datos += "\nLocutor: ";
+
+            int i_1 = 1;
+            foreach (var item in Locutor)
+            {
+                datos += i_1 + ". " + item.Nombre_y_Apellido;
+                i_1 += 1;
+            }
+
+            datos += "\nImagen: " + Imagen + "\nGenero: " + Genero;
+
+            return datos;
+        }
+
     }
 }

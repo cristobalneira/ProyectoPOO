@@ -53,42 +53,42 @@ namespace Proyecto_POO
             int i_1 = 1;
             foreach (var item in Playlists_Propias)
             {
-                a += i_1 + item.Nombre;
+                a += i_1 +". "+ item.Nombre;
                 i_1 += 1;
             }
             a += "\nPlaylists de otros: ";
             int i_2 = 1;
             foreach (var item in Playlists_de_Otros)
             {
-                a += i_2 + item.Nombre;
+                a += i_2 + ". " + item.Nombre;
                 i_2 += 1;
             }
             int i_3 = 1;
             a += "\nPerfiles seguidos: ";
             foreach (var item in Seguidos)
             {
-                a += i_3 + item.Nombre_perfil;
+                a += i_3 + ". " + item.Nombre_perfil;
                 i_3 += 1;
             }
             int i_4 = 1;
             a += "\nSeguidores: ";
             foreach (var item in Seguidores)
             {
-                a += i_4 + item.Nombre_perfil;
+                a += i_4 + ". " + item.Nombre_perfil;
                 i_4 += 1;
             }
             int i_5 = 1;
             a += "\nPersonas seguidas: ";
             foreach (var item in Personas_Seguidas)
             {
-                a += i_5 + item.Nombre_y_Apellido;
+                a += i_5 + ". " + item.Nombre_y_Apellido;
                 i_5 += 1;
             }
             int i_6 = 1;
             a += "\nEn cola: ";
             foreach (var item in En_Cola)
             {
-                a += i_6 + item.Titulo;
+                a += i_6 + ". " + item.Titulo;
                 i_6 += 1;
             }
             return (a);

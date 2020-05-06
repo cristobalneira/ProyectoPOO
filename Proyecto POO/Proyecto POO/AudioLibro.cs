@@ -4,9 +4,13 @@ namespace Proyecto_POO
 {
     public class AudioLibro : Archivo
     {
+        //Atributos
+
         public string Genero;
         public int Idioma;
         public Persona Lector;
+
+        //Constructor
 
         public AudioLibro(string titulo, int categoria, DateTime año, TimeSpan duracion, double ranking,
             int estado, string url, string genero, int idioma, Persona lector)
@@ -23,7 +27,13 @@ namespace Proyecto_POO
             Lector = lector;
         }
 
-        //Console.WriteLine("AudioLibro: {0}, Categoria: {1}, Idioma: {2}, Duracion: {3}, Lector: {4}.", titulo, Categoria??, idioma??, duracion, lector);
+        public string Informacion_Audiolibro()
+        {
+            string datos = "Titulo: " + Titulo + "\nCategoria: " + Categoria + "\nAño: " + Año +
+                "\nDuracion: " + Duracion + "\nRanking: " + Ranking + "\nGenero: " + Genero + "\nIdioma: " + Idioma + "\nLector: " + Lector;
+            return datos;
+        }
+       
 
     }
 }
