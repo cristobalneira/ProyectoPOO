@@ -50,5 +50,22 @@ namespace Proyecto_POO
             return datos;
         }
 
+        public string Editar_informacion(Persona p)
+        {
+
+            string nombre_y_Apellido = p.Nombre_y_Apellido;
+            Nombre_y_Apellido = nombre_y_Apellido;
+            int sexo = p.Sexo;
+            Sexo = sexo;
+            string nacionalidad = p.Nacionalidad;
+            Nacionalidad = nacionalidad;
+            DateTime fecha_de_nacimiento = p.Fecha_De_Nacimiento;
+            Fecha_De_Nacimiento = fecha_de_nacimiento;
+            List<int> profesion = p.Profesion;
+            Profesion = profesion;
+            return "Cambios actualizados";
+
+        }
+
     }
 }

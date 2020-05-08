@@ -37,5 +37,20 @@ namespace Proyecto_POO
             a += "\nCalificacion: " + Calificacion + "\nTipo de playlist: " + Tipo + "\nDuracion: " + Duracion;
             return (a);
         }
+
+        public string Editar_informacion(Playlist p)
+        {
+            string nombre = p.Nombre;
+            Nombre = nombre;
+            List<Archivo> objetos = p.Objetos;
+            Objetos = objetos;
+            double calificacion = p.Calificacion;
+            Calificacion = calificacion;
+            string tipo = p.Tipo;
+            Tipo = tipo;
+            TimeSpan duracion = p.Duracion;
+            Duracion = duracion;
+            return "Cambios actualizados";
+        }
     }
 }

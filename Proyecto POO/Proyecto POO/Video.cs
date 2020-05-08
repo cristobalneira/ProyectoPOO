@@ -5,6 +5,15 @@ namespace Proyecto_POO
 {
     public class Video : Archivo
     {
+        public enum enum_Clasificacion
+        {
+            AA = 1,
+            A = 2,
+            B = 3,
+            C = 4,
+            D = 5,
+        }
+
         public List<Persona> Actor;
         public List<Persona> Director;
         public string Estudio;
@@ -12,6 +21,8 @@ namespace Proyecto_POO
         public string Descripcion;
         public int Clasificacion;
         public string Genero;
+
+
         //Contructor:
         public Video(string titulo, int categoria, DateTime año, TimeSpan duracion, double ranking,
             int estado, string url, List<Persona> actor, List<Persona> director, string estudio, int resolucion, string descripcion,
