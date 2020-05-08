@@ -21,6 +21,9 @@ namespace Proyecto_POO
             Objetos = objetos;
             Calificacion = calificacion;
             Tipo = tipo;
+            if (Tipo == "Cancion")
+            {
+            }
             Duracion = duracion;
         }
 
