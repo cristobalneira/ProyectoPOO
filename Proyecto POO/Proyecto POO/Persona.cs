@@ -35,11 +35,7 @@ namespace Proyecto_POO
             Sexo = sexo;
             Nacionalidad = nacionalidad;
             Fecha_De_Nacimiento = fecha_de_nacimiento;
-            foreach (var item in profesion)
-            {
-                Profesion.Add(item);
-            }
-            
+            Profesion = profesion;
         }
 
         public string Informacion_Persona()

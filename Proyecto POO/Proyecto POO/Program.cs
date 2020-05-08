@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Dynamic;
 using System.Linq;
 using System.Media;
 using System.Text;
@@ -19,25 +20,22 @@ namespace Proyecto_POO
         {
             SoundPlayer soundPlayer = new SoundPlayer();
 
-            List<int> lista_profesiones = new List<int>();
-            lista_profesiones.Add(1);
-            lista_profesiones.Add(2);
 
-            Persona Coolio = new Persona("Coolio", 1, "Estadounidense", new DateTime(1963, 08, 01),lista_profesiones);
-            List<Persona> Cantantes_cancion_1 = new List<Persona>();
-            Cantantes_cancion_1.Add(Coolio);
-
-            Cancion cancion_1 = new Cancion("Gangsta's paradise", 1, new DateTime(1995,08,08), new TimeSpan(0,4,0),10.0,2,
+            Persona Coolio = new Persona("Coolio", 1, "Estadounidense", new DateTime(1963, 08, 01),new List<int> { 1, 2 });
+            Cancion Gangstas_paradise = new Cancion("Gangsta's paradise", 1, new DateTime(1995,08,08), new TimeSpan(0,4,0),10.0,2,
                 @"C:\Users\juani\Desktop\POO\Prueba\Prueba reproducir video y sonido\Prueba reproducir video y sonido\bin\Debug\Musica\Coolio gangstas paradise1.wav",
-                Cantantes_cancion_1, Compositores_cancion_1, "Gangsta's Paradise 2k11","Imagen","Letra","RAP");
+                new List<Persona> {Coolio}, new List<Persona> { Coolio }, "Gangsta's Paradise 2k11","Imagen","Letra","RAP");
+
+
+
 
             Console.WriteLine("Informacion Cantante:");
-            Console.WriteLine(Coolio1.Informacion_Persona());
+            Console.WriteLine(Coolio.Informacion_Persona());
             Console.WriteLine("\n\nInformacion Cancion:");
-            Console.WriteLine(cancion_1.Informacion_Cancion());
+            Console.WriteLine(Gangstas_paradise.Informacion_Cancion());
 
 
-            Spotflix.Canciones.Objetos.Add(cancion_1);
+            Spotflix.Canciones.Objetos.Add(Gangstas_paradise);
             soundPlayer.SoundLocation = Spotflix.Canciones.Objetos[0].URL;
             soundPlayer.Play();
 
