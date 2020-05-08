@@ -4,6 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Media;
+using WMPLib;
+using System.Threading;
 
 namespace Proyecto_POO
 {
@@ -13,34 +15,66 @@ namespace Proyecto_POO
         public static Playlist Videos = new Playlist("Videos", new List<Archivo>(), 10, "Video", new TimeSpan(0, 4, 0));
         public static Playlist Peliculas = new Playlist("Peliculas", new List<Archivo>(), 10, "Pelicula", new TimeSpan(0, 4, 0));
         public static Playlist Podcast = new Playlist("Podcast", new List<Archivo>(), 10, "Podcast", new TimeSpan(0, 4, 0));
-        public static Playlist Audiolibros = new Playlist("Audiolibros", new List<AudioLibro>(), 10, "Audiolibro", new TimeSpan(0, 4, 0));
+        public static Playlist Audiolibros = new Playlist("Audiolibros", new List<Archivo>(), 10, "Audiolibro", new TimeSpan(0, 4, 0));
 
         //Metodos:
-
+        public static WindowsMediaPlayer spotflix = new WindowsMediaPlayer();
+        public static IWMPMedia media;
         public static string Reproducir(Playlist playlist, int v = 0)
         {
+            spotflix.currentPlaylist.clear();
+            spotflix.currentPlaylist = spotflix.playlistCollection.newPlaylist("Temporal");
+            for (int i = 0; i < playlist.Objetos.Count; i++)
+            {
+                media= spotflix.newMedia(playlist.Objetos[i].URL);
+                spotflix.currentPlaylist.appendItem(media);
+            }
+            for (int i = 0; i < v; i++)
+            {
+                spotflix.controls.next();
+            }
             
-            SoundPlayer Spotflix = new SoundPlayer();
-            Spotflix.SoundLocation = playlist.Objetos[v].URL;
-            Spotflix.Play();
-            string a= "Reproduciendo: "+ playlist.Objetos[v].Titulo;
-            return(a);
+            spotflix.controls.play();
+            Thread.Sleep(300);
+            string a = spotflix.controls.currentPositionString+". "+ spotflix.status.Split(':')[0];
+            return (a);
+            
         }
-        public static string Pausar(Playlist playlist)
+        public static string Pausar()
         {
-            SoundPlayer Spotflix = new SoundPlayer();
-            Spotflix.SoundLocation = playlist.Objetos[0].URL;
-            Spotflix.Stop();
-            string a = "Reproduciendo: " + playlist.Objetos[0].Titulo;
+            spotflix.controls.pause();
+            Thread.Sleep(300);
+            string a = spotflix.controls.currentPositionString + ". " + spotflix.status.Split(':')[0];
             return (a);
         }
-        public static string Adelantar(Playlist playlist)
+        public static string Reanudar()
         {
-            SoundPlayer Spotflix = new SoundPlayer();
-            
-            Spotflix.SoundLocation = playlist.Objetos[0].URL;
-            string a = "Reproduciendo: " + playlist.Objetos[0].Titulo;
+            spotflix.controls.play();
+            Thread.Sleep(300);
+            string a = spotflix.controls.currentPositionString + ". " + spotflix.status.Split(':')[0];
             return (a);
         }
+        public static string Adelantar()
+        {
+            spotflix.controls.next();
+            Thread.Sleep(300);
+            string a = spotflix.controls.currentPositionString + ". " + spotflix.status.Split(':')[0];
+            return (a);
+        }
+        public static string Retroceder()
+        {
+            spotflix.controls.previous();
+            Thread.Sleep(300);
+            string a = spotflix.controls.currentPositionString + ". " + spotflix.status.Split(':')[0];
+            return (a);
+        }
+        public static void Info()
+        {
+            for (int i = 0; i < spotflix.currentPlaylist.count; i++)
+            {
+                Console.WriteLine(i + ". " + spotflix.currentPlaylist.Item[i].name);
+            }
+        }
+
     }
 }
