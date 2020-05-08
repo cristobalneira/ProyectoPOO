@@ -18,15 +18,14 @@ namespace Proyecto_POO
         static void Main(string[] args)
         {
             SoundPlayer soundPlayer = new SoundPlayer();
-            
 
-            
-            Persona Coolio1 = new Persona("Coolio", 1, "Estadounidense", new DateTime(1963, 08, 01), 1);
-            Persona Coolio2 = new Persona("Coolio", 1, "Estadounidense", new DateTime(1963, 08, 01), 2);
+            List<int> lista_profesiones = new List<int>();
+            lista_profesiones.Add(1);
+            lista_profesiones.Add(2);
+
+            Persona Coolio = new Persona("Coolio", 1, "Estadounidense", new DateTime(1963, 08, 01),lista_profesiones);
             List<Persona> Cantantes_cancion_1 = new List<Persona>();
-            Cantantes_cancion_1.Add(Coolio1);
-            List<Persona> Compositores_cancion_1 = new List<Persona>();
-            Compositores_cancion_1.Add(Coolio2);
+            Cantantes_cancion_1.Add(Coolio);
 
             Cancion cancion_1 = new Cancion("Gangsta's paradise", 1, new DateTime(1995,08,08), new TimeSpan(0,4,0),10.0,2,
                 @"C:\Users\juani\Desktop\POO\Prueba\Prueba reproducir video y sonido\Prueba reproducir video y sonido\bin\Debug\Musica\Coolio gangstas paradise1.wav",
