@@ -23,11 +23,13 @@ namespace Proyecto_POO
         public static string Reproducir(Playlist playlist, int v = 0)
         {
             spotflix.currentPlaylist.clear();
-            spotflix.currentPlaylist = spotflix.playlistCollection.newPlaylist("Temporal");
+            spotflix.currentPlaylist = spotflix.playlistCollection.newPlaylist("Canciones");
             for (int i = 0; i < playlist.Objetos.Count; i++)
             {
                 media= spotflix.newMedia(playlist.Objetos[i].URL);
+                media.name = playlist.Objetos[i].Titulo;
                 spotflix.currentPlaylist.appendItem(media);
+                
             }
             for (int i = 0; i < v; i++)
             {
