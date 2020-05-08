@@ -44,7 +44,26 @@ namespace Proyecto_POO
             return datos;
         }
 
-        //Editar Info:
+        public string Editar_Informacion(Usuario u)
+        {
+            string nombre=u.Nombre;
+            Nombre = nombre;
+            string apellido=u.Apellido;
+            Apellido = apellido;
+            DateTime fecha= u.Fecha_De_Nacimiento;
+            Fecha_De_Nacimiento = fecha;
+            int sexo=u.Sexo;
+            Sexo = sexo;
+            string pais=u.Pais;
+            Pais = pais;
+            string email=u.Email;
+            Email = email;
+            string contraseña=u.Contraseña;
+            Contraseña = contraseña;
+            int memb=u.Tipo_de_Membresia;
+            Tipo_de_Membresia = memb;
+            return "Cambios actualizados";
+    }
     }
 
     

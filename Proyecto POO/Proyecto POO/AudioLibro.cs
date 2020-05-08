@@ -28,7 +28,7 @@ namespace Proyecto_POO
             Lector = lector;
         }
         //Editar informacion:
-        public string Editar_infromacion(AudioLibro AL)
+        public string Editar_informacion(AudioLibro AL)
         {
             string titulo = AL.Titulo;
             Titulo = titulo;

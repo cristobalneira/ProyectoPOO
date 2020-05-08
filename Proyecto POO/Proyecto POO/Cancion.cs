@@ -81,7 +81,5 @@ namespace Proyecto_POO
             Genero = genero;
             return "Cambios actualizados";
         }
-        
-
     }
 }

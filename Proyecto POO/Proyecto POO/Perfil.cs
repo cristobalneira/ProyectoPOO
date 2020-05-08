@@ -93,6 +93,15 @@ namespace Proyecto_POO
             }
             return (a);
         }
-
+        public string Editar_Informacion(Perfil p)
+        {
+            Usuario usuario=p.Usuario_Asociado;
+            Usuario_Asociado = usuario;
+            string nombrperf=p.Nombre_perfil;
+            Nombre_perfil = nombrperf;
+            int tipoperfil=p.Tipo_de_Perfil;
+            Tipo_de_Perfil = tipoperfil;
+            return "Cambios actualizados";
+        }
     }
 }
