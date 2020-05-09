@@ -156,7 +156,6 @@ namespace Proyecto_POO
                 else if(a_1==4)
                 {
                     Spotflix.Retroceder();
-
                 }
                 
             }
