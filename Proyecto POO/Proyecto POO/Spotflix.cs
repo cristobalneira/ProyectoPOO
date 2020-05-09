@@ -17,6 +17,7 @@ namespace Proyecto_POO
 
         public static List<Usuario> Lista_Usuarios;
         public static List<Perfil> Lista_Perfil;
+        public static List<Persona> Lista_Cantantes;
 
 
 

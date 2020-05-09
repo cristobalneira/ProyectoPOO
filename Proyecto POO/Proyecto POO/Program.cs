@@ -11,7 +11,6 @@ using System.Runtime.Remoting.Messaging;
 using System.Runtime.Remoting.Metadata.W3cXsd2001;
 using System.ComponentModel;
 using System.Runtime.InteropServices;
-using System.Threading;
 
 namespace Proyecto_POO
 {
@@ -34,7 +33,7 @@ namespace Proyecto_POO
             Persona ShawnLevy = new Persona("Shawn Levy", 1, "Estadounidense", new DateTime(1968, 07,23), new List<int> {4});
             Persona SteveMartin = new Persona("Steve Martin", 1, "Canadiense", new DateTime(1945, 08, 14), new List<int> { 3 });
             Persona BonnieHunt = new Persona("Bonnie Hunt", 2, "Estadounidense", new DateTime(1961, 09, 22), new List<int> { 3 });
-            Persona PiperPerabo = new Persona("Piper Perabo", 2, "Estadounidense", new DateTime(1976, 10, 31), new List<int> { 3 });
+            Persona PiperPerabo = new Persona("Piper Perabo", 2, "Estadounidense", new DateTime(1976, 09, 31), new List<int> { 3 });
 
             //Nerve
 
@@ -115,49 +114,44 @@ namespace Proyecto_POO
 
 
 
+            Spotflix.Canciones.Objetos.Add(Gangstas_paradise);
+            Spotflix.Canciones.Objetos.Add(Tres_de_abril);
+            Spotflix.Canciones.Objetos.Add(Keii);
+            Spotflix.Canciones.Objetos.Add(Follow);
+            Spotflix.Canciones.Objetos.Add(Skechers);
+            Spotflix.Lista_Cantantes.Add(JustinBieber);
+            Spotflix.Lista_Cantantes.Add(Adele);
+            Spotflix.Lista_Cantantes.Add(Coolio);
+            Spotflix.Lista_Cantantes.Add(Anuel);
+            Spotflix.Lista_Cantantes.Add(Karol_G);
+            Spotflix.Lista_Cantantes.Add(DripReport);
 
 
-            
 
-            Spotflix.Canciones.appendItem(new WindowsMediaPlayer().newMedia(Gangstas_paradise.URL));
-            Spotflix.Canciones.appendItem(new WindowsMediaPlayer().newMedia(Tres_de_abril.URL));
-            Spotflix.Canciones.appendItem(new WindowsMediaPlayer().newMedia(Keii.URL));
-            Spotflix.Canciones.appendItem(new WindowsMediaPlayer().newMedia(Follow.URL));
-            Spotflix.Canciones.appendItem(new WindowsMediaPlayer().newMedia(Skechers.URL));
-
-            Spotflix.Reproducir(Spotflix.Canciones);
+            Console.WriteLine(Spotflix.Reproducir(Spotflix.Canciones));
             int a_1 = -1;
-            
-            while (a_1 != 0)
+            while (a_1!=0)
             {
-                Timer timer = new Timer(TimerCallback, null,1000, 10000);
-                void TimerCallback(Object o)
-                {
-                    Console.WriteLine(Spotflix.Estado());
-                    GC.Collect();
-                }
+                
                 Console.WriteLine("1 para pausar 2 reanudar 3 adelantar 4 retroceder 0 salir");
-                a_1 =Convert.ToInt32(Console.ReadLine());
+                a_1=Convert.ToInt32(Console.ReadLine());
                 if (a_1==1)
                 {
-                    Spotflix.Pausar();
-
+                    Console.WriteLine(Spotflix.Pausar());
                 }
                 else if (a_1 == 2)
                 {
-                    Spotflix.Reanudar();
-
+                    Console.WriteLine(Spotflix.Reanudar());
                 }
                 else if (a_1==3)
                 {
-                    Spotflix.Adelantar();
-
+                    Console.WriteLine(Spotflix.Adelantar());
                 }
                 else if(a_1==4)
                 {
-                    Spotflix.Retroceder();
+                    Console.WriteLine(Spotflix.Retroceder());
                 }
-                
+
             }
             
         }
