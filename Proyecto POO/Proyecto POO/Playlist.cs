@@ -14,7 +14,7 @@ namespace Proyecto_POO
         public double Calificacion;
         public string Tipo;
         public TimeSpan Duracion;
-
+        public IWMPPlaylistCollection playlist;
         public Playlist(string nombre, List<Archivo> objetos, double calificacion, string tipo, TimeSpan duracion)
         {
             Nombre = nombre;

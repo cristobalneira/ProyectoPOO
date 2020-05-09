@@ -12,12 +12,11 @@ namespace Proyecto_POO
     public static class Spotflix
     {
         public static Playlist Canciones = new Playlist("Canciones", new List<Archivo>(),10, "Cancion", new TimeSpan(0,4,0));
-        public static Playlist Videos = new Playlist("Videos", new List<Archivo>(), 10, "Video", new TimeSpan(0, 4, 0));
-        public static Playlist Peliculas = new Playlist("Peliculas", new List<Archivo>(), 10, "Pelicula", new TimeSpan(0, 4, 0));
-        public static Playlist Podcast = new Playlist("Podcast", new List<Archivo>(), 10, "Podcast", new TimeSpan(0, 4, 0));
-        public static Playlist Audiolibros = new Playlist("Audiolibros", new List<Archivo>(), 10, "Audiolibro", new TimeSpan(0, 4, 0));
+        public static Playlist Canciones1= 
         public static List<Usuario> Lista_Usuarios;
         public static List<Perfil> Lista_Perfil;
+        
+        Spotflix.playlist.newPlaylist("Canciones")
 
         //Metodos:
         public static WindowsMediaPlayer spotflix = new WindowsMediaPlayer();
