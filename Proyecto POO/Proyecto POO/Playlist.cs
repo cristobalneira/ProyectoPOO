@@ -9,51 +9,28 @@ namespace Proyecto_POO
 {
     public class Playlist
     {
-        public string Nombre;
-        public List<Archivo> Objetos;
-        public double Calificacion;
-        public string Tipo;
-        public TimeSpan Duracion;
-        public IWMPPlaylistCollection playlist;
-        public Playlist(string nombre, List<Archivo> objetos, double calificacion, string tipo, TimeSpan duracion)
+
+        public List<IWMPPlaylist> Lista_Play_list;
+        public IWMPPlaylist Play_list;
+
+        public Playlist()
         {
-            Nombre = nombre;
-            Objetos = objetos;
-            Calificacion = calificacion;
-            Tipo = tipo;
-            if (Tipo == "Cancion")
-            {
-            }
-            Duracion = duracion;
+            Play_list = new WindowsMediaPlayer().newPlaylist("Canciones", null); ;
         }
 
         public string Informacion_Playlist()
         {
-            string a = "Nombre playlist: " + Nombre;
-            int i_7 = 1;
+            string a = "Nombre playlist: " + Play_list.name;
             a += "\n Nombre archivos en playlist: ";
-            foreach (var item in Objetos)
+            double b = 0;
+            for (int i = 0; i < Play_list.count; i++)
             {
-                a += i_7 + item.Titulo;
-                i_7 += 1;
+                a += i + " " + Play_list.attributeName[i];
+                b+= Play_list.Item[i].duration;
             }
-            a += "\nCalificacion: " + Calificacion + "\nTipo de playlist: " + Tipo + "\nDuracion: " + Duracion;
+            a += "\nDuracion: " + b;
             return (a);
         }
 
-        public string Editar_informacion(Playlist p)
-        {
-            string nombre = p.Nombre;
-            Nombre = nombre;
-            List<Archivo> objetos = p.Objetos;
-            Objetos = objetos;
-            double calificacion = p.Calificacion;
-            Calificacion = calificacion;
-            string tipo = p.Tipo;
-            Tipo = tipo;
-            TimeSpan duracion = p.Duracion;
-            Duracion = duracion;
-            return "Cambios actualizados";
-        }
     }
 }

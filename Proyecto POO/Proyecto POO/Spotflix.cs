@@ -11,65 +11,47 @@ namespace Proyecto_POO
 {
     public static class Spotflix
     {
-        public static Playlist Canciones = new Playlist("Canciones", new List<Archivo>(),10, "Cancion", new TimeSpan(0,4,0));
-        public static Playlist Canciones1= 
+
+        public static IWMPPlaylist Canciones = new WindowsMediaPlayer().newPlaylist("Canciones", null);
+
+
         public static List<Usuario> Lista_Usuarios;
         public static List<Perfil> Lista_Perfil;
-        
-        Spotflix.playlist.newPlaylist("Canciones")
+
+
+
 
         //Metodos:
         public static WindowsMediaPlayer spotflix = new WindowsMediaPlayer();
-        public static IWMPMedia media;
-        public static string Reproducir(Playlist playlist, int v = 0)
+
+        public static void Reproducir(IWMPPlaylist playlists, int v = 0)
         {
+            Thread.Sleep(500);
             spotflix.currentPlaylist.clear();
-            spotflix.currentPlaylist = spotflix.playlistCollection.newPlaylist("Canciones");
-            for (int i = 0; i < playlist.Objetos.Count; i++)
-            {
-                media= spotflix.newMedia(playlist.Objetos[i].URL);
-                media.name = playlist.Objetos[i].Titulo;
-                spotflix.currentPlaylist.appendItem(media);
-                
-            }
-            for (int i = 0; i < v; i++)
-            {
-                spotflix.controls.next();
-            }
-            
+            spotflix.currentPlaylist = playlists;
             spotflix.controls.play();
-            Thread.Sleep(300);
-            string a = spotflix.controls.currentPositionString+". "+ spotflix.status.Split(':')[0];
-            return (a);
             
+
         }
-        public static string Pausar()
+        public static void Pausar()
         {
             spotflix.controls.pause();
-            Thread.Sleep(300);
-            string a = spotflix.controls.currentPositionString + ". " + spotflix.status.Split(':')[0];
-            return (a);
+
         }
-        public static string Reanudar()
+        public static void Reanudar()
         {
             spotflix.controls.play();
-            Thread.Sleep(300);
-            string a = spotflix.controls.currentPositionString + ". " + spotflix.status.Split(':')[0];
-            return (a);
+
         }
-        public static string Adelantar()
+        public static void Adelantar()
         {
             spotflix.controls.next();
-            Thread.Sleep(300);
-            string a = spotflix.controls.currentPositionString + ". " + spotflix.status.Split(':')[0];
-            return (a);
+
         }
-        public static string Retroceder()
+        public static void Retroceder()
         {
             spotflix.controls.previous();
-            Thread.Sleep(300);
-            string a = spotflix.controls.currentPositionString + ". " + spotflix.status.Split(':')[0];
-            return (a);
+
         }
         public static void Info()
         {
@@ -78,6 +60,10 @@ namespace Proyecto_POO
                 Console.WriteLine(i + ". " + spotflix.currentPlaylist.Item[i].name);
             }
         }
-
+        public static string Estado()
+        {
+            string a = spotflix.controls.currentPositionString + ". " + spotflix.status.Split(':')[0];
+            return (a);
+        }
     }
 }
