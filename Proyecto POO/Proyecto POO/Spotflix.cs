@@ -16,6 +16,8 @@ namespace Proyecto_POO
         public static Playlist Peliculas = new Playlist("Peliculas", new List<Archivo>(), 10, "Pelicula", new TimeSpan(0, 4, 0));
         public static Playlist Podcast = new Playlist("Podcast", new List<Archivo>(), 10, "Podcast", new TimeSpan(0, 4, 0));
         public static Playlist Audiolibros = new Playlist("Audiolibros", new List<Archivo>(), 10, "Audiolibro", new TimeSpan(0, 4, 0));
+        public static List<Usuario> Lista_Usuarios;
+        public static List<Perfil> Lista_Perfil;
 
         //Metodos:
         public static WindowsMediaPlayer spotflix = new WindowsMediaPlayer();
