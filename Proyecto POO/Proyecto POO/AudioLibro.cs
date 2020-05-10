@@ -28,7 +28,7 @@ namespace Proyecto_POO
             Lector = lector;
         }
         //Editar informacion:
-        public string Editar_informacion(AudioLibro AL)
+        public string Editar_Informacion(AudioLibro AL)
         {
             string titulo = AL.Titulo;
             Titulo = titulo;
@@ -53,7 +53,7 @@ namespace Proyecto_POO
             Lector = lector;
             return "Cambios actualizados";
         }
-        public string Informacion_Audiolibro()
+        public string Informacion_AudioLibro()
         {
             string datos = "Titulo: " + Titulo + "\nCategoria: " + Categoria + "\nAño: " + Año +
                 "\nDuracion: " + Duracion + "\nRanking: " + Ranking + "\nGenero: " + Genero + "\nIdioma: " + Idioma + "\nLector: " + Lector;

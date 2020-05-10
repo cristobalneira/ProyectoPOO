@@ -13,14 +13,15 @@ namespace Proyecto_POO
     {
 
         public static IWMPPlaylist Canciones = new WindowsMediaPlayer().newPlaylist("Canciones", null);
-
-
         public static List<Usuario> Lista_Usuarios;
-        public static List<Perfil> Lista_Perfil;
-        public static List<Persona> Lista_Cantantes;
-
-
-
+        public static List<Perfil> Lista_Perfiles;
+        public static List<Persona> Lista_Personas;
+        public static List<Cancion> Lista_Canciones;
+        public static List<Video> Lista_Videos;
+        public static List<Podcast> Lista_Podcasts;
+        public static List<Pelicula> Lista_Peliculas;
+        public static List<AudioLibro> Lista_AudioLibros;
+        public static List<Playlist> Lista_Playlists;
 
         //Metodos:
         public static WindowsMediaPlayer spotflix = new WindowsMediaPlayer();
@@ -31,8 +32,6 @@ namespace Proyecto_POO
             spotflix.currentPlaylist.clear();
             spotflix.currentPlaylist = playlists;
             spotflix.controls.play();
-            
-
         }
         public static void Pausar()
         {
