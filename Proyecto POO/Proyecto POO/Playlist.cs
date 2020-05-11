@@ -9,19 +9,26 @@ namespace Proyecto_POO
 {
     public class Playlist
     {
-
+        public enum enum_TipoDePlaylist
+        {
+            Publica = 1,
+            Privada = 2,
+        }
         public List<IWMPPlaylist> Lista_Play_list;//listas de listas
         public IWMPPlaylist Play_list;
+        public int Tipo_De_Playlist;
 
-        public Playlist(string Nombre)
+
+        public Playlist(string Nombre, int tipo_de_playlist)
         {
             Play_list = new WindowsMediaPlayer().newPlaylist(Nombre, null);
             Lista_Play_list.Add(Play_list);
+            Tipo_De_Playlist = tipo_de_playlist;
         }
 
         public string Informacion_Playlist()
         {
-            string a = "Nombre playlist: " + Play_list.name;
+            string a = "Nombre playlist: " + Play_list.name + "Tipo de playlist" + (enum_TipoDePlaylist)Tipo_De_Playlist;
             a += "\n Nombre archivos en playlist: ";
             double b = 0;
             for (int i = 0; i < Play_list.count; i++)
