@@ -366,7 +366,7 @@ namespace Proyecto_POO
                                 int i_1 = 1;
                                 foreach (var item in Spotflix.Lista_Canciones)
                                 {
-                                    foreach (var item1 in Spotflix)
+                                    foreach (var item1 in Spotflix.Lista_Canciones)
                                     {
 
                                     }
@@ -452,7 +452,7 @@ namespace Proyecto_POO
                                 string genero = Console.ReadLine();
 
                                 AudioLibro cc1 = new AudioLibro(titulo, categoria, dt, c1.Duracion, c1.Ranking, c1.Estado,
-                                    c1.URL, genero, c1.Idioma, c1.Lector);
+                                    c1.URL,c1.URL_Texto, genero, c1.Idioma, c1.Lector);
                                 ;
                                 Spotflix.Lista_AudioLibros[y].Editar_Informacion(cc1);
                             }
@@ -767,9 +767,7 @@ namespace Proyecto_POO
                                 //crear
                                 //AudioLibro a1 = new AudioLibro(año,cw,ValueTuple,base,e);
 
-                                Perfil p1 = new Perfil(per.Usuario_Asociado, nomb, tipoperf, per.Fav_Canciones,
-                                    per.Fav_Videos, per.Fav_Podcast, per.Fav_AudioLibro, per.Playlists_Propias,
-                                    per.Playlists_De_Otros, per.Seguidos, per.Seguidores, per.Personas_Seguidas);
+                                Perfil p1 = new Perfil(per.Usuario_Asociado, nomb, tipoperf);
                                 Spotflix.Lista_Perfiles[y].Editar_Informacion(p1);
                             }
                         }

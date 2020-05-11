@@ -22,10 +22,11 @@ namespace Proyecto_POO
         public Usuario Usuario_Asociado;
         public string Nombre_perfil;
         public int Tipo_de_Perfil;
-        public Playlist Fav_Canciones = new Playlist("Canciones Favoritas");
+        public List<Cancion> Fav_Canciones;
+        public List<Pelicula> Fav_Pelicula;
         public Playlist Fav_Videos = new Playlist("Videos Favoritas");
         public Playlist Fav_Podcast = new Playlist("Podcast Favoritas");
-        public Playlist Fav_AudioLibro = new Playlist("AudioLibro Favoritas");
+        public List<AudioLibro> Fav_AudioLibro;
         public List<Playlist> Playlists_Propias = new List<Playlist>();
         public List<Playlist> Playlists_De_Otros = new List<Playlist>();
         public List<Perfil> Seguidos = new List<Perfil>();
@@ -39,36 +40,30 @@ namespace Proyecto_POO
 
         //Constructor
 
-        public Perfil(Usuario usuario_asociado, string nombre_perfil,int tipo_de_Perfil, Playlist fav_Canciones, Playlist fav_Videos, Playlist fav_Podcast, Playlist fav_AudioLibro,
-            List<Playlist> playlists_Propias, List<Playlist> playlists_de_Otros, List<Perfil> seguidos, List<Perfil> seguidores,
-            List<Persona> personas_Seguidas)
+        public Perfil(Usuario usuario_asociado, string nombre_perfil,int tipo_de_Perfil)
+            
         {
             Usuario_Asociado = usuario_asociado;
             Nombre_perfil = nombre_perfil;
             Tipo_de_Perfil = tipo_de_Perfil;
-            Fav_Canciones = fav_Canciones;
-            Fav_Videos = fav_Videos;
-            Fav_Podcast = fav_Podcast;
-            Fav_AudioLibro = fav_AudioLibro;
-            Playlists_Propias = playlists_Propias;
-            Playlists_De_Otros = playlists_de_Otros;
-            Seguidos = seguidos;
-            Seguidores = seguidores;
-            Personas_Seguidas = personas_Seguidas;
-        }
-        public Perfil(Usuario u, string nombreperf, int tipo_perfil)
-        {
-            this.Usuario_Asociado = u;
-            this.Nombre_perfil = nombreperf;
-            this.Tipo_de_Perfil = tipo_perfil;
+
         }
         public string Informacion_de_Perfil()
         {
             string a = "Nombre Usuario: " + Usuario_Asociado.Nombre + " " + Usuario_Asociado.Apellido + "\nNombre de perfil: "
-                + Nombre_perfil + "\nCanciones favoritas: " + Fav_Canciones.Informacion_Playlist() + "\nVideos favoritos: "
-                + Fav_Videos.Informacion_Playlist() + "\nPodcast favoritos: " + Fav_Podcast.Informacion_Playlist()
-                + "\nAudiolibros favoritos: " + Fav_AudioLibro.Informacion_Playlist();
-
+                + Nombre_perfil + "\nCanciones favoritas: ";
+            int i = 0;
+            foreach (var item in Fav_Canciones)
+            {
+                a += i + ". " + item.Informacion_Cancion();
+            }
+            a += "\nVideos favoritos: " + Fav_Videos.Informacion_Playlist() + "\nPodcast favoritos: " + Fav_Podcast.Informacion_Playlist()
+            + "\nAudiolibros favoritos: ";
+            i = 0;
+            foreach (var item in Fav_AudioLibro)
+            {
+                a += i + ". " + item.Informacion_AudioLibro();
+            }
             int i_1 = 1;
             a += "\nPlaylist propias: ";
             foreach (var item in Playlists_Propias)
