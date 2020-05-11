@@ -66,6 +66,8 @@ namespace Proyecto_POO
             Persona Karol_G = new Persona("Karol G", 2, "Colombiana", new DateTime(1991, 02, 14), new List<int> { 1, 2 });
             Persona DripReport = new Persona("DripReport", 1, "Indio", new DateTime(1970, 06, 14), new List<int> { 1, 2 });
 
+
+
             //Canciones:
             Cancion Gangstas_paradise = new Cancion("Gangsta's paradise", 1, new DateTime(1995, 08, 08), TimeSpan.Zero, 10.0, 2,
                 Directory.GetCurrentDirectory() + @"\Musica\Coolio - gangstas paradise.wav",
@@ -86,24 +88,39 @@ namespace Proyecto_POO
             //Peliculas
 
             Pelicula MasBaratoPorDocena = new Pelicula("Mas Barato Por Docena", 1, new DateTime(2003, 12, 25), new TimeSpan(1, 46, 0), 10.0, 1,
-                "", new List<Persona> { SteveMartin, BonnieHunt, PiperPerabo }, new List<Persona> { ShawnLevy },
+                Directory.GetCurrentDirectory() + @"\Peliculas\Mas Barato por Docena - Trailer.mp4", new List<Persona> { SteveMartin, BonnieHunt, PiperPerabo }, new List<Persona> { ShawnLevy },
                 "‎20th Century Fox Home Entertainment", 1, "Descripcion", 1, "Familiar");
 
             Pelicula Nerve = new Pelicula("Nerve", 1, new DateTime(2016, 09, 01), new TimeSpan(1, 36, 0), 10.0, 1,
-                "", new List<Persona> { EmmaRoberts, DaveFranco, JulietteLewis }, new List<Persona> { HenryJoost },
+                Directory.GetCurrentDirectory() + @"\Peliculas\Nerve - Trailer Oficial.mp4", new List<Persona> { EmmaRoberts, DaveFranco, JulietteLewis }, new List<Persona> { HenryJoost },
                 "‎Allison Shearmur Productions", 1, "Descripcion", 1, "Accion");
 
             Pelicula LaCenicienta = new Pelicula("La Cenicienta", 1, new DateTime(2015, 03, 13), new TimeSpan(1, 54, 0), 10.0, 1,
-                "", new List<Persona> { LilyJames, BenChaplin, RichardMadden }, new List<Persona> { KennethBranagh },
+                Directory.GetCurrentDirectory() + @"\Peliculas\La Cenicienta - Trailer Oficial.mp4", new List<Persona> { LilyJames, BenChaplin, RichardMadden }, new List<Persona> { KennethBranagh },
                 "Walt Disney Productions", 1, "Descripcion", 1, "Fantasia");
 
             Pelicula HighSchoolMusical = new Pelicula("High School Musical", 1, new DateTime(2006, 01, 20), new TimeSpan(1, 38, 0), 10.0, 1,
-                "", new List<Persona> { ZacEfron, VanessaHudgens, AshleyTisdale }, new List<Persona> { KennyOrtega },
+                Directory.GetCurrentDirectory() + @"\Peliculas\High School Musical – Original Trailer.mp4", new List<Persona> { ZacEfron, VanessaHudgens, AshleyTisdale }, new List<Persona> { KennyOrtega },
                 "Salty Films", 1, "Descripcion", 1, "Musical");
 
             Pelicula SonComoNiños = new Pelicula("Son Como Niños", 1, new DateTime(2010, 06, 24), new TimeSpan(1, 42, 0), 10.0, 1,
-                "", new List<Persona> { AdamSandler, KevinJames, ChrisRock }, new List<Persona> { DennisDugan },
+                Directory.GetCurrentDirectory() + @"\Peliculas\Son como Niños - Trailer Oficial.mp4", new List<Persona> { AdamSandler, KevinJames, ChrisRock }, new List<Persona> { DennisDugan },
                 "Relativity Media", 1, "Descripcion", 1, "Comedia");
+
+
+            // Audiolibros
+            Persona Neira = new Persona("Neira", 1, "Española", new DateTime(1998, 2, 2), new List<int> { 6});
+            AudioLibro Azafata_Chistosa = new AudioLibro("Azafata chistosa", 3, new DateTime(2020, 05, 11), TimeSpan.Zero, 10.0, 2,
+                Directory.GetCurrentDirectory() + @"\Audio libros\Azafata Chistosa\Azafata chistosa.mp3", 
+                Directory.GetCurrentDirectory() + @"\Audio libros\Azafata Chistosa\Azafata chistosa.txt", "Comedia", 1, Neira);
+            AudioLibro Hijo_Huerfano = new AudioLibro("Hijo huerfano", 3, new DateTime(2020, 05, 11), TimeSpan.Zero, 10.0, 2,
+                Directory.GetCurrentDirectory() + @"\Audio libros\Hijo Huerfano\Hijo huerfano.mp3",
+                Directory.GetCurrentDirectory() + @"\Audio libros\Hijo Huerfano\Hijo huerfano.txt", "Comedia", 1, Neira);
+
+
+            Spotflix.Lista_AudioLibros.Add(Azafata_Chistosa);
+            Spotflix.Lista_AudioLibros.Add(Hijo_Huerfano);
+
 
             Spotflix.Lista_Canciones.Add(Gangstas_paradise);
             Spotflix.Lista_Canciones.Add(Tres_de_abril);
@@ -128,8 +145,39 @@ namespace Proyecto_POO
             }
 
 
-            Agregar_a_temportal(Spotflix.Lista_Canciones);
-            Spotflix.Reproducir(Spotflix.Temporal);
+
+
+            Console.WriteLine("1 audio libro 0 salir");
+            int a_321 = -1;
+            a_321 = Convert.ToInt32(Console.ReadLine());
+            if (a_321 == 1)
+            {
+                for (int i = 0; i < Spotflix.Lista_AudioLibros.Count; i++)
+                {
+                    Console.WriteLine(i+1+". "+Spotflix.Lista_AudioLibros[i].Titulo);
+                }
+                int a_21 = Convert.ToInt32(Console.ReadLine());
+                Spotflix.Temporal.clear();
+                Spotflix.Temporal.appendItem(new WindowsMediaPlayer().newMedia(Spotflix.Lista_AudioLibros[a_21-1].URL));
+                Spotflix.Reproducir(Spotflix.Temporal);
+                Thread.Sleep(1000);
+                string[] texto = File.ReadAllLines(Spotflix.Lista_AudioLibros[a_21 - 1].URL_Texto);
+                foreach (string line in texto)
+                {
+                    Console.WriteLine("\t"+line);
+                    Thread.Sleep(5000);
+                }
+
+            }        
+
+            
+            //Spotflix.spotflix.openPlayer(Nerve.URL);
+           
+
+            
+
+            //Agregar_a_temportal(Spotflix.Lista_Canciones);
+            //Spotflix.Reproducir(Spotflix.Temporal);
             int a_1 = -1;
 
 

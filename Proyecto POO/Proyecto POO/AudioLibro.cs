@@ -9,12 +9,13 @@ namespace Proyecto_POO
 
         public string Genero;
         public int Idioma;
+        public string URL_Texto;
         public Persona Lector;
 
         //Constructor
 
         public AudioLibro(string titulo, int categoria, DateTime año, TimeSpan duracion, double ranking,
-            int estado, string url, string genero, int idioma, Persona lector)
+            int estado, string url, string url_texto, string genero, int idioma, Persona lector)
         {
             Titulo = titulo;
             Categoria = categoria;
@@ -23,6 +24,7 @@ namespace Proyecto_POO
             Ranking = ranking;
             Estado = estado;
             URL = url;
+            URL_Texto = url_texto;
             Genero = genero;
             Idioma = idioma;
             Lector = lector;
