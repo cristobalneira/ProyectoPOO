@@ -13,9 +13,10 @@ namespace Proyecto_POO
         public List<IWMPPlaylist> Lista_Play_list;
         public IWMPPlaylist Play_list;
 
-        public Playlist()
+        public Playlist(string Nombre)
         {
-            Play_list = new WindowsMediaPlayer().newPlaylist("Canciones", null); ;
+            Play_list = new WindowsMediaPlayer().newPlaylist(Nombre, null);
+            Lista_Play_list.Add(Play_list);
         }
 
         public string Informacion_Playlist()

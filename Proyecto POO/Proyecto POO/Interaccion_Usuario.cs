@@ -31,11 +31,11 @@ namespace Proyecto_POO
                         Console.WriteLine("Nombre de la cancion: ");
                         string song = Console.ReadLine();
                         int i = 1;
-                        foreach (var item in Spotflix.Canciones)
+                        foreach (var item in Spotflix.Lista_Canciones)
                         {
                             if (song == item.Titulo)
                             {
-                                Console.WriteLine(Spotflix.Canciones[i - 1].Informacion_Cancion());
+                                Console.WriteLine(Spotflix.Lista_Canciones[i - 1].Informacion_Cancion());
                                 i++;
                             }
 

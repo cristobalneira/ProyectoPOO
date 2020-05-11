@@ -12,25 +12,29 @@ namespace Proyecto_POO
     public static class Spotflix
     {
 
-        public static IWMPPlaylist Canciones = new WindowsMediaPlayer().newPlaylist("Canciones", null);
-        public static List<Usuario> Lista_Usuarios;
-        public static List<Perfil> Lista_Perfiles;
-        public static List<Persona> Lista_Personas;
-        public static List<Cancion> Lista_Canciones;
-        public static List<Video> Lista_Videos;
-        public static List<Podcast> Lista_Podcasts;
-        public static List<Pelicula> Lista_Peliculas;
-        public static List<AudioLibro> Lista_AudioLibros;
+        public static IWMPPlaylist Temporal = new WindowsMediaPlayer().newPlaylist("Temporal", null);
+        public static List<Usuario> Lista_Usuarios = new List<Usuario>();
+        public static List<Perfil> Lista_Perfiles = new List<Perfil>();
+        public static List<Persona> Lista_Personas = new List<Persona>();
+
+        public static List<Cancion> Lista_Canciones =  new List<Cancion>();
+        public static List<Video> Lista_Videos = new List<Video>();
+        public static List<Podcast> Lista_Podcasts = new List<Podcast>();
+        public static List<Pelicula> Lista_Peliculas = new List<Pelicula>();
+        public static List<AudioLibro> Lista_AudioLibros = new List<AudioLibro>();
         public static List<Playlist> Lista_Playlists;
 
         //Metodos:
+
+        
+
         public static WindowsMediaPlayer spotflix = new WindowsMediaPlayer();
 
-        public static void Reproducir(IWMPPlaylist playlists, int v = 0)
+        public static void Reproducir(IWMPPlaylist playlist, int v = 0)
         {
             Thread.Sleep(500);
             spotflix.currentPlaylist.clear();
-            spotflix.currentPlaylist = playlists;
+            spotflix.currentPlaylist = playlist;
             spotflix.controls.play();
         }
         public static void Pausar()
