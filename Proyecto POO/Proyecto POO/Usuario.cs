@@ -9,6 +9,11 @@ using WMPLib;
 
 namespace Proyecto_POO
 {
+    public enum enum_TipoDeMembresia
+    {
+        Gratis = 1,
+        Premium = 2,
+    }
     public class Usuario
     {
         //Atributos:

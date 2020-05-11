@@ -4,6 +4,14 @@ namespace Proyecto_POO
 {
     public abstract class Archivo
     {
+        public enum enum_Categoria
+        {
+            Cancion = 1,
+            Video = 2,
+            Podcast = 3,
+            Pelicula = 4,
+            Audiolibro = 5,
+        }
         public string Titulo;
         public int Categoria;
         public DateTime Año;

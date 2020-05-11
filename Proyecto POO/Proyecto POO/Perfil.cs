@@ -8,8 +8,16 @@ using WMPLib;
 
 namespace Proyecto_POO
 {
+
     public class Perfil
     {
+        public enum enum_TipoDePerfil
+        {
+            Artista = 1,
+            Publico = 2,
+            Privado = 3,
+
+        }
         //Atributos
         public Usuario Usuario_Asociado;
         public string Nombre_perfil;

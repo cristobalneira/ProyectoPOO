@@ -7,6 +7,12 @@ namespace Proyecto_POO
     {
         //Atributos
 
+        public enum enum_Audio
+        {
+            Español = 1,
+            Ingles = 2,
+            Portugues = 3,
+        }
         public string Genero;
         public int Idioma;
         public string URL_Texto;

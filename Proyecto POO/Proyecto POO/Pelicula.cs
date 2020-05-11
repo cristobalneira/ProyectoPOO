@@ -5,6 +5,12 @@ namespace Proyecto_POO
 {
     public class Pelicula : Archivo
     {
+        public enum enum_Resolucion
+        {
+            Baja = 1,
+            Normal = 2,
+            HD = 3,
+        }
         public enum enum_Clasificacion
         {
             AA = 1,
