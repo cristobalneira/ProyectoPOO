@@ -24,14 +24,7 @@ namespace Proyecto_POO
         }
         static void Main(string[] args)
         {
-
-            //SoundPlayer soundPlayer = new SoundPlayer();
-
-            //Personas:
-
-            //Mas barato por docena
-
-            Persona ShawnLevy = new Persona("Shawn Levy", 1, "Estadounidense", new DateTime(1968, 07,23), new List<int> {4});
+            Persona ShawnLevy = new Persona("Shawn Levy", 1, "Estadounidense", new DateTime(1968, 07, 23), new List<int> { 4 });
             Persona SteveMartin = new Persona("Steve Martin", 1, "Canadiense", new DateTime(1945, 08, 14), new List<int> { 3 });
             Persona BonnieHunt = new Persona("Bonnie Hunt", 2, "Estadounidense", new DateTime(1961, 09, 22), new List<int> { 3 });
             Persona PiperPerabo = new Persona("Piper Perabo", 2, "Estadounidense", new DateTime(1976, 10, 31), new List<int> { 3 });
@@ -45,7 +38,7 @@ namespace Proyecto_POO
 
             //La Cenicienta
 
-            Persona KennethBranagh = new Persona("Kenneth Branagh", 1, "Britanico", new DateTime(1960, 12, 10), new List<int> {4});
+            Persona KennethBranagh = new Persona("Kenneth Branagh", 1, "Britanico", new DateTime(1960, 12, 10), new List<int> { 4 });
             Persona LilyJames = new Persona("Lily James", 2, "Britanica", new DateTime(1989, 04, 05), new List<int> { 3 });
             Persona BenChaplin = new Persona("Ben Chaplin", 1, "Britanico", new DateTime(1969, 07, 31), new List<int> { 3 });
             Persona RichardMadden = new Persona("Richard Madden", 1, "Britanico", new DateTime(1986, 06, 18), new List<int> { 3 });
@@ -66,17 +59,17 @@ namespace Proyecto_POO
 
 
 
-            Persona JustinBieber = new Persona("Justin Bieber", 1, "Canadiense", new DateTime(1996, 03, 01), new List<int> {1,2});
+            Persona JustinBieber = new Persona("Justin Bieber", 1, "Canadiense", new DateTime(1996, 03, 01), new List<int> { 1, 2 });
             Persona Adele = new Persona("Adele", 2, "Britanica", new DateTime(), new List<int> { 1, 2 });
-            Persona Coolio = new Persona("Coolio", 1, "Estadounidense", new DateTime(1963, 08, 01),new List<int> { 1, 2 });
+            Persona Coolio = new Persona("Coolio", 1, "Estadounidense", new DateTime(1963, 08, 01), new List<int> { 1, 2 });
             Persona Anuel = new Persona("Anuel AA", 1, "Puertorriqueño", new DateTime(1992, 11, 27), new List<int> { 1, 2 });
             Persona Karol_G = new Persona("Karol G", 2, "Colombiana", new DateTime(1991, 02, 14), new List<int> { 1, 2 });
             Persona DripReport = new Persona("DripReport", 1, "Indio", new DateTime(1970, 06, 14), new List<int> { 1, 2 });
 
             //Canciones:
-            Cancion Gangstas_paradise = new Cancion("Gangsta's paradise", 1, new DateTime(1995,08,08), TimeSpan.Zero, 10.0,2,
+            Cancion Gangstas_paradise = new Cancion("Gangsta's paradise", 1, new DateTime(1995, 08, 08), TimeSpan.Zero, 10.0, 2,
                 Directory.GetCurrentDirectory() + @"\Musica\Coolio - gangstas paradise.wav",
-                new List<Persona> {Coolio}, new List<Persona> { Coolio }, "Gangsta's Paradise 2k11","Imagen","Letra","RAP");
+                new List<Persona> { Coolio }, new List<Persona> { Coolio }, "Gangsta's Paradise 2k11", "Imagen", "Letra", "RAP");
             Cancion Tres_de_abril = new Cancion("3 de Abril", 1, new DateTime(2020, 04, 03), TimeSpan.Zero, 10.0, 2,
                 Directory.GetCurrentDirectory() + @"\Musica\Anuel AA - 3 de abril.wav",
                 new List<Persona> { Anuel }, new List<Persona> { Anuel }, "3 de Abril", "Imagen", "Letra", "TRAP");
@@ -85,18 +78,18 @@ namespace Proyecto_POO
                 new List<Persona> { Anuel }, new List<Persona> { Anuel }, "Keii", "Imagen", "Letra", "TRAP");
             Cancion Follow = new Cancion("Follow", 1, new DateTime(2020, 04, 01), TimeSpan.Zero, 10.0, 2,
                 Directory.GetCurrentDirectory() + @"\Musica\KArol G, Anuel AA - Follow.wav",
-                new List<Persona> { Karol_G, Anuel }, new List<Persona> { Karol_G}, "Keii", "Imagen", "Letra", "Regueton");
+                new List<Persona> { Karol_G, Anuel }, new List<Persona> { Karol_G }, "Keii", "Imagen", "Letra", "Regueton");
             Cancion Skechers = new Cancion("Skechers", 1, new DateTime(2020, 01, 12), TimeSpan.Zero, 10.0, 2,
                 Directory.GetCurrentDirectory() + @"\Musica\DripReport - Skechers.wav",
-                new List<Persona> { DripReport}, new List<Persona> { DripReport }, "Skechers", "Imagen", "Letra", "Rap");
+                new List<Persona> { DripReport }, new List<Persona> { DripReport }, "Skechers", "Imagen", "Letra", "Rap");
 
             //Peliculas
 
-            Pelicula MasBaratoPorDocena = new Pelicula("Mas Barato Por Docena", 1, new DateTime(2003, 12, 25), new TimeSpan(1,46,0), 10.0, 1,
-                "", new List<Persona> {SteveMartin, BonnieHunt, PiperPerabo }, new List<Persona> { ShawnLevy},
+            Pelicula MasBaratoPorDocena = new Pelicula("Mas Barato Por Docena", 1, new DateTime(2003, 12, 25), new TimeSpan(1, 46, 0), 10.0, 1,
+                "", new List<Persona> { SteveMartin, BonnieHunt, PiperPerabo }, new List<Persona> { ShawnLevy },
                 "‎20th Century Fox Home Entertainment", 1, "Descripcion", 1, "Familiar");
 
-            Pelicula Nerve = new Pelicula("Nerve", 1, new DateTime(2016, 09, 01), new TimeSpan(1,36,0), 10.0, 1,
+            Pelicula Nerve = new Pelicula("Nerve", 1, new DateTime(2016, 09, 01), new TimeSpan(1, 36, 0), 10.0, 1,
                 "", new List<Persona> { EmmaRoberts, DaveFranco, JulietteLewis }, new List<Persona> { HenryJoost },
                 "‎Allison Shearmur Productions", 1, "Descripcion", 1, "Accion");
 
@@ -105,19 +98,12 @@ namespace Proyecto_POO
                 "Walt Disney Productions", 1, "Descripcion", 1, "Fantasia");
 
             Pelicula HighSchoolMusical = new Pelicula("High School Musical", 1, new DateTime(2006, 01, 20), new TimeSpan(1, 38, 0), 10.0, 1,
-                "", new List<Persona> {ZacEfron, VanessaHudgens, AshleyTisdale}, new List<Persona> { KennyOrtega },
+                "", new List<Persona> { ZacEfron, VanessaHudgens, AshleyTisdale }, new List<Persona> { KennyOrtega },
                 "Salty Films", 1, "Descripcion", 1, "Musical");
 
             Pelicula SonComoNiños = new Pelicula("Son Como Niños", 1, new DateTime(2010, 06, 24), new TimeSpan(1, 42, 0), 10.0, 1,
-                "", new List<Persona> { AdamSandler, KevinJames, ChrisRock}, new List<Persona> { DennisDugan },
+                "", new List<Persona> { AdamSandler, KevinJames, ChrisRock }, new List<Persona> { DennisDugan },
                 "Relativity Media", 1, "Descripcion", 1, "Comedia");
-
-
-
-            
-
-            
-
 
             Spotflix.Lista_Canciones.Add(Gangstas_paradise);
             Spotflix.Lista_Canciones.Add(Tres_de_abril);
@@ -132,10 +118,6 @@ namespace Proyecto_POO
             Spotflix.Lista_Personas.Add(Karol_G);
             Spotflix.Lista_Personas.Add(DripReport);
 
-
-            
-
-
             void Agregar_a_temportal(List<Cancion> canciones)
             {
                 Spotflix.Temporal.clear();
@@ -144,44 +126,173 @@ namespace Proyecto_POO
                     Spotflix.Temporal.appendItem(new WindowsMediaPlayer().newMedia(item.URL));
                 }
             }
-            
-            
+
+
             Agregar_a_temportal(Spotflix.Lista_Canciones);
-
-
             Spotflix.Reproducir(Spotflix.Temporal);
             int a_1 = -1;
 
 
-
-
-            while (a_1!=0)
+            ////////////////MENU////////////////////////
+            Console.WriteLine("Bienvenidos a Spotiflix!");
+            Usuario usuarioenlinea = new Usuario();
+            DateTime now = DateTime.Now;
+            Console.WriteLine(": {0} hrs ; {1} mins ; {2} secs", now.Hour, now.Minute, now.Second);
+            Console.WriteLine("Iniciar session:");
+            Console.WriteLine("Tiene cuenta? [0] si, [1] no");
+            int usuario = Convert.ToInt32(Console.ReadLine());
+            int a = 0;
+            if (usuario != 0 && usuario != 1)
             {
-                Timer timer = new Timer(TimerCallback, null, 1000, 5000);
-                void TimerCallback(Object o)
+                while (usuario != 0 && usuario != 1)
                 {
-                    Console.WriteLine(Spotflix.Estado());
-                    GC.Collect();
+                    Console.WriteLine("Error, introduzca informacion valida!");
+                    Console.WriteLine("Tiene cuenta? [0] si, [1] no");
+                    a = Convert.ToInt32(Console.ReadLine());
+                    usuario = a;
                 }
-                Console.WriteLine("1 para pausar 2 reanudar 3 adelantar 4 retroceder 0 salir");
-                a_1=Convert.ToInt32(Console.ReadLine());
-                if (a_1==1)
+            }
+            else if (usuario == 0)
+            {
+                Console.WriteLine("Nombre de usuario:");
+                string nombreusuario = Console.ReadLine();
+                Console.WriteLine("Contraseña:");
+                string contraseñausuario = Console.ReadLine();
+                foreach (var item in Spotflix.Lista_Usuarios)
                 {
-                    Spotflix.Pausar();
-                }
-                else if (a_1 == 2)
-                {
-                    Spotflix.Reanudar();
-                }
-                else if (a_1==3)
-                {
-                    Spotflix.Adelantar();
-                }
-                else if(a_1==4)
-                {
-                    Spotflix.Retroceder();
-                }
+                    if (nombreusuario == item.Nombre && contraseñausuario == item.Contraseña)
+                    {
+                        Console.WriteLine("Ingresando a sesion!");
+                        Thread.Sleep(2000);
+                        usuarioenlinea = item;
+                        int verperfiles = 1;
+                        List<Perfil> perfilesdeusuario = new List<Perfil>();
+                        foreach (var item2 in Spotflix.Lista_Perfiles)
+                        {
+                            if (item2.Usuario_Asociado == usuarioenlinea)
+                            {
+                                Console.WriteLine("Perfil "+verperfiles);
+                                perfilesdeusuario.Add(item2);
+                                verperfiles += 1;
+                            }
+                        }
+                        if (verperfiles == 1)
+                        {
+                            Console.WriteLine("No hay perfiles en su usuario, creando uno!");
+                            Console.WriteLine("Su nombre de perfil:");
+                            string nperfil = Console.ReadLine();
+                            int tipoperf = 1;
+                            Perfil perfilenlinea = new Perfil(item, nperfil, tipoperf);
+                            Spotflix.Lista_Perfiles.Add(perfilenlinea);
+                            Console.WriteLine("Perfil creado");
+                        }
+                        else
+                        {
+                            int c_1 = 1;
+                            Console.WriteLine("Perfil/es:");
+                            foreach (var item3 in perfilesdeusuario)
+                            {
+                                Console.WriteLine(c_1+" "+item.Nombre);
+                                c_1 += 1;
+                            }
+                            Console.WriteLine("A cual perfil deseas ingresar?");
+                            int perfilingresar = Convert.ToInt32(Console.ReadLine());
+                            Perfil perfilenlinea= perfilesdeusuario[c_1 - 1];
+                        }
 
+                        break;
+                    }
+                }
+            }
+            else if (usuario == 1)
+            {
+                Console.WriteLine("Creando su propia cuenta!");
+                Console.WriteLine("Su nombrede usuario:");
+                string nomb = Console.ReadLine();
+                Console.WriteLine("Su apellido:");
+                string apell = Console.ReadLine();
+                Console.WriteLine("Su fecha de nacimiento:[DDMMAAAA]");
+                string date = Console.ReadLine();
+                int ano = date[4] + date[5] + date[6] + date[7];
+                int mes = date[2] + date[3];
+                int dia = date[0] + date[1];
+                DateTime dt = new DateTime(ano, mes, dia);
+                Console.WriteLine("Su sexo:");
+                int sex = Convert.ToInt32(Console.ReadLine());
+                Console.WriteLine("Su pais:");
+                string pais = Console.ReadLine();
+                Console.WriteLine("Su email:");
+                string email = Console.ReadLine();
+                Console.WriteLine("Su contraseña:");
+                string contra = Console.ReadLine();
+                Console.WriteLine("Su contraseña nuevamente:");
+                string contra2 = Console.ReadLine();
+                if (contra != contra2)
+                {
+                    Console.WriteLine("Distintas contraseñas! Ultima vez y acuerdese!");
+                    contra = Console.ReadLine();
+                }
+                int tipomemb = 1;
+                Usuario u = new Usuario(nomb, apell, dt, sex, pais, email, contra, tipomemb);
+                Spotflix.Lista_Usuarios.Add(u);
+                Console.WriteLine("Usuario creado, ahora creando su propio perfil");
+
+                Console.WriteLine("Su nombre de perfil:");
+                string nperfil = Console.ReadLine();
+                int tipoperf = 1;
+                Perfil perfilenlinea = new Perfil(u, nperfil, tipoperf);
+                Spotflix.Lista_Perfiles.Add(perfilenlinea);
+                Console.WriteLine("Perfil creado");
+            }
+            Console.Clear();
+            Console.WriteLine("Que desea hacer?");
+            Console.WriteLine("1. Reproducir multimedia, 2. Buscar/seguir, 3. EditarInfo, 4. Agregar Archivo, 0 Salir");
+            int b = Convert.ToInt32(Console.ReadLine());
+            if (b == 1)
+            {
+                while (a_1 != 0)
+                {
+                    Timer timer = new Timer(TimerCallback, null, 1000, 5000);
+                    void TimerCallback(Object o)
+                    {
+                        Console.WriteLine(Spotflix.Estado());
+                        GC.Collect();
+                    }
+                    Console.WriteLine("1 para pausar 2 reanudar 3 adelantar 4 retroceder 0 salir");
+                    a_1 = Convert.ToInt32(Console.ReadLine());
+                    if (a_1 == 1)
+                    {
+                        Spotflix.Pausar();
+                    }
+                    else if (a_1 == 2)
+                    {
+                        Spotflix.Reanudar();
+                    }
+                    else if (a_1 == 3)
+                    {
+                        Spotflix.Adelantar();
+                    }
+                    else if (a_1 == 4)
+                    {
+                        Spotflix.Retroceder();
+                    }
+                }
+            }
+            else if (b == 2)
+            {
+                //Buscar
+            }
+            else if (b == 3)
+            {
+                //EditarInfo
+            }
+            else if (b == 4)
+            {
+                //Agregar Archivo
+            }
+            else
+            {
+                b = 0;
             }
             
         }

@@ -3,13 +3,9 @@ using WMPLib;
 
 namespace Proyecto_POO
 {
-    public class Interaccion_Usuario
+    public static class Interaccion_Usuario
     {
-        public Interaccion_Usuario()
-        {
-        }
-
-        public void Buscar(Perfil p)
+        public static void Buscar(Perfil p)
         {
             Console.WriteLine("1. Busqueda Simple \n2. Busqueda Compleja");
             int answer = Convert.ToInt32(Console.ReadLine());
@@ -267,7 +263,7 @@ namespace Proyecto_POO
         }
 
 
-        public void Editar_Informacion()//Falta cordinar
+        public static void Editar_Informacion_Admin()//Admin
         {
             Console.WriteLine("Quieres editar los archivos [0] o los usuarios/perfiles [1]?");
             int x = Convert.ToInt32(Console.ReadLine());
@@ -633,7 +629,7 @@ namespace Proyecto_POO
 
                                 Perfil p1 = new Perfil(per.Usuario_Asociado, nomb, tipoperf, per.Fav_Canciones,
                                     per.Fav_Videos, per.Fav_Podcast, per.Fav_AudioLibro, per.Playlists_Propias,
-                                    per.Playlists_de_Otros, per.Seguidos, per.Seguidores, per.Personas_Seguidas, per.En_Cola);
+                                    per.Playlists_de_Otros, per.Seguidos, per.Seguidores, per.Personas_Seguidas, per.En_Cola_cancion);
                                 Spotflix.Lista_Perfiles[y].Editar_Informacion(p1);
                             }
                         }
@@ -658,6 +654,91 @@ namespace Proyecto_POO
             else
             {
                 Console.WriteLine("Error, ¡valor distinto a 0 o 1!");
+            }
+        }
+        public static void Editar_Informacion_Usuario(Usuario usuario)
+        {
+            Console.WriteLine("Deseas cambiar la informacion de: [0] usuario, [1] de algun perfil ,[otro numero] salir ?");
+            int edituser = Convert.ToInt32(Console.ReadLine());
+            if (edituser == 0)
+            {
+                Console.WriteLine("Informacion: ");
+                Console.WriteLine(usuario.Informacion_Usuario());
+                Console.WriteLine("Quieres modificarla? (Cuidado, vas a tener que modificar toda la informacion!)");
+                Console.WriteLine("Si [0], No [0]");
+                int edituser2 = Convert.ToInt32(Console.ReadLine());
+                if (edituser2 == 0)
+                {
+                    Console.WriteLine("Su nombre:");
+                    string nomb = Console.ReadLine();
+                    Console.WriteLine("Su apellido:");
+                    string apell = Console.ReadLine();
+                    Console.WriteLine("Su fecha de nacimiento:[DDMMAAAA]");
+                    string date = Console.ReadLine();
+                    int ano = date[4] + date[5] + date[6] + date[7];
+                    int mes = date[2] + date[3];
+                    int dia = date[0] + date[1];
+                    DateTime dt = new DateTime(ano, mes, dia);
+                    Console.WriteLine("Su sexo:");
+                    int sex = Convert.ToInt32(Console.ReadLine());
+                    Console.WriteLine("Su pais:");
+                    string pais = Console.ReadLine();
+                    Console.WriteLine("Su email:");
+                    string email = Console.ReadLine();
+
+                    Console.WriteLine("Su contraseña:");
+                    string contra = Console.ReadLine();
+                    Console.WriteLine("Su contraseña nuevamente:");
+                    string contra2 = Console.ReadLine();
+                    if (contra != contra2)
+                    {
+                        Console.WriteLine("Distintas contraseñas! Ultima vez y acuerdese!");
+                        contra = Console.ReadLine();
+                    }
+                    Usuario u1 = new Usuario(nomb, apell, dt, sex, pais, email, contra, usuario.Tipo_de_Membresia);
+                    usuario.Editar_Informacion(u1);
+                }
+                else
+                {
+                    Console.WriteLine("Informacion no modificada!");
+                }
+            }
+            else if (edituser == 1)
+            {
+                Console.WriteLine("Acontinuacion se mostraran todos los perfil enlazados a tu usuario");
+                int count = 0;
+                foreach (var item in Spotflix.Lista_Perfiles)
+                {
+                    if (item.Usuario_Asociado == usuario)
+                    {
+                        Console.WriteLine(item.Informacio_de_Perfil());
+                        Console.WriteLine("Desea [0] Cambiar Nombre, [1] Resetear todas las listas, [2] Eliminarlo");
+                        int editprofile = Convert.ToInt32(Console.ReadLine());
+                        if (editprofile == 0)
+                        {
+
+                            Console.WriteLine("Su nombre de perfil:");
+                            string nperfil = Console.ReadLine();
+                            item.Nombre_perfil = nperfil;
+                            Console.WriteLine("Perfil actualizado");
+                        }
+                        else if (editprofile==1)
+                        {
+                            Perfil perfil2 = new Perfil(usuario, item.Nombre_perfil, item.Tipo_de_Perfil);
+                            Spotflix.Lista_Perfiles[count] = perfil2;
+                            Console.WriteLine("Listas reseteadas!");
+                        }
+                        else if (editprofile == 2)
+                        {
+                            Spotflix.Lista_Perfiles.Remove(item);
+                        }
+                        else
+                        {
+                            Console.WriteLine("Numero no dentro de intervalo 0-2");
+                        }
+                    }
+                    count += 1;
+                }
             }
         }
 
