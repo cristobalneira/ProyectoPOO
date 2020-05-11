@@ -134,6 +134,7 @@ namespace Proyecto_POO
 
 
             ////////////////MENU////////////////////////
+            ///
             Console.WriteLine("Bienvenidos a Spotiflix!");
             Usuario usuarioenlinea = new Usuario();
             DateTime now = DateTime.Now;
@@ -171,7 +172,7 @@ namespace Proyecto_POO
                         {
                             if (item2.Usuario_Asociado == usuarioenlinea)
                             {
-                                Console.WriteLine("Perfil "+verperfiles);
+                                Console.WriteLine("Perfil " + verperfiles);
                                 perfilesdeusuario.Add(item2);
                                 verperfiles += 1;
                             }
@@ -192,12 +193,12 @@ namespace Proyecto_POO
                             Console.WriteLine("Perfil/es:");
                             foreach (var item3 in perfilesdeusuario)
                             {
-                                Console.WriteLine(c_1+" "+item.Nombre);
+                                Console.WriteLine(c_1 + " " + item.Nombre);
                                 c_1 += 1;
                             }
                             Console.WriteLine("A cual perfil deseas ingresar?");
                             int perfilingresar = Convert.ToInt32(Console.ReadLine());
-                            Perfil perfilenlinea= perfilesdeusuario[c_1 - 1];
+                            Perfil perfilenlinea = perfilesdeusuario[c_1 - 1];
                         }
 
                         break;
@@ -236,65 +237,71 @@ namespace Proyecto_POO
                 Usuario u = new Usuario(nomb, apell, dt, sex, pais, email, contra, tipomemb);
                 Spotflix.Lista_Usuarios.Add(u);
                 Console.WriteLine("Usuario creado, ahora creando su propio perfil");
-
                 Console.WriteLine("Su nombre de perfil:");
                 string nperfil = Console.ReadLine();
                 int tipoperf = 1;
                 Perfil perfilenlinea = new Perfil(u, nperfil, tipoperf);
                 Spotflix.Lista_Perfiles.Add(perfilenlinea);
                 Console.WriteLine("Perfil creado");
-            }
-            Console.Clear();
-            Console.WriteLine("Que desea hacer?");
-            Console.WriteLine("1. Reproducir multimedia, 2. Buscar/seguir, 3. EditarInfo, 4. Agregar Archivo, 0 Salir");
-            int b = Convert.ToInt32(Console.ReadLine());
-            if (b == 1)
-            {
-                while (a_1 != 0)
+                Console.Clear();
+                Console.WriteLine("Que desea hacer?");
+                Console.WriteLine("1. Reproducir multimedia, 2. Buscar/seguir, 3. EditarInfo, 4. Agregar Archivo, 0 Salir");
+                int b = Convert.ToInt32(Console.ReadLine());
+                if (b == 1)
                 {
-                    Timer timer = new Timer(TimerCallback, null, 1000, 5000);
-                    void TimerCallback(Object o)
+                    while (a_1 != 0)
                     {
-                        Console.WriteLine(Spotflix.Estado());
-                        GC.Collect();
-                    }
-                    Console.WriteLine("1 para pausar 2 reanudar 3 adelantar 4 retroceder 0 salir");
-                    a_1 = Convert.ToInt32(Console.ReadLine());
-                    if (a_1 == 1)
-                    {
-                        Spotflix.Pausar();
-                    }
-                    else if (a_1 == 2)
-                    {
-                        Spotflix.Reanudar();
-                    }
-                    else if (a_1 == 3)
-                    {
-                        Spotflix.Adelantar();
-                    }
-                    else if (a_1 == 4)
-                    {
-                        Spotflix.Retroceder();
+                        Timer timer = new Timer(TimerCallback, null, 1000, 5000);
+                        void TimerCallback(Object o)
+                        {
+                            Console.WriteLine(Spotflix.Estado());
+                            GC.Collect();
+                        }
+                        Console.WriteLine("1 para pausar 2 reanudar 3 adelantar 4 retroceder 0 salir");
+                        a_1 = Convert.ToInt32(Console.ReadLine());
+                        if (a_1 == 1)
+                        {
+                            Spotflix.Pausar();
+                        }
+                        else if (a_1 == 2)
+                        {
+                            Spotflix.Reanudar();
+                        }
+                        else if (a_1 == 3)
+                        {
+                            Spotflix.Adelantar();
+                        }
+                        else if (a_1 == 4)
+                        {
+                            Spotflix.Retroceder();
+                        }
                     }
                 }
+                else if (b == 2)
+                {
+                    //Buscar
+                }
+                else if (b == 3)
+                {
+                    int tipoperfil=perfilenlinea.Tipo_de_Perfil;
+                    if (tipoperfil == 3)
+                    {
+                        Interaccion_Usuario.Editar_Informacion_Admin();
+                    }
+                    else
+                    {
+                        Interaccion_Usuario.Editar_Informacion_Usuario(usuarioenlinea);
+                    }
+                }
+                else if (b == 4)
+                {
+                    //Agregar Archivo
+                }
+                else
+                {
+                    b = 0;
+                }
             }
-            else if (b == 2)
-            {
-                //Buscar
-            }
-            else if (b == 3)
-            {
-                //EditarInfo
-            }
-            else if (b == 4)
-            {
-                //Agregar Archivo
-            }
-            else
-            {
-                b = 0;
-            }
-            
         }
     }
     

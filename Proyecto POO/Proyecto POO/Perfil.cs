@@ -12,21 +12,21 @@ namespace Proyecto_POO
     {
         public Usuario Usuario_Asociado;
         public string Nombre_perfil;
-        public int Tipo_de_Perfil; 
-        public Playlist Fav_Canciones;
-        public Playlist Fav_Videos;
-        public Playlist Fav_Podcast;
-        public Playlist Fav_AudioLibro;
-        public Playlist Playlists_Propias;
-        public Playlist Playlists_de_Otros;
-        public List<Perfil> Seguidos;
-        public List<Perfil> Seguidores;
-        public List<Persona> Personas_Seguidas;
-        public List<Cancion> En_Cola_cancion;
+        public int Tipo_de_Perfil;
+        public Playlist Fav_Canciones = new Playlist("Canciones Favoritas");
+        public Playlist Fav_Videos = new Playlist("Videos Favoritas");
+        public Playlist Fav_Podcast = new Playlist("Podcast Favoritas");
+        public Playlist Fav_AudioLibro = new Playlist("AudioLibro Favoritas");
+        public Playlist Playlists_Propias = new Playlist("Playlist Propias");
+        public Playlist Playlists_de_Otros = new Playlist("Playlist de otros");
+        public List<Perfil> Seguidos = new List<Perfil>();
+        public List<Perfil> Seguidores = new List<Perfil>();
+        public List<Persona> Personas_Seguidas = new List<Persona>();
+        public List<Cancion> En_Cola_cancion = new List<Cancion>();
        
         public Perfil(Usuario usuario_asociado, string nombre_perfil,int tipo_de_Perfil, Playlist fav_Canciones, Playlist fav_Videos, Playlist fav_Podcast, Playlist fav_AudioLibro,
             Playlist playlists_Propias, Playlist playlists_de_Otros, List<Perfil> seguidos, List<Perfil> seguidores,
-            List<Persona> personas_Seguidas, List<Cancion> En_cola)
+            List<Persona> personas_Seguidas)
         {
             Usuario_Asociado = usuario_asociado;
             Nombre_perfil = nombre_perfil;
@@ -40,34 +40,12 @@ namespace Proyecto_POO
             Seguidos = seguidos;
             Seguidores = seguidores;
             Personas_Seguidas = personas_Seguidas;
-            En_Cola_cancion = En_cola;
-            
         }
         public Perfil(Usuario u, string nombreperf, int tipo_perfil)
         {
             this.Usuario_Asociado = u;
             this.Nombre_perfil = nombreperf;
             this.Tipo_de_Perfil = tipo_perfil;
-        //    Fav_Canciones = new List<Cancion>();
-        //    Fav_Videos;
-        //    Fav_Podcast;
-        //    Fav_AudioLibro;
-        //    Playlists_Propias;
-        //    Playlists_de_Otros;
-        //    Seguidos;
-        //    Seguidores;
-        //    Personas_Seguidas;
-        //    En_Cola_cancion;
-        //numeros = new List<int>();
-        //    numeros = new List<int>();
-        //    numeros = new List<int>();
-        //    numeros = new List<int>();
-        //    numeros = new List<int>();
-        //    numeros = new List<int>();
-        //    numeros = new List<int>();
-        //    numeros = new List<int>();
-        //    numeros = new List<int>();
-        //    numeros = new List<int>();
         }
         public string Informacio_de_Perfil()
         {

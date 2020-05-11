@@ -10,7 +10,7 @@ namespace Proyecto_POO
     public class Playlist
     {
 
-        public List<IWMPPlaylist> Lista_Play_list;
+        public List<IWMPPlaylist> Lista_Play_list;//listas de listas
         public IWMPPlaylist Play_list;
 
         public Playlist(string Nombre)
