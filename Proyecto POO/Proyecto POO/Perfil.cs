@@ -22,11 +22,11 @@ namespace Proyecto_POO
         public List<Perfil> Seguidos;
         public List<Perfil> Seguidores;
         public List<Persona> Personas_Seguidas;
-        public Playlist En_Cola;
+        public List<Cancion> En_Cola_cancion;
 
         public Perfil(Usuario usuario_asociado, string nombre_perfil,int tipo_de_Perfil, Playlist fav_Canciones, Playlist fav_Videos, Playlist fav_Podcast, Playlist fav_AudioLibro,
             Playlist playlists_Propias, Playlist playlists_de_Otros, List<Perfil> seguidos, List<Perfil> seguidores,
-            List<Persona> personas_Seguidas, Playlist en_Cola)
+            List<Persona> personas_Seguidas)
         {
             Usuario_Asociado = usuario_asociado;
             Nombre_perfil = nombre_perfil;
@@ -40,7 +40,7 @@ namespace Proyecto_POO
             Seguidos = seguidos;
             Seguidores = seguidores;
             Personas_Seguidas = personas_Seguidas;
-            En_Cola = en_Cola;
+            
         }
 
 
@@ -72,7 +72,13 @@ namespace Proyecto_POO
                 a += i_5 + ". " + item.Nombre_y_Apellido;
                 i_5 += 1;
             }
-            a += "\nEn cola: "+ En_Cola.Informacion_Playlist();
+            a += "\nEn cola: ";
+            int i_6 = 1;
+            foreach (var item in En_Cola_cancion)
+            {
+                a+=i_6+". "+item.Informacion_Cancion();
+            }
+            
             
             return (a);
         }

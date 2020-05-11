@@ -134,6 +134,8 @@ namespace Proyecto_POO
 
 
             
+
+
             void Agregar_a_temportal(List<Cancion> canciones)
             {
                 Spotflix.Temporal.clear();
@@ -142,10 +144,17 @@ namespace Proyecto_POO
                     Spotflix.Temporal.appendItem(new WindowsMediaPlayer().newMedia(item.URL));
                 }
             }
-
+            
+            
             Agregar_a_temportal(Spotflix.Lista_Canciones);
+
+
             Spotflix.Reproducir(Spotflix.Temporal);
             int a_1 = -1;
+
+
+
+
             while (a_1!=0)
             {
                 Timer timer = new Timer(TimerCallback, null, 1000, 5000);
