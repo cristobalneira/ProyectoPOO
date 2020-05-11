@@ -45,7 +45,7 @@ namespace Proyecto_POO
         {
             string datos = "Nombre: " + Nombre + " " + Apellido + "\nFecha de nacimiento: " + Fecha_De_Nacimiento +
                 "\nSexo: " + Sexo + "\nPais: " + Pais + "\nEmail: " + Email + "\nContraseña: " + Contraseña +
-                "\nTipo de membresia: " + Tipo_de_Membresia;
+                "\nTipo de membresia: " + (enum_TipoDeMembresia)Tipo_de_Membresia;
             return datos;
         }
 

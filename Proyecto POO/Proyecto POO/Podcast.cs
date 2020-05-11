@@ -27,7 +27,7 @@ namespace Proyecto_POO
 
         public string Informacion_Podcast()
         {
-            string datos = "Titulo: " + Titulo + "\nCategoria: " + Categoria + "\nAño: " + Año + "\nDuracion: " + Duracion +
+            string datos = "Titulo: " + Titulo + "\nCategoria: " + (enum_Categoria)Categoria + "\nAño: " + Año + "\nDuracion: " + Duracion +
                 "\nRanking: " + Ranking;
 
             datos += "\nLocutor: ";

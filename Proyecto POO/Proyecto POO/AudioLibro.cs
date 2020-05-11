@@ -7,7 +7,7 @@ namespace Proyecto_POO
     {
         //Atributos
 
-        public enum enum_Audio
+        public enum enum_Idioma
         {
             Español = 1,
             Ingles = 2,
@@ -63,8 +63,8 @@ namespace Proyecto_POO
         }
         public string Informacion_AudioLibro()
         {
-            string datos = "Titulo: " + Titulo + "\nCategoria: " + Categoria + "\nAño: " + Año +
-                "\nDuracion: " + Duracion + "\nRanking: " + Ranking + "\nGenero: " + Genero + "\nIdioma: " + Idioma + "\nLector: " + Lector;
+            string datos = "Titulo: " + Titulo + "\nCategoria: " + (enum_Categoria)Categoria + "\nAño: " + Año +
+                "\nDuracion: " + Duracion + "\nRanking: " + Ranking + "\nGenero: " + Genero + "\nIdioma: " + (enum_Idioma)Idioma + "\nLector: " + Lector;
             return datos;
         }
     }

@@ -33,7 +33,7 @@ namespace Proyecto_POO
         //Informacion_Cancion:
         public string Informacion_Cancion()
         {
-            string a = "Titulo: " + Titulo + "\nCategoria: " + Categoria + "\nAño: " + Año.ToString("dd, MM, yyyy") + "\nDuracion: " + Duracion + "\nRanking: " + Ranking;
+            string a = "Titulo: " + Titulo + "\nCategoria: " + (enum_Categoria)Categoria + "\nAño: " + Año.ToString("dd, MM, yyyy") + "\nDuracion: " + Duracion + "\nRanking: " + Ranking;
             a+= "\nCantante(s): ";
             foreach (var item in Cantante)
             {

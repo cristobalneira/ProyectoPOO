@@ -54,7 +54,7 @@ namespace Proyecto_POO
         //Informacion_Video:
         public string Informacion_Video()
         {
-            string a = "Titulo: " + Titulo + "\nCategoria: " + Categoria + "\nAño: " + Año + "\nDuracion: " + Duracion + "\nRanking: " + Ranking;
+            string a = "Titulo: " + Titulo + "\nCategoria: " + (enum_Categoria)Categoria + "\nAño: " + Año + "\nDuracion: " + Duracion + "\nRanking: " + Ranking;
             a+= "\nActor(es) :";
             int i_1 = 1;
             foreach (var item in Actor)
@@ -69,7 +69,7 @@ namespace Proyecto_POO
                 a += i_2 + ". :" + item.Nombre_y_Apellido;
                 i_2 += 1;
             }
-            a += "\nEstudio :" + Estudio + "\nResolucion :" + Resolucion + "\nDescripcion :" + Descripcion + "\nClasificacion :" + Clasificacion;
+            a += "\nEstudio :" + Estudio + "\nResolucion :" + (enum_Resolucion)Resolucion + "\nDescripcion :" + Descripcion + "\nClasificacion :" + (enum_Clasificacion)Clasificacion;
             a += "\nGenero :" + Genero;
             return a;
         }
