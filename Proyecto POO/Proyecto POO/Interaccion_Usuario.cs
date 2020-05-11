@@ -293,7 +293,7 @@ namespace Proyecto_POO
                             int y2 = Convert.ToInt32(Console.ReadLine());
                             if (y2 == 0)
                             {
-                                Console.WriteLine("Editando Cancion:");
+                                Console.WriteLine("Editando AudioLibro:");
                                 Console.WriteLine("Titulo;");
                                 string titulo = Console.ReadLine();
                                 Console.WriteLine("Categoria;");
@@ -741,6 +741,46 @@ namespace Proyecto_POO
                 }
             }
         }
+        public static void Agregar_Archivo(Perfil p)
+        {
+            Console.Clear();
+            Console.WriteLine("Quieres editar un AudiLibro [0] \nCancion [1] \nPelicula [2] \nPodcast [3] \nVideo [4]?");
+            int aarchivo = Convert.ToInt32(Console.ReadLine());
+            if (aarchivo == 0)
+            {
+                Console.WriteLine("Creando AudioLibro");
+                Console.WriteLine("Titulo;");
+                string titulo = Console.ReadLine();
+                Console.WriteLine("Categoria;");
+                int categoria = Convert.ToInt32(Console.ReadLine());
+                Console.WriteLine("Su fecha:[DDMMAAAA]");
+                string date = Console.ReadLine();
+                int ano = date[4] + date[5] + date[6] + date[7];
+                int mes = date[2] + date[3];
+                int dia = date[0] + date[1];
+                DateTime dt = new DateTime(ano, mes, dia);
+                Console.WriteLine("Idioma;");
+                string Album = Console.ReadLine();
+                Console.WriteLine("Genero;");
+                string genero = Console.ReadLine();
 
+            }
+            else if (aarchivo == 1)
+            {
+
+            }
+            else if (aarchivo == 2)
+            {
+
+            }
+            else if (aarchivo == 3)
+            {
+
+            }
+            else if (aarchivo == 4)
+            {
+
+            }
+        }
     }
 }
