@@ -10,6 +10,7 @@ namespace Proyecto_POO
 {
     public class Perfil
     {
+        //Atributos
         public Usuario Usuario_Asociado;
         public string Nombre_perfil;
         public int Tipo_de_Perfil;
@@ -17,15 +18,21 @@ namespace Proyecto_POO
         public Playlist Fav_Videos = new Playlist("Videos Favoritas");
         public Playlist Fav_Podcast = new Playlist("Podcast Favoritas");
         public Playlist Fav_AudioLibro = new Playlist("AudioLibro Favoritas");
-        public Playlist Playlists_Propias = new Playlist("Playlist Propias");
-        public Playlist Playlists_de_Otros = new Playlist("Playlist de otros");
+        public List<Playlist> Playlists_Propias = new List<Playlist>();
+        public List<Playlist> Playlists_De_Otros = new List<Playlist>();
         public List<Perfil> Seguidos = new List<Perfil>();
         public List<Perfil> Seguidores = new List<Perfil>();
         public List<Persona> Personas_Seguidas = new List<Persona>();
         public List<Cancion> En_Cola_cancion = new List<Cancion>();
-       
+        public List<Video> En_Cola_video = new List<Video>();
+        public List<Pelicula> En_Cola_pelicula = new List<Pelicula>();
+        public List<Podcast> En_Cola_podcast = new List<Podcast>();
+        public List<AudioLibro> En_Cola_audiolibro = new List<AudioLibro>();
+
+        //Constructor
+
         public Perfil(Usuario usuario_asociado, string nombre_perfil,int tipo_de_Perfil, Playlist fav_Canciones, Playlist fav_Videos, Playlist fav_Podcast, Playlist fav_AudioLibro,
-            Playlist playlists_Propias, Playlist playlists_de_Otros, List<Perfil> seguidos, List<Perfil> seguidores,
+            List<Playlist> playlists_Propias, List<Playlist> playlists_de_Otros, List<Perfil> seguidos, List<Perfil> seguidores,
             List<Persona> personas_Seguidas)
         {
             Usuario_Asociado = usuario_asociado;
@@ -36,7 +43,7 @@ namespace Proyecto_POO
             Fav_Podcast = fav_Podcast;
             Fav_AudioLibro = fav_AudioLibro;
             Playlists_Propias = playlists_Propias;
-            Playlists_de_Otros = playlists_de_Otros;
+            Playlists_De_Otros = playlists_de_Otros;
             Seguidos = seguidos;
             Seguidores = seguidores;
             Personas_Seguidas = personas_Seguidas;
@@ -47,13 +54,27 @@ namespace Proyecto_POO
             this.Nombre_perfil = nombreperf;
             this.Tipo_de_Perfil = tipo_perfil;
         }
-        public string Informacio_de_Perfil()
+        public string Informacion_de_Perfil()
         {
-            string a ="Nombre Usuario: " +Usuario_Asociado.Nombre + " " + Usuario_Asociado.Apellido + "\nNombre de perfil: " 
-                + Nombre_perfil + "\nCanciones favoritas: " + Fav_Canciones.Informacion_Playlist()+ "\nVideos favoritos: " 
+            string a = "Nombre Usuario: " + Usuario_Asociado.Nombre + " " + Usuario_Asociado.Apellido + "\nNombre de perfil: "
+                + Nombre_perfil + "\nCanciones favoritas: " + Fav_Canciones.Informacion_Playlist() + "\nVideos favoritos: "
                 + Fav_Videos.Informacion_Playlist() + "\nPodcast favoritos: " + Fav_Podcast.Informacion_Playlist()
-                + "\nAudiolibros favoritos: " + Fav_AudioLibro.Informacion_Playlist()+ "\nPlaylists propias: "+Playlists_Propias.Informacion_Playlist()
-                + "\nPlaylists de otros: "+Playlists_de_Otros.Informacion_Playlist();
+                + "\nAudiolibros favoritos: " + Fav_AudioLibro.Informacion_Playlist();
+
+            int i_1 = 1;
+            a += "\nPlaylist propias: ";
+            foreach (var item in Playlists_Propias)
+            {
+                a += i_1 + ". " + item.Informacion_Playlist();
+                i_1 += 1;
+            }
+            int i_2 = 1;
+            a += "\nPlaylist de otros: ";
+            foreach (var item in Playlists_De_Otros)
+            {
+                a += i_2 + ". " + item.Informacion_Playlist();
+                i_2 += 1;
+            }
             int i_3 = 1;
             a += "\nPerfiles seguidos: ";
             foreach (var item in Seguidos)
