@@ -1146,7 +1146,7 @@ namespace Proyecto_POO
                                 Console.WriteLine("Descripcion:");
                                 string descripcion = Console.ReadLine();
                                 Video cc1 = new Video(titulo, categoria, dt, c1.Duracion, c1.Ranking, c1.Estado,
-                                    c1.URL, c1.Actor, c1.Director, c1.Estudio, c1.Resolucion, descripcion, c1.Clasificacion, c1.Genero);
+                                    c1.URL, c1.Resolucion, descripcion, c1.Clasificacion, c1.Genero);
                                 ;
                                 ;
                                 Spotflix.Lista_Videos[y].Editar_Informacion(cc1);

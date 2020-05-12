@@ -22,10 +22,10 @@ namespace Proyecto_POO
         public Usuario Usuario_Asociado;
         public string Nombre_perfil;
         public int Tipo_de_Perfil;
-        public List<Cancion> Fav_Canciones;
+        public List<Cancion> Fav_Canciones = new List<Cancion>();
         public List<Pelicula> Fav_Pelicula;
         public List<Video> Fav_Videos;
-        public List<Podcast> Fav_Podcast;
+        public List<Podcast> Fav_Podcast = new List<Podcast>();
         public List<AudioLibro> Fav_AudioLibro;
         public List<Playlist> Playlists_Propias = new List<Playlist>();
         public List<Playlist> Playlists_De_Otros = new List<Playlist>();
