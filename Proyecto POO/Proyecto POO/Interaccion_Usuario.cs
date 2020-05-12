@@ -367,6 +367,8 @@ namespace Proyecto_POO
                     else if (answer3 == 4)
                     {
                         Console.WriteLine("Nacionalidad: ");
+                        Console.WriteLine("Ejemplo válido: Estadounidense");
+                        Console.WriteLine("Ejemplo no válido: estadounidense ");
                         Console.WriteLine(" ");
                         string nacionalidad = Console.ReadLine();
                         int i = 1;
@@ -438,20 +440,454 @@ namespace Proyecto_POO
                     {
                         Console.WriteLine("Titulo: ");
                         string titulo = Console.ReadLine();
-                        Console.WriteLine("1.Canciones \n2.Videos \n3.Podcast \n4.Pelicula \n5.AudioLibro \n6.Playlist");
+                        Console.WriteLine("1.Canciones \n2.Videos \n3.Podcast \n4.Pelicula \n5.AudioLibro");
                         Console.WriteLine("Categoria:");
                         int categoria = Convert.ToInt32(Console.ReadLine());
+                        if (categoria == 1)
+                        {
+                            int i_1 = 1;
+                            foreach (var item in Spotflix.Lista_Canciones)
+                            {
+                                if (titulo == item.Titulo)
+                                {
+                                    Console.WriteLine(i + ". " + item.Titulo);
+                                    i_1 += 1;
+                                }
+
+                            }
+                        }
+                        else if (categoria == 2)
+                        {
+                            int i_1 = 1;
+                            foreach (var item in Spotflix.Lista_Videos)
+                            {
+                                if (titulo == item.Titulo)
+                                {
+                                    Console.WriteLine(i + ". " + item.Titulo);
+                                    i_1 += 1;
+                                }
+
+                            }
+                        }
+                        else if (categoria == 3)
+                        {
+                            int i_1 = 1;
+                            foreach (var item in Spotflix.Lista_Podcasts)
+                            {
+                                if (titulo == item.Titulo)
+                                {
+                                    Console.WriteLine(i + ". " + item.Titulo);
+                                    i_1 += 1;
+                                }
+
+                            }
+                        }
+                        else if (categoria == 4)
+                        {
+                            int i_1 = 1;
+                            foreach (var item in Spotflix.Lista_Peliculas)
+                            {
+                                if (titulo == item.Titulo)
+                                {
+                                    Console.WriteLine(i + ". " + item.Titulo);
+                                    i_1 += 1;
+                                }
+
+                            }
+                        }
+                        else if (categoria == 5)
+                        {
+                            int i_1 = 1;
+                            foreach (var item in Spotflix.Lista_AudioLibros)
+                            {
+                                if (titulo == item.Titulo)
+                                {
+
+                                    Console.WriteLine(i + ". " + item.Titulo);
+                                    i_1 += 1;
+                                }
+
+                            }
+                        }
+
+
+                    }
+                    else if (opcion1 == 1 && opcion2 == 3)
+                    {
+                        Console.WriteLine("Titulo: ");
+                        string titulo = Console.ReadLine();
+                        Console.WriteLine("Año: ");
+                        int año = Convert.ToInt32(Console.ReadLine());
+
+                        foreach(var item in Spotflix.Lista_Canciones)
+                        {
+                            int i_1 = 1;
+                            if (titulo == item.Titulo && año == item.Año.Year)
+                            {
+                                Console.WriteLine("Canciones");
+                                Console.WriteLine(" ");
+                                Console.WriteLine(i + ". " + item.Titulo);
+                                i_1 += 1;
+                            }
+                        }
+                        foreach (var item in Spotflix.Lista_Videos)
+                        {
+                            int i_1 = 1;
+                            if (titulo == item.Titulo && año == item.Año.Year)
+                            {
+                                Console.WriteLine("Videos");
+                                Console.WriteLine(" ");
+                                Console.WriteLine(i + ". " + item.Titulo);
+                                i_1 += 1;
+                            }
+                        }
+                        foreach (var item in Spotflix.Lista_Podcasts)
+                        {
+                            int i_1 = 1;
+                            if (titulo == item.Titulo && año == item.Año.Year)
+                            {
+                                Console.WriteLine("Podcast");
+                                Console.WriteLine(" ");
+                                Console.WriteLine(i + ". " + item.Titulo);
+                                i_1 += 1;
+                            }
+                        }
+                        foreach (var item in Spotflix.Lista_Peliculas)
+                        {
+                            int i_1 = 1;
+                            if (titulo == item.Titulo && año == item.Año.Year)
+                            {
+                                Console.WriteLine("Peliculas");
+                                Console.WriteLine(" ");
+                                Console.WriteLine(i + ". " + item.Titulo);
+                                i_1 += 1;
+                            }
+                        }
+                        foreach (var item in Spotflix.Lista_AudioLibros)
+                        {
+                            int i_1 = 1;
+                            if (titulo == item.Titulo && año == item.Año.Year)
+                            {
+                                Console.WriteLine("Audiolibros");
+                                Console.WriteLine(" ");
+                                Console.WriteLine(i + ". " + item.Titulo);
+                                i_1 += 1;
+                            }
+                        }
+                    }
+                    else if (opcion1 == 1 && opcion2 == 4)
+                    {
+                        Console.WriteLine("Titulo: ");
+                        string titulo = Console.ReadLine();
+                        Console.WriteLine("Ranking: ");
+                        double ranking = Convert.ToDouble(Console.ReadLine());
 
                         foreach (var item in Spotflix.Lista_Canciones)
                         {
-                            Console.WriteLine("[" + i + "]. " + item.Titulo);
-                            i += 1;
+                            int i_1 = 1;
+                            if (titulo == item.Titulo && ranking == item.Ranking)
+                            {
+                                Console.WriteLine("Canciones");
+                                Console.WriteLine(" ");
+                                Console.WriteLine(i + ". " + item.Titulo);
+                                i_1 += 1;
+                            }
                         }
-                        Console.WriteLine("Que cancion desea escuchar: ");
-                        int cancion = Convert.ToInt32(Console.ReadLine());
-                        p.En_Cola_cancion.Add(Spotflix.Lista_Canciones[cancion - 1]);
+                        foreach (var item in Spotflix.Lista_Videos)
+                        {
+                            int i_1 = 1;
+                            if (titulo == item.Titulo && ranking == item.Ranking)
+                            {
+                                Console.WriteLine("Videos");
+                                Console.WriteLine(" ");
+                                Console.WriteLine(i + ". " + item.Titulo);
+                                i_1 += 1;
+                            }
+                        }
+                        foreach (var item in Spotflix.Lista_Podcasts)
+                        {
+                            int i_1 = 1;
+                            if (titulo == item.Titulo && ranking == item.Ranking)
+                            {
+                                Console.WriteLine("Podcast");
+                                Console.WriteLine(" ");
+                                Console.WriteLine(i + ". " + item.Titulo);
+                                i_1 += 1;
+                            }
+                        }
+                        foreach (var item in Spotflix.Lista_Peliculas)
+                        {
+                            int i_1 = 1;
+                            if (titulo == item.Titulo && ranking == item.Ranking)
+                            {
+                                Console.WriteLine("Peliculas");
+                                Console.WriteLine(" ");
+                                Console.WriteLine(i + ". " + item.Titulo);
+                                i_1 += 1;
+                            }
+                        }
+                        foreach (var item in Spotflix.Lista_AudioLibros)
+                        {
+                            int i_1 = 1;
+                            if (titulo == item.Titulo && ranking == item.Ranking)
+                            {
+                                Console.WriteLine("Audiolibros");
+                                Console.WriteLine(" ");
+                                Console.WriteLine(i + ". " + item.Titulo);
+                                i_1 += 1;
+                            }
+                        }
                     }
+                    else if (opcion1 == 2 && opcion2 == 3)
+                    {
+                        Console.WriteLine("1.Canciones \n2.Videos \n3.Podcast \n4.Pelicula \n5.AudioLibro");
+                        Console.WriteLine("Categoria: ");
+                        int categoria = Convert.ToInt32(Console.ReadLine());
+                        Console.WriteLine("Año:");
+                        int año = Convert.ToInt32(Console.ReadLine());
 
+                        if (categoria == 1)
+                        {
+                            int i_1 = 1;
+                            foreach (var item in Spotflix.Lista_Canciones)
+                            {
+                                if (año == item.Año.Year)
+                                {
+                                    Console.WriteLine("Canciones");
+                                    Console.WriteLine(" ");
+                                    Console.WriteLine(i + ". " + item.Titulo);
+                                    Console.WriteLine(" " + item.Año);
+                                    i_1 += 1;
+                                }
+
+                            }
+                        }
+                        else if (categoria == 2)
+                        {
+                            int i_1 = 1;
+                            foreach (var item in Spotflix.Lista_Videos)
+                            {
+                                if (año == item.Año.Year)
+                                {
+                                    Console.WriteLine("Videos");
+                                    Console.WriteLine(" ");
+                                    Console.WriteLine(i + ". " + item.Titulo);
+                                    Console.WriteLine(" " + item.Año);
+                                    i_1 += 1;
+                                }
+
+                            }
+                        }
+                        else if (categoria == 3)
+                        {
+                            int i_1 = 1;
+                            foreach (var item in Spotflix.Lista_Podcasts)
+                            {
+                                if (año == item.Año.Year)
+                                {
+                                    Console.WriteLine("Podcast");
+                                    Console.WriteLine(" ");
+                                    Console.WriteLine(i + ". " + item.Titulo);
+                                    Console.WriteLine(" " + item.Año);
+                                    i_1 += 1;
+                                }
+
+                            }
+                        }
+                        else if (categoria == 4)
+                        {
+                            int i_1 = 1;
+                            foreach (var item in Spotflix.Lista_Peliculas)
+                            {
+                                if (año == item.Año.Year)
+                                {
+                                    Console.WriteLine("Peliculas");
+                                    Console.WriteLine(" ");
+                                    Console.WriteLine(i + ". " + item.Titulo);
+                                    Console.WriteLine(" " + item.Año);
+                                    i_1 += 1;
+                                }
+
+                            }
+                        }
+                        else if (categoria == 5)
+                        {
+                            int i_1 = 1;
+                            foreach (var item in Spotflix.Lista_AudioLibros)
+                            {
+                                if (año == item.Año.Year)
+                                {
+                                    Console.WriteLine("Audiolibros");
+                                    Console.WriteLine(" ");
+                                    Console.WriteLine(i + ". " + item.Titulo);
+                                    Console.WriteLine(" " + item.Año);
+                                    i_1 += 1;
+                                }
+
+                            }
+                        }
+                    }
+                    else if (opcion1 == 2 && opcion2 == 4)
+                    {
+                        Console.WriteLine("1.Canciones \n2.Videos \n3.Podcast \n4.Pelicula \n5.AudioLibro");
+                        Console.WriteLine("Categoria: ");
+                        int categoria = Convert.ToInt32(Console.ReadLine());
+                        Console.WriteLine("Ranking: ");
+                        double ranking = Convert.ToDouble(Console.ReadLine());
+
+                        if (categoria == 1)
+                        {
+                            int i_1 = 1;
+                            foreach (var item in Spotflix.Lista_Canciones)
+                            {
+                                if (ranking == item.Ranking)
+                                {
+                                    Console.WriteLine("Canciones");
+                                    Console.WriteLine(" ");
+                                    Console.WriteLine(i + ". " + item.Titulo);
+                                    Console.WriteLine(" " + item.Ranking);
+                                    i_1 += 1;
+                                }
+
+                            }
+                        }
+                        else if (categoria == 2)
+                        {
+                            int i_1 = 1;
+                            foreach (var item in Spotflix.Lista_Videos)
+                            {
+                                if (ranking == item.Ranking)
+                                {
+                                    Console.WriteLine("Videos");
+                                    Console.WriteLine(" ");
+                                    Console.WriteLine(i + ". " + item.Titulo);
+                                    Console.WriteLine(" " + item.Ranking);
+                                    i_1 += 1;
+                                }
+
+                            }
+                        }
+                        else if (categoria == 3)
+                        {
+                            int i_1 = 1;
+                            foreach (var item in Spotflix.Lista_Podcasts)
+                            {
+                                if (ranking == item.Ranking)
+                                {
+                                    Console.WriteLine("Podcast");
+                                    Console.WriteLine(" ");
+                                    Console.WriteLine(i + ". " + item.Titulo);
+                                    Console.WriteLine(" " + item.Ranking);
+                                    i_1 += 1;
+                                }
+
+                            }
+                        }
+                        else if (categoria == 4)
+                        {
+                            int i_1 = 1;
+                            foreach (var item in Spotflix.Lista_Peliculas)
+                            {
+                                if (ranking == item.Ranking)
+                                {
+                                    Console.WriteLine("Peliculas");
+                                    Console.WriteLine(" ");
+                                    Console.WriteLine(i + ". " + item.Titulo);
+                                    Console.WriteLine(" " + item.Ranking);
+                                    i_1 += 1;
+                                }
+
+                            }
+                        }
+                        else if (categoria == 5)
+                        {
+                            int i_1 = 1;
+                            foreach (var item in Spotflix.Lista_AudioLibros)
+                            {
+                                if (ranking == item.Ranking)
+                                {
+                                    Console.WriteLine("Audiolibros");
+                                    Console.WriteLine(" ");
+                                    Console.WriteLine(i + ". " + item.Titulo);
+                                    Console.WriteLine(" " + item.Ranking);
+                                    i_1 += 1;
+                                }
+
+                            }
+                        }
+                    }
+                    else if (opcion1 == 3 && opcion2 == 4)
+                    {
+                        Console.WriteLine("Año:");
+                        int año = Convert.ToInt32(Console.ReadLine());
+                        Console.WriteLine("Ranking: ");
+                        double ranking = Convert.ToDouble(Console.ReadLine());
+                        foreach (var item in Spotflix.Lista_Canciones)
+                        {
+                            int i_1 = 1;
+                            if (año == item.Año.Year && ranking == item.Ranking)
+                            {
+                                Console.WriteLine("Canciones");
+                                Console.WriteLine(" ");
+                                Console.WriteLine(i + ". " + item.Titulo);
+                                Console.WriteLine("  " + item.Año);
+                                Console.WriteLine("  " + item.Ranking);
+                                i_1 += 1;
+                            }
+                        }
+                        foreach (var item in Spotflix.Lista_Videos)
+                        {
+                            int i_1 = 1;
+                            if (año == item.Año.Year && ranking == item.Ranking)
+                            {
+                                Console.WriteLine("Videos");
+                                Console.WriteLine(" ");
+                                Console.WriteLine(i + ". " + item.Titulo);
+                                Console.WriteLine("  " + item.Año);
+                                Console.WriteLine("  " + item.Ranking);
+                                i_1 += 1;
+                            }
+                        }
+                        foreach (var item in Spotflix.Lista_Podcasts)
+                        {
+                            int i_1 = 1;
+                            if (año == item.Año.Year && ranking == item.Ranking)
+                            {
+                                Console.WriteLine("Podcast");
+                                Console.WriteLine(" ");
+                                Console.WriteLine(i + ". " + item.Titulo);
+                                Console.WriteLine("  " + item.Año);
+                                Console.WriteLine("  " + item.Ranking);
+                                i_1 += 1;
+                            }
+                        }
+                        foreach (var item in Spotflix.Lista_Peliculas)
+                        {
+                            int i_1 = 1;
+                            if (año == item.Año.Year && ranking == item.Ranking)
+                            {
+                                Console.WriteLine("Peliculas");
+                                Console.WriteLine(" ");
+                                Console.WriteLine(i + ". " + item.Titulo);
+                                Console.WriteLine("  " + item.Año);
+                                Console.WriteLine("  " + item.Ranking);
+                                i_1 += 1;
+                            }
+                        }
+                        foreach (var item in Spotflix.Lista_AudioLibros)
+                        {
+                            int i_1 = 1;
+                            if (año == item.Año.Year && ranking == item.Ranking)
+                            {
+                                Console.WriteLine("Audiolibros");
+                                Console.WriteLine(" ");
+                                Console.WriteLine(i + ". " + item.Titulo);
+                                Console.WriteLine("  " + item.Año);
+                                Console.WriteLine("  " + item.Ranking);
+                                i_1 += 1;
+                            }
+                        }
+                    }
 
                 }
             }
