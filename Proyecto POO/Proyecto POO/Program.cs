@@ -51,6 +51,7 @@ namespace Proyecto_POO
             Persona Karol_G = new Persona("Karol G", 2, "Colombiana", new DateTime(1991, 02, 14), new List<int> { 1, 2 });
             Persona DripReport = new Persona("DripReport", 1, "Indio", new DateTime(1970, 06, 14), new List<int> { 1, 2 });
             Persona Roxana_Gonzalez = new Persona("Roxana Gonzalez", 1, "Española", new DateTime(1998, 2, 2), new List<int> { 6 });
+            Persona Miguel_Granados = new Persona("Miguel Granados", 1, "Argentino", new DateTime(1986, 10, 25), new List<int> { 5 });
 
             //Agregar a lista:
             Spotflix.Lista_Personas.Add(Bad_Bunny);
@@ -79,6 +80,7 @@ namespace Proyecto_POO
             Spotflix.Lista_Personas.Add(Karol_G);
             Spotflix.Lista_Personas.Add(DripReport);
             Spotflix.Lista_Personas.Add(Roxana_Gonzalez);
+            Spotflix.Lista_Personas.Add(Miguel_Granados);
 
             //Crear Canciones:
             Cancion Como_se_siente = new Cancion("Como se siente", 11, new DateTime(2020, 05, 11), TimeSpan.Zero, 10.0, 2,
@@ -109,19 +111,19 @@ namespace Proyecto_POO
             Spotflix.Lista_Canciones.Add(Skechers);
 
             //Crear Peliculas:
-            Pelicula MasBaratoPorDocena = new Pelicula("Mas Barato Por Docena", 1, new DateTime(2003, 12, 25), new TimeSpan(1, 46, 0), 10.0, 1,
+            Pelicula MasBaratoPorDocena = new Pelicula("Mas Barato Por Docena", 4, new DateTime(2003, 12, 25), new TimeSpan(1, 46, 0), 10.0, 1,
                 Directory.GetCurrentDirectory() + @"\Peliculas\Mas Barato por Docena - Trailer.mp4", new List<Persona> { SteveMartin, BonnieHunt, PiperPerabo }, new List<Persona> { ShawnLevy },
                 "‎20th Century Fox Home Entertainment", 2, "Descripcion", 1, "Familiar");
-            Pelicula Nerve = new Pelicula("Nerve", 1, new DateTime(2016, 09, 01), new TimeSpan(1, 36, 0), 10.0, 1,
+            Pelicula Nerve = new Pelicula("Nerve", 4, new DateTime(2016, 09, 01), new TimeSpan(1, 36, 0), 10.0, 1,
                 Directory.GetCurrentDirectory() + @"\Peliculas\Nerve - Trailer Oficial.mp4", new List<Persona> { EmmaRoberts, DaveFranco, JulietteLewis }, new List<Persona> { HenryJoost },
                 "‎Allison Shearmur Productions", 2, "Descripcion", 1, "Accion");
-            Pelicula LaCenicienta = new Pelicula("La Cenicienta", 1, new DateTime(2015, 03, 13), new TimeSpan(1, 54, 0), 10.0, 1,
+            Pelicula LaCenicienta = new Pelicula("La Cenicienta", 4, new DateTime(2015, 03, 13), new TimeSpan(1, 54, 0), 10.0, 1,
                 Directory.GetCurrentDirectory() + @"\Peliculas\La Cenicienta - Trailer Oficial.mp4", new List<Persona> { LilyJames, BenChaplin, RichardMadden }, new List<Persona> { KennethBranagh },
                 "Walt Disney Productions", 2, "Descripcion", 1, "Fantasia");
-            Pelicula HighSchoolMusical = new Pelicula("High School Musical", 1, new DateTime(2006, 01, 20), new TimeSpan(1, 38, 0), 10.0, 1,
+            Pelicula HighSchoolMusical = new Pelicula("High School Musical", 4, new DateTime(2006, 01, 20), new TimeSpan(1, 38, 0), 10.0, 1,
                 Directory.GetCurrentDirectory() + @"\Peliculas\High School Musical – Original Trailer.mp4", new List<Persona> { ZacEfron, VanessaHudgens, AshleyTisdale }, new List<Persona> { KennyOrtega },
                 "Salty Films", 1, "Descripcion", 2, "Musical");
-            Pelicula SonComoNiños = new Pelicula("Son Como Niños", 1, new DateTime(2010, 06, 24), new TimeSpan(1, 42, 0), 10.0, 1,
+            Pelicula SonComoNiños = new Pelicula("Son Como Niños", 4, new DateTime(2010, 06, 24), new TimeSpan(1, 42, 0), 10.0, 1,
                 Directory.GetCurrentDirectory() + @"\Peliculas\Son como Niños - Trailer Oficial.mp4", new List<Persona> { AdamSandler, KevinJames, ChrisRock }, new List<Persona> { DennisDugan },
                 "Relativity Media", 2, "Descripcion", 1, "Comedia");
 
@@ -145,13 +147,19 @@ namespace Proyecto_POO
             Spotflix.Lista_AudioLibros.Add(Hijo_Huerfano);
 
             //Crear Videos:
-
+            Video Como_Subir_videos = new Video("Como subir videosa youtube", 2, new DateTime(2020, 01, 15), TimeSpan.Zero, 10.0, 2,
+                 Directory.GetCurrentDirectory() + @"\Videos\2 Formas Increibles de bajar videos en youtube sin programas 2020.mp4", 2, "", 2, "Informativo");
+            
             //Agregar Videos:
-
+            Spotflix.Lista_Videos.Add(Como_Subir_videos);
+            
             //Crear Podcast:
-
+            Podcast Comedia_Miguel_Granados = new Podcast("Comedia Miguel Granados", 3, new DateTime(2019, 10, 17), TimeSpan.Zero, 10.0, 2,
+                Directory.GetCurrentDirectory() + @"\Podcast\.mp3", new List<Persona> { Miguel_Granados }, "Imagen", "Comedia");
+            
             //Agregar Podcast:
-
+            Spotflix.Lista_Podcasts.Add(Comedia_Miguel_Granados);
+            
             //Crear Usuarios:
             Usuario User_Ronca = new Usuario("Juan", "Roncagliolo", new DateTime(1998, 01, 16), 1, "Chile", "ronca@spotflix.com", "ronca", 2);
 
@@ -195,10 +203,12 @@ namespace Proyecto_POO
                     string correo = Console.ReadLine();
                     Console.WriteLine("Contraseña:");
                     string contraseña = Console.ReadLine();
+                    int b_1 = 0;
                     foreach (var item in Spotflix.Lista_Usuarios)
                     {
                         if (correo == item.Email && contraseña == item.Contraseña)
                         {
+                            b_1++;
                             Console.WriteLine("Ingresando a sesion...");
                             Thread.Sleep(2000);
                             int verperfiles = 1;
@@ -568,10 +578,13 @@ namespace Proyecto_POO
                             }
                             break;
                         }
-                    }   
-                    Console.WriteLine("Error no se ha encontrado cuenta.");
+                    }
+                    if (b_1 == 0)
+                    {
+                        Console.WriteLine("Error no se ha encontrado cuenta.");
+                    }
                     break;
-                }
+                }//Ingresar y usar cuenta.
                 else if (entrada == 2)
                 {
                     Console.WriteLine("Creando su propia cuenta!");
@@ -612,7 +625,7 @@ namespace Proyecto_POO
                     Console.WriteLine("Perfil creado");
                     Console.Clear();
                     
-                }
+                }//Crear cuenta
                 else
                 {
                     Console.WriteLine("Error, introduzca informacion valida!");
@@ -620,5 +633,4 @@ namespace Proyecto_POO
             }
         }
     }
-    
 }

@@ -21,9 +21,6 @@ namespace Proyecto_POO
             D = 5,
         }
 
-        public List<Persona> Actor;
-        public List<Persona> Director;
-        public string Estudio;
         public int Resolucion;
         public string Descripcion;
         public int Clasificacion;
@@ -32,7 +29,7 @@ namespace Proyecto_POO
 
         //Contructor:
         public Video(string titulo, int categoria, DateTime año, TimeSpan duracion, double ranking,
-            int estado, string url, List<Persona> actor, List<Persona> director, string estudio, int resolucion, string descripcion,
+            int estado, string url, int resolucion, string descripcion,
             int clasificacion, string genero)
         {
 
@@ -43,9 +40,6 @@ namespace Proyecto_POO
             Ranking = ranking;
             Estado = estado;
             URL = url;
-            Actor = actor;
-            Director = director;
-            Estudio = estudio;
             Resolucion = resolucion;
             Descripcion = descripcion;
             Clasificacion = clasificacion;
