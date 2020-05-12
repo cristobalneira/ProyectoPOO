@@ -101,7 +101,7 @@ namespace Proyecto_POO
                 new List<Persona> { Karol_G, Anuel }, new List<Persona> { Karol_G }, "Keii", "Imagen", "Letra", "Reggaeton");
             Cancion Skechers = new Cancion("Skechers", 1, new DateTime(2020, 01, 12), TimeSpan.Zero, 10.0, 2,
                 Directory.GetCurrentDirectory() + @"\Musica\DripReport - Skechers.wav",
-                new List<Persona> { DripReport }, new List<Persona> { DripReport }, "Skechers", "Imagen", "Letra", "Rap");
+                new List<Persona> { DripReport }, new List<Persona> { DripReport }, "Skechers", "Imagen", "Letra", "Rap"); 
 
             //Agregar Canciones:
             Spotflix.Lista_Canciones.Add(Como_se_siente);
