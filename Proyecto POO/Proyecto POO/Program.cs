@@ -83,7 +83,7 @@ namespace Proyecto_POO
             Spotflix.Lista_Personas.Add(Miguel_Granados);
 
             //Crear Canciones:
-            Cancion Como_se_siente = new Cancion("Como se siente", 11, new DateTime(2020, 05, 11), TimeSpan.Zero, 10.0, 2,
+            Cancion Como_se_siente = new Cancion("Como se siente", 1, new DateTime(2020, 05, 11), TimeSpan.Zero, 10.0, 2,
                 Directory.GetCurrentDirectory() + @"\Musica\Bad bunny - Como se siente.mp3"
                 , new List<Persona> { Bad_Bunny }, new List<Persona> { Bad_Bunny }, "Las que no iban a salir", "Imagen", "Letra", "Trap");
             Cancion Gangstas_paradise = new Cancion("Gangsta's paradise", 1, new DateTime(1995, 08, 08), TimeSpan.Zero, 10.0, 2,
