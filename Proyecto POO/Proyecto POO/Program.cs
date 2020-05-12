@@ -465,7 +465,7 @@ namespace Proyecto_POO
                                                         }
                                                     }
                                                 }//Playlist propias
-                                                else if (a_2 == 3)
+                                                else if (a_2 == 4)
                                                 {
                                                     Console.WriteLine("Que playlist desea escuchar.");
                                                     int a_6 = 1;
@@ -529,7 +529,7 @@ namespace Proyecto_POO
                                                             timer2.Dispose();
                                                         }
                                                     }
-                                                }//Playlist propias
+                                                }//Playlist de otros
                                                 else if (a_2 == 5)
                                                 {
                                                     int a_3 = -1;
