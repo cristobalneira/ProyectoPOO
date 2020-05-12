@@ -12,7 +12,7 @@ namespace Proyecto_POO
     public static class Spotflix
     {
 
-        public static IWMPPlaylist Temporal = new WindowsMediaPlayer().newPlaylist("Temporal", null);
+        public static IWMPPlaylist Temporal;
         public static List<Usuario> Lista_Usuarios = new List<Usuario>();
         public static List<Perfil> Lista_Perfiles = new List<Perfil>();
         public static List<Persona> Lista_Personas = new List<Persona>();
@@ -56,10 +56,6 @@ namespace Proyecto_POO
         {
             spotflix.controls.previous();
 
-        }
-        public static void Detener()
-        {
-            spotflix.controls.stop();
         }
         public static void Info()
         {

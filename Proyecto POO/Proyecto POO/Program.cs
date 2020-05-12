@@ -238,6 +238,7 @@ namespace Proyecto_POO
                                 int a = -1;
                                 while (a!=0)
                                 {
+                                    Console.Clear();
                                     Console.WriteLine("Bienvenido " + perfilenlinea.Nombre_perfil + "\nQue desea hacer?");
                                     Console.WriteLine("1. Reproducir multimedia, 2. Buscar/seguir, 3. EditarInfo, 4. Agregar Archivo, 0 Salir");
                                     a = Convert.ToInt32(Console.ReadLine());
@@ -251,71 +252,159 @@ namespace Proyecto_POO
                                             int a_2 = -1;
                                             void Agregar_a_temportal(List<Cancion> canciones)
                                             {
-                                                Spotflix.Temporal.clear();
+                                                Spotflix.Temporal = new WindowsMediaPlayer().newPlaylist("Temporal", null);
                                                 foreach (var item_4 in canciones)
                                                 {
+                                                    
                                                     Spotflix.Temporal.appendItem(new WindowsMediaPlayer().newMedia(item_4.URL));
                                                 }
                                             }
-                                            Console.WriteLine("Que playlist de canciones desea reproducir:\n1. Todas\n2. Canciones favoritas\n0. Salir");
+                                            Console.WriteLine("Que playlist de canciones desea reproducir:\n1. Todas\n2. Canciones favoritas\n3. En cola\n0. Salir");
                                             a_2 = Convert.ToInt32(Console.ReadLine());
                                             if (a_2 == 1)
                                             {
+                                                int a_3 = -1;
                                                 Agregar_a_temportal(Spotflix.Lista_Canciones);
                                                 Spotflix.Reproducir(Spotflix.Temporal);
+                                                while (a_3 != 0)
+                                                {
+                                                    Timer timer = new Timer(TimerCallback, null, 1000, 5000);
+                                                    void TimerCallback(Object o)
+                                                    {
+                                                        Console.WriteLine(Spotflix.Estado());
+                                                        GC.Collect();
+                                                    }
+                                                    foreach (var item_6 in Spotflix.Lista_Canciones)
+                                                    {
+                                                        Console.Write("| "+item_6.Titulo+" | ");
+                                                    }
+                                                    Console.WriteLine("\n1 para pausar 2 reanudar 3 adelantar 4 retroceder 0 salir");
+                                                    a_3 = Convert.ToInt32(Console.ReadLine());
+                                                    if (a_3 == 1)
+                                                    {
+                                                        Spotflix.Pausar();
+                                                    }
+                                                    else if (a_3 == 2)
+                                                    {
+                                                        Spotflix.Reanudar();
+                                                    }
+                                                    else if (a_3 == 3)
+                                                    {
+                                                        Spotflix.Adelantar();
+                                                    }
+                                                    else if (a_3 == 4)
+                                                    {
+                                                        Spotflix.Retroceder();
+                                                    }
+                                                    else if (a_3 == 0)
+                                                    {
+                                                        Spotflix.Pausar();
+                                                        timer.Dispose();
+                                                    }
+                                                }
+
                                             }
-                                            else if (a_2 == 1)
+                                            else if (a_2 == 2)
                                             {
+                                                int a_3 = -1;
                                                 Agregar_a_temportal(perfilenlinea.Fav_Canciones);
                                                 Spotflix.Reproducir(Spotflix.Temporal);
+                                                while (a_3 != 0)
+                                                {
+                                                    Timer timer = new Timer(TimerCallback, null, 1000, 5000);
+                                                    void TimerCallback(Object o)
+                                                    {
+                                                        Console.WriteLine(Spotflix.Estado());
+                                                        GC.Collect();
+                                                    }
+                                                    foreach (var item_6 in perfilenlinea.Fav_Canciones)
+                                                    {
+                                                        Console.Write(" " + item_6.Titulo+"|");
+                                                    }
+                                                    Console.WriteLine("1 para pausar 2 reanudar 3 adelantar 4 retroceder 0 salir");
+                                                    a_3 = Convert.ToInt32(Console.ReadLine());
+                                                    if (a_3 == 1)
+                                                    {
+                                                        Spotflix.Pausar();
+                                                    }
+                                                    else if (a_3 == 2)
+                                                    {
+                                                        Spotflix.Reanudar();
+                                                    }
+                                                    else if (a_3 == 3)
+                                                    {
+                                                        Spotflix.Adelantar();
+                                                    }
+                                                    else if (a_3 == 4)
+                                                    {
+                                                        Spotflix.Retroceder();
+                                                    }
+                                                    else if (a_3 == 0)
+                                                    {
+                                                        Spotflix.Pausar();
+                                                        timer.Dispose();
+                                                    }
+                                                }
+                                            }
+                                            else if (a_2 == 3)
+                                            {
+                                                int a_3 = -1;
+                                                Agregar_a_temportal(perfilenlinea.En_Cola_cancion);
+                                                Spotflix.Reproducir(Spotflix.Temporal);
+                                                while (a_3 != 0)
+                                                {
+                                                    Timer timer = new Timer(TimerCallback, null, 1000, 5000);
+                                                    void TimerCallback(Object o)
+                                                    {
+                                                        Console.WriteLine(Spotflix.Estado());
+                                                        GC.Collect();
+                                                    }
+                                                    foreach (var item_6 in perfilenlinea.En_Cola_cancion)
+                                                    {
+                                                        Console.Write(" " + item_6.Titulo + "|");
+                                                    }
+                                                    Console.WriteLine("1 para pausar 2 reanudar 3 adelantar 4 retroceder 0 salir");
+                                                    a_3 = Convert.ToInt32(Console.ReadLine());
+                                                    if (a_3 == 1)
+                                                    {
+                                                        Spotflix.Pausar();
+                                                    }
+                                                    else if (a_3 == 2)
+                                                    {
+                                                        Spotflix.Reanudar();
+                                                    }
+                                                    else if (a_3 == 3)
+                                                    {
+                                                        Spotflix.Adelantar();
+                                                    }
+                                                    else if (a_3 == 4)
+                                                    {
+                                                        Spotflix.Retroceder();
+                                                    }
+                                                    else if (a_3 == 0)
+                                                    {
+                                                        Spotflix.Pausar();
+                                                        timer.Dispose();
+                                                    }
+                                                }
                                             }
                                             else if (a_2 == 0)
                                             {
                                                 break;
                                             }
+                                            
                                             else
                                             {
                                                 Console.WriteLine("Opcion incorrecta, intente nuevamente");
                                                 a_2 = Convert.ToInt32(Console.ReadLine());
                                             }
-                                            int a_3 = -1;
-                                            while (a_3 != 0)
-                                            {
-                                                Timer timer = new Timer(TimerCallback, null, 1000, 5000);
-                                                void TimerCallback(Object o)
-                                                {
-                                                    Console.WriteLine(Spotflix.Estado());
-                                                    GC.Collect();
-                                                }
-                                                Console.WriteLine("1 para pausar 2 reanudar 3 adelantar 4 retroceder 0 salir");
-                                                a_3 = Convert.ToInt32(Console.ReadLine());
-                                                if (a_3 == 1)
-                                                {
-                                                    Spotflix.Pausar();
-                                                }
-                                                else if (a_3 == 2)
-                                                {
-                                                    Spotflix.Reanudar();
-                                                }
-                                                else if (a_3 == 3)
-                                                {
-                                                    Spotflix.Adelantar();
-                                                }
-                                                else if (a_3 == 4)
-                                                {
-                                                    Spotflix.Retroceder();
-                                                }
-                                                else if (a_3==0)
-                                                {
-                                                    Spotflix.Detener();
-                                                }
-                                            }
+                                            
                                         }//Reproducir Canciones Listo
 
                                         else if (a_1 ==2)
                                         {
                                             int a_2 = -1;
-                                            Console.WriteLine("De que playlist de peliculas desea reproducir:\n1. Todas\n 2. Peliculas favoritas\n0. Salir");
+                                            Console.WriteLine("De que playlist de peliculas desea reproducir:\n1. Todas\n2. Peliculas favoritas\n0. Salir");
                                             a_2 = Convert.ToInt32(Console.ReadLine());
                                             if (a_2==1)
                                             {
@@ -324,6 +413,7 @@ namespace Proyecto_POO
                                                 foreach (var item_5 in Spotflix.Lista_Peliculas)
                                                 {
                                                     Console.WriteLine(i+". "+item_5.Titulo);
+                                                    i++;
                                                 }
                                                 int a_3 = Convert.ToInt32(Console.ReadLine());
                                                 Spotflix.spotflix.openPlayer(Spotflix.Lista_Peliculas[a_3-1].URL);
@@ -335,6 +425,7 @@ namespace Proyecto_POO
                                                 foreach (var item_5 in perfilenlinea.Fav_Pelicula)
                                                 {
                                                     Console.WriteLine(i + ". " + item_5.Titulo);
+                                                    i++;
                                                 }
                                                 int a_3 = Convert.ToInt32(Console.ReadLine());
                                                 Spotflix.spotflix.openPlayer(perfilenlinea.Fav_Pelicula[a_3 - 1].URL);
@@ -355,7 +446,7 @@ namespace Proyecto_POO
                                         else if (a_1 == 3)
                                         {
                                             int a_2 = -1;
-                                            Console.WriteLine("De que playlist de audiolibros desea reproducir:\n1. Todas\n 2. Audiolibros favoritos\n0. Salir");
+                                            Console.WriteLine("De que playlist de audiolibros desea reproducir:\n1. Todas\n2. Audiolibros favoritos\n0. Salir");
                                             a_2 = Convert.ToInt32(Console.ReadLine());
                                             if (a_2 == 1)
                                             {
@@ -372,7 +463,7 @@ namespace Proyecto_POO
                                                 }
                                                 else
                                                 {
-                                                    Spotflix.Temporal.clear();
+                                                    Spotflix.Temporal = new WindowsMediaPlayer().newPlaylist("Temporal", null);
                                                     Spotflix.Temporal.appendItem(new WindowsMediaPlayer().newMedia(Spotflix.Lista_AudioLibros[a_3 - 1].URL));
                                                     Spotflix.Reproducir(Spotflix.Temporal);
                                                     Thread.Sleep(1000);
@@ -438,11 +529,11 @@ namespace Proyecto_POO
                                             break;
                                         }
 
-                                    }
+                                    }//Reproducir multimedia
 
                                     else if (a == 2)
                                     {
-                                        //Buscar
+                                        Interaccion_Usuario.Buscar(perfilenlinea);
                                     }
 
                                     else if (a == 3)

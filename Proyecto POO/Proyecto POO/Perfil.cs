@@ -24,8 +24,8 @@ namespace Proyecto_POO
         public int Tipo_de_Perfil;
         public List<Cancion> Fav_Canciones;
         public List<Pelicula> Fav_Pelicula;
-        public Playlist Fav_Videos;
-        public Playlist Fav_Podcast ;
+        public List<Video> Fav_Videos;
+        public List<Podcast> Fav_Podcast;
         public List<AudioLibro> Fav_AudioLibro;
         public List<Playlist> Playlists_Propias = new List<Playlist>();
         public List<Playlist> Playlists_De_Otros = new List<Playlist>();
@@ -57,8 +57,8 @@ namespace Proyecto_POO
             {
                 a += i + ". " + item.Informacion_Cancion();
             }
-            a += "\nVideos favoritos: " + Fav_Videos.Informacion_Playlist() + "\nPodcast favoritos: " + Fav_Podcast.Informacion_Playlist()
-            + "\nAudiolibros favoritos: ";
+            //a += "\nVideos favoritos: " + Fav_Videos.Informacion_Playlist() + "\nPodcast favoritos: " + Fav_Podcast.Informacion_Playlist()
+            //+ "\nAudiolibros favoritos: ";
             i = 0;
             foreach (var item in Fav_AudioLibro)
             {
