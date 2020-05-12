@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Threading;
 using WMPLib;
 
 namespace Proyecto_POO
@@ -436,7 +437,7 @@ namespace Proyecto_POO
                     Console.WriteLine("Criterio de busqueda 2: ");
                     int opcion2 = Convert.ToInt32(Console.ReadLine());
 
-                    if (opcion1 == 1 && opcion2 == 2)
+                    if (opcion1 == 1 && opcion2 == 2 || opcion1 == 2 && opcion2 == 1)
                     {
                         Console.WriteLine("Titulo: ");
                         string titulo = Console.ReadLine();
@@ -450,7 +451,7 @@ namespace Proyecto_POO
                             {
                                 if (titulo == item.Titulo)
                                 {
-                                    Console.WriteLine(i + ". " + item.Titulo);
+                                    Console.WriteLine(i_1 + ". " + item.Titulo);
                                     i_1 += 1;
                                 }
 
@@ -463,7 +464,7 @@ namespace Proyecto_POO
                             {
                                 if (titulo == item.Titulo)
                                 {
-                                    Console.WriteLine(i + ". " + item.Titulo);
+                                    Console.WriteLine(i_1 + ". " + item.Titulo);
                                     i_1 += 1;
                                 }
 
@@ -476,7 +477,7 @@ namespace Proyecto_POO
                             {
                                 if (titulo == item.Titulo)
                                 {
-                                    Console.WriteLine(i + ". " + item.Titulo);
+                                    Console.WriteLine(i_1 + ". " + item.Titulo);
                                     i_1 += 1;
                                 }
 
@@ -489,7 +490,7 @@ namespace Proyecto_POO
                             {
                                 if (titulo == item.Titulo)
                                 {
-                                    Console.WriteLine(i + ". " + item.Titulo);
+                                    Console.WriteLine(i_1 + ". " + item.Titulo);
                                     i_1 += 1;
                                 }
 
@@ -503,7 +504,7 @@ namespace Proyecto_POO
                                 if (titulo == item.Titulo)
                                 {
 
-                                    Console.WriteLine(i + ". " + item.Titulo);
+                                    Console.WriteLine(i_1 + ". " + item.Titulo);
                                     i_1 += 1;
                                 }
 
@@ -512,7 +513,7 @@ namespace Proyecto_POO
 
 
                     }
-                    else if (opcion1 == 1 && opcion2 == 3)
+                    else if (opcion1 == 1 && opcion2 == 3 || opcion1 == 3 && opcion2 == 1)
                     {
                         Console.WriteLine("Titulo: ");
                         string titulo = Console.ReadLine();
@@ -575,7 +576,7 @@ namespace Proyecto_POO
                             }
                         }
                     }
-                    else if (opcion1 == 1 && opcion2 == 4)
+                    else if (opcion1 == 1 && opcion2 == 4 || opcion1 == 4 && opcion2 == 1)
                     {
                         Console.WriteLine("Titulo: ");
                         string titulo = Console.ReadLine();
@@ -638,7 +639,7 @@ namespace Proyecto_POO
                             }
                         }
                     }
-                    else if (opcion1 == 2 && opcion2 == 3)
+                    else if (opcion1 == 2 && opcion2 == 3 || opcion1 == 4 && opcion2 == 2)
                     {
                         Console.WriteLine("1.Canciones \n2.Videos \n3.Podcast \n4.Pelicula \n5.AudioLibro");
                         Console.WriteLine("Categoria: ");
@@ -727,7 +728,7 @@ namespace Proyecto_POO
                             }
                         }
                     }
-                    else if (opcion1 == 2 && opcion2 == 4)
+                    else if (opcion1 == 2 && opcion2 == 4 || opcion1 == 4 && opcion2 == 2)
                     {
                         Console.WriteLine("1.Canciones \n2.Videos \n3.Podcast \n4.Pelicula \n5.AudioLibro");
                         Console.WriteLine("Categoria: ");
@@ -816,7 +817,7 @@ namespace Proyecto_POO
                             }
                         }
                     }
-                    else if (opcion1 == 3 && opcion2 == 4)
+                    else if (opcion1 == 3 && opcion2 == 4 || opcion1 == 4 && opcion2 == 3)
                     {
                         Console.WriteLine("Año:");
                         int año = Convert.ToInt32(Console.ReadLine());
@@ -887,6 +888,358 @@ namespace Proyecto_POO
                                 i_1 += 1;
                             }
                         }
+                    }
+
+                }
+                else if (a == 2)
+                {
+                    Console.WriteLine("1. Categoria \n2. Sexo \n3. Profesion");
+                    Console.WriteLine("Criterio de busqueda 1: ");
+                    int opcion1 = Convert.ToInt32(Console.ReadLine());
+                    Console.WriteLine("Criterio de busqueda 2: ");
+                    int opcion2 = Convert.ToInt32(Console.ReadLine());
+                    if (opcion1 == 1 && opcion2 == 2 || opcion1 == 2 && opcion2 == 1)
+                    {
+                        Console.WriteLine("1.Canciones \n2.Videos \n3.Podcast \n4.Pelicula \n5.AudioLibro");
+                        Console.WriteLine("Categoria: ");
+                        int categoria = Convert.ToInt32(Console.ReadLine());
+                        Console.WriteLine("1. Hombre \n2. Mujer");
+                        Console.WriteLine("Sexo: ");
+                        int sexo = Convert.ToInt32(Console.ReadLine());
+
+                        if (categoria == 1)
+                        {
+                            Console.WriteLine("Nombre: ");
+                            string nombre = Console.ReadLine();
+
+                            int i_1 = 1;
+                            foreach (var item in Spotflix.Lista_Personas)
+                            {
+                                if (nombre == item.Nombre_y_Apellido && sexo == item.Sexo && item.Profesion[0] == 1 || item.Profesion[0]== 2 )
+                                {
+                                    Console.WriteLine(i_1 + ". " + item.Nombre_y_Apellido);
+                                    Console.WriteLine("Sexo: " + item.Sexo);
+                                    Console.WriteLine("Profesion: " + item.Profesion);
+                                    Console.WriteLine("1. Seguir \n2. No seguir");
+                                    Console.WriteLine("Desea seguir a" + item.Nombre_y_Apellido + ": ");
+
+                                    int seguir = Convert.ToInt32(Console.ReadLine());
+                                    if (seguir == 1)
+                                    {
+                                        p.Personas_Seguidas.Add(item);
+                                    }
+                                    i_1 += 1;
+
+                                }
+
+                            }
+                        }
+                        else if (categoria == 2 || categoria == 4)
+                        {
+                            Console.WriteLine("Nombre: ");
+                            string nombre = Console.ReadLine();
+                            int i_1 = 1;
+                            foreach (var item in Spotflix.Lista_Personas)
+                            {
+                                if (nombre == item.Nombre_y_Apellido && sexo == item.Sexo && item.Profesion[0] == 3 || item.Profesion[0] == 4)
+                                {
+                                    Console.WriteLine(i_1 + ". " + item.Nombre_y_Apellido);
+                                    Console.WriteLine("Sexo: " + item.Sexo);
+                                    Console.WriteLine("Profesion: " + item.Profesion);
+                                    Console.WriteLine("1. Seguir \n2. No seguir");
+                                    Console.WriteLine("Desea seguir a" + item.Nombre_y_Apellido + ": ");
+                                    int seguir = Convert.ToInt32(Console.ReadLine());
+                                    if (seguir == 1)
+                                    {
+                                        p.Personas_Seguidas.Add(item);
+                                    }
+                                    i_1 += 1;
+                                }
+
+                            }
+                        }
+                        else if (categoria == 3)
+                        {
+                            Console.WriteLine("Nombre: ");
+                            string nombre = Console.ReadLine();
+                            int i_1 = 1;
+                            foreach (var item in Spotflix.Lista_Personas)
+                            {
+                                if (nombre == item.Nombre_y_Apellido && sexo == item.Sexo && item.Profesion[0] == 5)
+                                {
+                                    Console.WriteLine(i_1 + ". " + item.Nombre_y_Apellido);
+                                    Console.WriteLine("Sexo: " + item.Sexo);
+                                    Console.WriteLine("Profesion: " + item.Profesion);
+                                    Console.WriteLine("1. Seguir \n2. No seguir");
+                                    Console.WriteLine("Desea seguir a" + item.Nombre_y_Apellido + ": ");
+                                    int seguir = Convert.ToInt32(Console.ReadLine());
+                                    if (seguir == 1)
+                                    {
+                                        p.Personas_Seguidas.Add(item);
+                                    }
+                                    i_1 += 1;
+                                }
+
+                            }
+                        }
+                        else if (categoria == 5)
+                        {
+                            Console.WriteLine("Nombre: ");
+                            string nombre = Console.ReadLine();
+                            int i_1 = 1;
+                            foreach (var item in Spotflix.Lista_Personas)
+                            {
+                                if (nombre == item.Nombre_y_Apellido &&sexo == item.Sexo && item.Profesion[0] == 6)
+                                {
+                                    Console.WriteLine(i_1 + ". " + item.Nombre_y_Apellido);
+                                    Console.WriteLine("Sexo: " + item.Sexo);
+                                    Console.WriteLine("Profesion: " + item.Profesion);
+                                    Console.WriteLine("1. Seguir \n2. No seguir");
+                                    Console.WriteLine("Desea seguir a" + item.Nombre_y_Apellido + ": ");
+                                    int seguir = Convert.ToInt32(Console.ReadLine());
+                                    if (seguir == 1)
+                                    {
+                                        p.Personas_Seguidas.Add(item);
+                                    }
+                                    i_1 += 1;
+                                }
+
+                            }
+                        }
+
+                    }
+                    else if (opcion1 == 1 && opcion2 == 3 || opcion1 == 3 && opcion2 ==1)
+                    {
+                        Console.WriteLine("1.Canciones \n2.Videos \n3.Podcast \n4.Pelicula \n5.AudioLibro");
+                        Console.WriteLine("Categoria: ");
+                        int categoria = Convert.ToInt32(Console.ReadLine());
+                        Console.WriteLine("1. Cantante \n2. Compositor \n3. Actor \n4. Director \n5. Locutor \n6. Lector");
+                        Console.WriteLine("Profesion: ");
+                        int profesion = Convert.ToInt32(Console.ReadLine());
+
+                        if (profesion == 1 && categoria == 1)
+                        {
+                            Console.WriteLine("Nombre del cantante: ");
+                            string nombre = Console.ReadLine();
+
+                            int x = 1;
+                            foreach(var item in Spotflix.Lista_Personas)
+                            {
+                                if (nombre == item.Nombre_y_Apellido && profesion == item.Profesion[0])
+                                {
+                                    foreach (var item1 in Spotflix.Lista_Canciones)
+                                    {
+                                        Console.WriteLine("Cantante: " + item1.Cantante);
+                                        Console.WriteLine(x +". "+ item1.Titulo);
+                                    }
+                                    x++;
+
+                                }
+                            }
+                            
+                        }
+                        else if (profesion == 2 && categoria == 1)
+                        {
+                            Console.WriteLine("Nombre del compositor: ");
+                            string nombre = Console.ReadLine();
+
+                            int x = 1;
+                            foreach (var item in Spotflix.Lista_Personas)
+                            {
+                                if (nombre == item.Nombre_y_Apellido && profesion == item.Profesion[0])
+                                {
+                                    foreach (var item1 in Spotflix.Lista_Canciones)
+                                    {
+                                        Console.WriteLine("Compositor: " + item1.Compositor);
+                                        Console.WriteLine(x + ". " + item1.Titulo);
+                                    }
+                                    x++;
+
+                                }
+                            }
+
+                        }
+                        else if (profesion == 3 && categoria == 2)
+                        {
+                            Console.WriteLine("Nombre del actor: ");
+                            string nombre = Console.ReadLine();
+
+                            int x = 1;
+                            foreach (var item in Spotflix.Lista_Personas)
+                            {
+                                if (nombre == item.Nombre_y_Apellido && profesion == item.Profesion[0])
+                                {
+                                    foreach (var item1 in Spotflix.Lista_Videos)
+                                    {
+                                        Console.WriteLine("Actor: " + item.Nombre_y_Apellido);
+                                        Console.WriteLine(x + ". " + item1.Titulo);
+                                    }
+                                    x++;
+
+                                }
+                            }
+
+                        }
+                        else if (profesion == 3 && categoria == 4)
+                        {
+                            Console.WriteLine("Nombre del actor: ");
+                            string nombre = Console.ReadLine();
+
+                            int x = 1;
+                            foreach (var item in Spotflix.Lista_Personas)
+                            {
+                                if (nombre == item.Nombre_y_Apellido && profesion == item.Profesion[0])
+                                {
+                                    foreach (var item1 in Spotflix.Lista_Peliculas)
+                                    {
+                                        Console.WriteLine("Actor: " + item1.Actor);
+                                        Console.WriteLine(x + ". " + item1.Titulo);
+                                    }
+                                    x++;
+
+                                }
+                            }
+
+                        }
+                        else if (profesion == 4 && categoria == 4)
+                        {
+                            Console.WriteLine("Nombre del director: ");
+                            string nombre = Console.ReadLine();
+
+                            int x = 1;
+                            foreach (var item in Spotflix.Lista_Personas)
+                            {
+                                if (nombre == item.Nombre_y_Apellido && profesion == item.Profesion[0])
+                                {
+                                    foreach (var item1 in Spotflix.Lista_Peliculas)
+                                    {
+                                        Console.WriteLine("Director: " + item.Nombre_y_Apellido);
+                                        Console.WriteLine(x + ". " + item1.Titulo);
+                                    }
+                                    x++;
+
+                                }
+                            }
+                        }
+                        else if (profesion == 4 && categoria == 2)
+                        {
+                            Console.WriteLine("Nombre del director: ");
+                            string nombre = Console.ReadLine();
+
+                            int x = 1;
+                            foreach (var item in Spotflix.Lista_Personas)
+                            {
+                                if (nombre == item.Nombre_y_Apellido && profesion == item.Profesion[0])
+                                {
+                                    foreach (var item1 in Spotflix.Lista_Videos)
+                                    {
+                                        Console.WriteLine("Director: " + item.Nombre_y_Apellido);
+                                        Console.WriteLine(x + ". " + item1.Titulo);
+                                    }
+                                    x++;
+
+                                }
+                            }
+
+                        }
+                        else if (profesion == 5 && categoria == 3)
+                        {
+                            Console.WriteLine("Nombre del locutor: ");
+                            string nombre = Console.ReadLine();
+
+                            int x = 1;
+                            foreach (var item in Spotflix.Lista_Personas)
+                            {
+                                if (nombre == item.Nombre_y_Apellido && profesion == item.Profesion[0])
+                                {
+                                    foreach (var item1 in Spotflix.Lista_Podcasts)
+                                    {
+                                        Console.WriteLine("Locutor: " + item1.Locutor);
+                                        Console.WriteLine(x + ". " + item1.Titulo);
+                                    }
+                                    x++;
+
+                                }
+                            }
+
+                        }
+                        else if (profesion == 6 && categoria == 5)
+                        {
+                            Console.WriteLine("Nombre del Lector: ");
+                            string nombre = Console.ReadLine();
+
+                            int x = 1;
+                            foreach (var item in Spotflix.Lista_Personas)
+                            {
+                                if (nombre == item.Nombre_y_Apellido && profesion == item.Profesion[0])
+                                {
+                                    foreach (var item1 in Spotflix.Lista_AudioLibros)
+                                    {
+                                        Console.WriteLine("Lector: " + item.Nombre_y_Apellido);
+                                        Console.WriteLine(x + ". " + item1.Titulo);
+                                    }
+                                    x++;
+
+                                }
+                            }
+                        }
+
+                    }
+                    else if (opcion1 == 2 && opcion2==3 || opcion1 == 3 && opcion2 == 2)
+                    {
+                        Console.WriteLine("1. Hombre \n2. Mujer");
+                        Console.WriteLine("Sexo: ");
+                        int sexo = Convert.ToInt32(Console.ReadLine());
+                        Console.WriteLine("1. Cantante \n2. Compositor \n3. Actor \n4. Director \n5. Locutor \n6. Lector");
+                        Console.WriteLine("Profesion: ");
+                        int profesion = Convert.ToInt32(Console.ReadLine());
+                        Console.WriteLine("Nombre: ");
+                        string nombre = Console.ReadLine();
+
+                        int i_1 = 1;
+                        foreach (var item in Spotflix.Lista_Personas)
+                        {
+                            if (nombre == item.Nombre_y_Apellido && sexo == item.Sexo && profesion == item.Profesion[0])
+                            {
+                                Console.WriteLine(i_1 + ". " + item.Nombre_y_Apellido);
+                                Console.WriteLine("Sexo: " + item.Sexo);
+                                Console.WriteLine("Profesion: " + item.Profesion);
+                                Console.WriteLine("1. Seguir \n2. No seguir");
+                                Console.WriteLine("Desea seguir a" + item.Nombre_y_Apellido + ": ");
+
+                                int seguir = Convert.ToInt32(Console.ReadLine());
+                                if (seguir == 1)
+                                {
+                                    p.Personas_Seguidas.Add(item);
+                                }
+                                i_1 += 1;
+
+                            }
+
+                        }
+                    }
+                }
+                else if (a == 3)
+                {
+                    int i = 1;
+                    foreach (var item in Spotflix.Lista_Perfiles)
+                    {
+                        Console.WriteLine(Spotflix.Lista_Perfiles[i - 1].Nombre_perfil);
+                    }
+                    Console.WriteLine("Que perfil desea ver: ");
+                    Console.WriteLine(" ");
+                    int perfil = Convert.ToInt32(Console.ReadLine());
+
+                    Console.WriteLine(Spotflix.Lista_Perfiles[perfil - 1].Informacion_de_Perfil());
+
+                    Console.WriteLine("1. Seguir \n2. No seguir");
+                    Console.WriteLine(" ");
+                    Console.WriteLine("Desea seguir a" + Spotflix.Lista_Perfiles[perfil - 1] + ": ");
+                    int seguir = Convert.ToInt32(Console.ReadLine());
+                    if (seguir == 1)
+                    {
+                        p.Seguidos.Add(Spotflix.Lista_Perfiles[perfil - 1]);
+                        Console.WriteLine("Perfil seguido");
                     }
 
                 }
@@ -1380,47 +1733,289 @@ namespace Proyecto_POO
             int aarchivo = Convert.ToInt32(Console.ReadLine());
             if (aarchivo == 0)
             {
+
                 Console.WriteLine("Creando AudioLibro");
                 Console.WriteLine("Titulo;");
                 string titulo = Console.ReadLine();
-                Console.WriteLine("Categoria;");
-                int categoria = Convert.ToInt32(Console.ReadLine());
-                Console.WriteLine("Su fecha:[DDMMAAAA]");
-                string date = Console.ReadLine();
-                int ano = date[4] + date[5] + date[6] + date[7];
-                int mes = date[2] + date[3];
-                int dia = date[0] + date[1];
-                DateTime dt = new DateTime(ano, mes, dia);
-                Console.WriteLine("Idioma;");
-                string Album = Console.ReadLine();
+                Console.WriteLine("Su fecha:[DD/MM/AAAA]");
+                DateTime date = Convert.ToDateTime(Console.ReadLine());
+                DateTime dt = date;
+                Console.WriteLine("Idioma; [1] Español, [2] Ingles, [3] Portugues. ");
+                int idioma = Convert.ToInt32(Console.ReadLine());
                 Console.WriteLine("Genero;");
                 string genero = Console.ReadLine();
-
+                Console.WriteLine("Url mp3:");
+                string url1 = Console.ReadLine();
+                Console.WriteLine("Url txt:");
+                string url2 = Console.ReadLine();
+                Console.WriteLine("Nombre+Apellido Lector");
+                string nombre = Console.ReadLine();
+                Console.WriteLine("Nacionalidad?");
+                string defualtstring = Console.ReadLine();
+                Persona Person = new Persona(nombre, 35, defualtstring, new DateTime(2020, 05, 11), new List<int> { 6 });
+                AudioLibro NuevoAL = new AudioLibro(titulo, 3, dt, TimeSpan.Zero, 10.0, 2, url1, url2, genero, idioma, Person);
+                Console.WriteLine("AudioLibro crendose...");
+                Thread.Sleep(3000);
+                Spotflix.Lista_AudioLibros.Add(NuevoAL);
+                Console.WriteLine("Introduzca el archivo en '/Proyecto POO/bin/Debug/AudioLibro' para poder reproducirlo!");
+                Thread.Sleep(3000);
             }
-            else if (aarchivo == 1)
+            else if (aarchivo == 1)//\Proyecto POO\bin\Debug\Musica
             {
+                List<Persona> cantantes = new List<Persona>();
+                List<Persona> compositores = new List<Persona>();
 
+                Console.WriteLine("Creando Cancion:");
+                Console.WriteLine("Titulo;");
+                string titulo = Console.ReadLine();
+                Console.WriteLine("Su fecha:[DD/MM/AAAA]");
+                DateTime date = Convert.ToDateTime(Console.ReadLine());
+                DateTime dt = date;
+                Console.WriteLine("Url mp3:");
+                string url1 = Console.ReadLine();
+                Console.WriteLine("Url txt:");
+                string url2 = Console.ReadLine();
+                Console.WriteLine("Album:");
+                string album = Console.ReadLine();
+                Console.WriteLine("Imagen:");
+                string imagen = Console.ReadLine();
+                Console.WriteLine("Genero:");
+                string genero = Console.ReadLine();
+                int looop = 0;
+                //creando cantantes y compostorees
+                while (looop == 0)
+                {
+                    Console.WriteLine("Creando cantantes/ compositores");
+                    Console.WriteLine("[1] Cantante / [2] compositor");
+                    int desicion = Convert.ToInt32(Console.ReadLine());
+
+                    Console.WriteLine("Nombre:");
+                    string nombre2 = Console.ReadLine();
+                    Console.WriteLine("Sexo [1] H / [2] M");
+                    int sexo = Convert.ToInt32(Console.ReadLine());
+
+                    Console.WriteLine("Nacionalidad?");
+                    string defualtstring2 = Console.ReadLine();
+                    Console.WriteLine("Su fecha:[DD/MM/AAAA]");
+                    DateTime date2 = Convert.ToDateTime(Console.ReadLine());
+                    DateTime dt2 = date2;
+                    Persona persona11 = new Persona(nombre2, sexo, defualtstring2, dt2, new List<int> { desicion });
+                    Spotflix.Lista_Personas.Add(persona11);
+                    if (desicion == 1)
+                    {
+                        cantantes.Add(persona11);
+                    }
+                    else if (desicion == 2)
+                    {
+                        compositores.Add(persona11);
+                    }
+                    Console.WriteLine("Crear otro cantante/compositor? 'Si' o 'No'");
+                    string desicion2 = Console.ReadLine();
+                    if (desicion2 == "No")
+                    {
+                        looop = 3;
+                    }
+                }
+                Cancion c4 = new Cancion(titulo, 1, dt, TimeSpan.Zero, 10.0, 2, url1, cantantes, compositores, album, imagen, url2, genero);
+                Spotflix.Lista_Canciones.Add(c4);
+                Console.WriteLine("Archivo creandose...");
+                Thread.Sleep(3000);
+                Console.WriteLine("Agregue la cancion a carpeta: /Proyecto POO/bin/Debug/Musica");
+                Console.WriteLine("Pulse 1 para agregar a lista favoritas");
+                int pregunta = Convert.ToInt32(Console.ReadLine());
+                if (pregunta == 1)
+                {
+                    p.Fav_Canciones.Add(c4);
+                }
             }
             else if (aarchivo == 2)
             {
+                List<Persona> cantantes = new List<Persona>();
+                List<Persona> compositores = new List<Persona>();
+                Console.WriteLine("Creando Pelicula");
+                Console.WriteLine("Titulo;");
+                string titulo = Console.ReadLine();
+                Console.WriteLine("Su fecha:[DD/MM/AAAA]");
+                DateTime date = Convert.ToDateTime(Console.ReadLine());
+                DateTime dt = date;
+                Console.WriteLine("Url mp4:");
+                string url1 = Console.ReadLine();
+                Console.WriteLine("Estudio;");
+                string estudio = Console.ReadLine();
+                Console.WriteLine("Genero;");
+                string genero = Console.ReadLine();
+
+                int looop = 0;
+                while (looop == 0)
+                {
+                    Console.WriteLine("Creando actores/ directores");
+                    Console.WriteLine("[1] actor / [2] director");
+                    int desicion = Convert.ToInt32(Console.ReadLine());
+
+                    Console.WriteLine("Nombre:");
+                    string nombre2 = Console.ReadLine();
+                    Console.WriteLine("Sexo [1] H / [2] M");
+                    int sexo = Convert.ToInt32(Console.ReadLine());
+
+                    Console.WriteLine("Nacionalidad?");
+                    string defualtstring2 = Console.ReadLine();
+                    Console.WriteLine("Su fecha:[DD/MM/AAAA]");
+                    DateTime date2 = Convert.ToDateTime(Console.ReadLine());
+                    DateTime dt2 = date2;
+                    Persona persona11 = new Persona(nombre2, sexo, defualtstring2, dt2, new List<int> { desicion + 1 });
+                    Spotflix.Lista_Personas.Add(persona11);
+                    if (desicion == 1)
+                    {
+                        cantantes.Add(persona11);
+                    }
+                    else if (desicion == 2)
+                    {
+                        compositores.Add(persona11);
+                    }
+                    Console.WriteLine("Crear otro actor/drector? 'Si' o 'No'");
+                    string desicion2 = Console.ReadLine();
+                    if (desicion2 == "No")
+                    {
+                        looop = 3;
+                    }
+                }
+                Pelicula peli = new Pelicula(titulo, 4, date, TimeSpan.Zero, 10.0, 1,
+                url1, cantantes, compositores, estudio, 2, "Descripcion", 1, genero);
+                Spotflix.Lista_Peliculas.Add(peli);
+                Console.WriteLine("Pelicula creandose...");
+                Thread.Sleep(3000);
+                Console.WriteLine("Introduzca el archivo mp4 en la carpeta /Proyecto POO/bin/Debug/Peliculas");
+                Console.WriteLine("Desea introducirla en su lista de peliculas favoritas? 'Si' o 'No'");
+                string desicion3 = Console.ReadLine();
+                if (desicion3 == "Si")
+                {
+                    p.Fav_Pelicula.Add(peli);
+                }
 
             }
             else if (aarchivo == 3)
             {
 
+                List<Persona> Locutores = new List<Persona>();
+                Console.WriteLine("Creando Podcast");
+                Console.WriteLine("Titulo;");
+                string titulo = Console.ReadLine();
+                Console.WriteLine("Su fecha:[DD/MM/AAAA]");
+                DateTime date = Convert.ToDateTime(Console.ReadLine());
+                DateTime dt = date;
+                Console.WriteLine("Url mp3:");
+                string url1 = Console.ReadLine();
+                Console.WriteLine("Url txt:");
+                string url2 = Console.ReadLine();
+                Console.WriteLine("Album:");
+                string album = Console.ReadLine();
+                Console.WriteLine("Imagen:");
+                string imagen = Console.ReadLine();
+                Console.WriteLine("Genero:");
+                string genero = Console.ReadLine();
+                int looop = 0;
+                //creando locutores
+                while (looop == 0)
+                {
+                    Console.WriteLine("Creando locutores");
+                    Console.WriteLine("Nombre:");
+                    string nombre2 = Console.ReadLine();
+                    Console.WriteLine("Sexo [1] H / [2] M");
+                    int sexo = Convert.ToInt32(Console.ReadLine());
+
+                    Console.WriteLine("Nacionalidad?");
+                    string defualtstring2 = Console.ReadLine();
+                    Console.WriteLine("Su fecha:[DD/MM/AAAA]");
+                    DateTime date2 = Convert.ToDateTime(Console.ReadLine());
+                    DateTime dt2 = date2;
+                    Persona persona11 = new Persona(nombre2, sexo, defualtstring2, dt2, new List<int> { 5 });
+                    Spotflix.Lista_Personas.Add(persona11);
+                    Locutores.Add(persona11);
+                    Console.WriteLine("Crear otro locutor? 'Si' o 'No'");
+                    string desicion2 = Console.ReadLine();
+                    if (desicion2 == "No")
+                    {
+                        looop = 3;
+                    }
+                }
+                Podcast pod1 = new Podcast(titulo, 3, dt, TimeSpan.Zero, 10.0, 2, url1, Locutores, "Imagen", genero);
+                Spotflix.Lista_Podcasts.Add(pod1);
+                Console.WriteLine("Creando podcast...");
+                Console.WriteLine("Introduzca el archivo mp3 en el archivo /Proyecto POO/bin/Debug/Podcasts");
+                Thread.Sleep(3000);
+                Console.WriteLine("Desea introducirla en su lista de podcasts favoritas? 'Si' o 'No'");
+                string desicion3 = Console.ReadLine();
+                if (desicion3 == "Si")
+                {
+                    p.Fav_Podcast.Add(pod1);
+                }
+
+
             }
-            else if (aarchivo == 4)
+            else if (aarchivo == 4)//Proyecto POO/bin/Debug/Musica
             {
 
-            }
+                List<Persona> cantantes = new List<Persona>();
+                List<Persona> compositores = new List<Persona>();
+                Console.WriteLine("Creando Video");
+                Console.WriteLine("Titulo;");
+                string titulo = Console.ReadLine();
+                Console.WriteLine("Su fecha:[DD/MM/AAAA]");
+                DateTime date = Convert.ToDateTime(Console.ReadLine());
+                Console.WriteLine("Url mp4:");
+                string url1 = Console.ReadLine();
+                Console.WriteLine("Genero;");
+                string genero = Console.ReadLine();
+                Console.WriteLine("Descripcion;");
+                string descrip = Console.ReadLine();
+                int looop = 0;
+                while (looop == 0)
+                {
+                    Console.WriteLine("Creando actores/ directores");
+                    Console.WriteLine("[1] actor / [2] director");
+                    int desicion = Convert.ToInt32(Console.ReadLine());
 
+                    Console.WriteLine("Nombre:");
+                    string nombre2 = Console.ReadLine();
+                    Console.WriteLine("Sexo [1] H / [2] M");
+                    int sexo = Convert.ToInt32(Console.ReadLine());
+
+                    Console.WriteLine("Nacionalidad?");
+                    string defualtstring2 = Console.ReadLine();
+                    Console.WriteLine("Su fecha:[DD/MM/AAAA]");
+                    DateTime date2 = Convert.ToDateTime(Console.ReadLine());
+                    DateTime dt2 = date2;
+                    Persona persona11 = new Persona(nombre2, sexo, defualtstring2, dt2, new List<int> { desicion + 1 });
+                    Spotflix.Lista_Personas.Add(persona11);
+                    if (desicion == 1)
+                    {
+                        cantantes.Add(persona11);
+                    }
+                    else if (desicion == 2)
+                    {
+                        compositores.Add(persona11);
+                    }
+                    Console.WriteLine("Crear otro actor/drector? 'Si' o 'No'");
+                    string desicion2 = Console.ReadLine();
+                    if (desicion2 == "No")
+                    {
+                        looop = 3;
+                    }
+                }
+
+                Video video1 = new Video(titulo, 2, date, TimeSpan.Zero, 10.0, 2, url1, 2, descrip, 2, genero);
+                Spotflix.Lista_Videos.Add(video1);
+                Console.WriteLine("Video creandose...");
+                Thread.Sleep(3000);
+                Console.WriteLine("Introduzca el archivo mp4 en la carpeta /Proyecto POO/bin/Debug/Videos");
+                Console.WriteLine("Desea introducirla en su lista de Video favoritos? 'Si' o 'No'");
+                string desicion3 = Console.ReadLine();
+                if (desicion3 == "Si")
+                {
+                    p.Fav_Videos.Add(video1);
+                }
+            }
         }
-            
+
     }
 }
-
-
-
-
-            
-
