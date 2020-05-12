@@ -571,22 +571,20 @@ namespace Proyecto_POO
                         else
                         {
                             Console.WriteLine("Error no se ha encontrado cuenta.");
+                            break;
                         }
                     }
                 }
                 else if (entrada == 2)
                 {
                     Console.WriteLine("Creando su propia cuenta!");
-                    Console.WriteLine("Su nombrede usuario:");
+                    Console.WriteLine("Su nombre de usuario:");
                     string nomb = Console.ReadLine();
                     Console.WriteLine("Su apellido:");
                     string apell = Console.ReadLine();
-                    Console.WriteLine("Su fecha de nacimiento:[DDMMAAAA]");
-                    string date = Console.ReadLine();
-                    int ano = date[4] + date[5] + date[6] + date[7];
-                    int mes = date[2] + date[3];
-                    int dia = date[0] + date[1];
-                    DateTime dt = new DateTime(ano, mes, dia);
+                    Console.WriteLine("Su fecha de nacimiento:[DD/MM/AAAA]");
+                    DateTime date = Convert.ToDateTime(Console.ReadLine());
+                    DateTime dt = date;
                     Console.WriteLine("Su sexo:");
                     int sex = Convert.ToInt32(Console.ReadLine());
                     Console.WriteLine("Su pais:");
