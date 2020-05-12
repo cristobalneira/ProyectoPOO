@@ -236,7 +236,7 @@ namespace Proyecto_POO
                                 Usuario usuarioenlinea = perfilenlinea.Usuario_Asociado;
                                 //Menu Principal
                                 int a = -1;
-                                while (a!=0)
+                                while (a != 0)
                                 {
                                     Console.Clear();
                                     Console.WriteLine("Bienvenido " + perfilenlinea.Nombre_perfil + "\nQue desea hacer?");
@@ -255,7 +255,7 @@ namespace Proyecto_POO
                                                 Spotflix.Temporal = new WindowsMediaPlayer().newPlaylist("Temporal", null);
                                                 foreach (var item_4 in canciones)
                                                 {
-                                                    
+
                                                     Spotflix.Temporal.appendItem(new WindowsMediaPlayer().newMedia(item_4.URL));
                                                 }
                                             }
@@ -276,7 +276,7 @@ namespace Proyecto_POO
                                                     }
                                                     foreach (var item_6 in Spotflix.Lista_Canciones)
                                                     {
-                                                        Console.Write("| "+item_6.Titulo+" | ");
+                                                        Console.Write("| " + item_6.Titulo + " | ");
                                                     }
                                                     Console.WriteLine("\n1 para pausar 2 reanudar 3 adelantar 4 retroceder 0 salir");
                                                     a_3 = Convert.ToInt32(Console.ReadLine());
@@ -319,7 +319,7 @@ namespace Proyecto_POO
                                                     }
                                                     foreach (var item_6 in perfilenlinea.Fav_Canciones)
                                                     {
-                                                        Console.Write(" " + item_6.Titulo+"|");
+                                                        Console.Write(" " + item_6.Titulo + "|");
                                                     }
                                                     Console.WriteLine("1 para pausar 2 reanudar 3 adelantar 4 retroceder 0 salir");
                                                     a_3 = Convert.ToInt32(Console.ReadLine());
@@ -392,31 +392,31 @@ namespace Proyecto_POO
                                             {
                                                 break;
                                             }
-                                            
+
                                             else
                                             {
                                                 Console.WriteLine("Opcion incorrecta, intente nuevamente");
                                                 a_2 = Convert.ToInt32(Console.ReadLine());
                                             }
-                                            
+
                                         }//Reproducir Canciones Listo
 
-                                        else if (a_1 ==2)
+                                        else if (a_1 == 2)
                                         {
                                             int a_2 = -1;
                                             Console.WriteLine("De que playlist de peliculas desea reproducir:\n1. Todas\n2. Peliculas favoritas\n0. Salir");
                                             a_2 = Convert.ToInt32(Console.ReadLine());
-                                            if (a_2==1)
+                                            if (a_2 == 1)
                                             {
                                                 Console.WriteLine("Elija la pelicula que desea ver");
-                                                int i=1;
+                                                int i = 1;
                                                 foreach (var item_5 in Spotflix.Lista_Peliculas)
                                                 {
-                                                    Console.WriteLine(i+". "+item_5.Titulo);
+                                                    Console.WriteLine(i + ". " + item_5.Titulo);
                                                     i++;
                                                 }
                                                 int a_3 = Convert.ToInt32(Console.ReadLine());
-                                                Spotflix.spotflix.openPlayer(Spotflix.Lista_Peliculas[a_3-1].URL);
+                                                Spotflix.spotflix.openPlayer(Spotflix.Lista_Peliculas[a_3 - 1].URL);
                                             }
                                             else if (a_2 == 2)
                                             {
@@ -475,7 +475,7 @@ namespace Proyecto_POO
                                                     }
                                                 }
                                             }
-                                            else if(a_2 == 2)
+                                            else if (a_2 == 2)
                                             {
                                                 Console.WriteLine("Que Audiolibro desea ver de favoritos");
                                                 for (int i = 0; i < perfilenlinea.Fav_AudioLibro.Count; i++)
@@ -502,7 +502,7 @@ namespace Proyecto_POO
                                                     }
                                                 }
                                             }
-                                            else if (a_2==0)
+                                            else if (a_2 == 0)
                                             {
                                                 break;
                                             }
@@ -568,12 +568,11 @@ namespace Proyecto_POO
                             }
                             break;
                         }
-                        else
-                        {
-                            Console.WriteLine("Error no se ha encontrado cuenta.");
-                            break;
-                        }
-                    }
+                    }   
+                        Console.WriteLine("Error no se ha encontrado cuenta.");
+                        break;
+                        
+                    
                 }
                 else if (entrada == 2)
                 {
