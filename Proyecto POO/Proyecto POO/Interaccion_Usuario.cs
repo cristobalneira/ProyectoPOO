@@ -7,7 +7,7 @@ namespace Proyecto_POO
 {
     public static class Interaccion_Usuario
     {
-        public static void Crear_Playlist(Perfil p)
+        public static void Agregar_Playlist(Perfil p)
         {
             Console.WriteLine("De que desea crear la playlist?: ");
             Console.WriteLine("1. Cancion \n2. Video \n3. Podcast \n4. Pelicula \n5. Audiolibro");
@@ -16,9 +16,7 @@ namespace Proyecto_POO
             Console.WriteLine("Tipo de Playlist");
             Console.WriteLine("1. Publica \n2. Privada");
             int tipo = Convert.ToInt32(Console.ReadLine());
-
             List<Cancion> Playlist1 = new List<Cancion>();
-
             Playlist playlistcreada = new Playlist(nombre, tipo);
 
         }
@@ -1256,7 +1254,6 @@ namespace Proyecto_POO
             {
                 Console.WriteLine("Quieres editar un AudiLibro [0], Cancion [1], Pelicula [2], Podcast [3], Video [4]?");
                 int xy = Convert.ToInt32(Console.ReadLine());
-
                 if (xy == 0)//AL
                 {
                     while (xy == 0)
@@ -1264,7 +1261,7 @@ namespace Proyecto_POO
                         int i = 1;
                         foreach (var item in Spotflix.Lista_AudioLibros)
                         {
-                            Console.WriteLine("[" + i + "]. " + item.Titulo);
+                            Console.WriteLine("\n[" + i + "]. " + item.Titulo);
                             i += 1;
                         }
                         Console.WriteLine("Cual quieres editar? [x]");
@@ -1272,24 +1269,19 @@ namespace Proyecto_POO
                         if (y >= 1 && y <= i)
                         {
                             AudioLibro c1 = Spotflix.Lista_AudioLibros[y - 1];
-                            Console.WriteLine("Informacion del AudioLibro a editar: ");
+                            Console.WriteLine("Informacion del AudioLibro a editar: \n");
                             Console.WriteLine(Spotflix.Lista_AudioLibros[y - 1].Informacion_AudioLibro());
                             Console.WriteLine("Quieres editarlo? [si=0, no=1]");
                             int y2 = Convert.ToInt32(Console.ReadLine());
                             if (y2 == 0)
                             {
-                                Console.WriteLine("Editando AudioLibro:");
+                                Console.WriteLine("\nEditando AudioLibro:");
                                 Console.WriteLine("Titulo;");
                                 string titulo = Console.ReadLine();
                                 Console.WriteLine("Categoria;");
                                 int categoria = Convert.ToInt32(Console.ReadLine());
-                                Console.WriteLine("Su fecha:[DDMMAAAA]");
-                                string date = Console.ReadLine();
-                                int ano = date[4] + date[5] + date[6] + date[7];
-                                int mes = date[2] + date[3];
-                                int dia = date[0] + date[1];
-                                DateTime dt = new DateTime(ano, mes, dia);
-
+                                Console.WriteLine("Su fecha:[DD/MM/AAAA]");
+                                DateTime dt = Convert.ToDateTime(Console.ReadLine());
                                 Console.WriteLine("Idioma;");
                                 string Album = Console.ReadLine();
 
@@ -1298,8 +1290,8 @@ namespace Proyecto_POO
 
                                 AudioLibro cc1 = new AudioLibro(titulo, categoria, dt, c1.Duracion, c1.Ranking, c1.Estado,
                                     c1.URL, c1.URL_Texto, genero, c1.Idioma, c1.Lector);
-                                ;
-                                Spotflix.Lista_AudioLibros[y].Editar_Informacion(cc1);
+                                
+                                c1.Editar_Informacion(cc1);
                             }
                         }
 
@@ -1333,12 +1325,8 @@ namespace Proyecto_POO
                                 string titulo = Console.ReadLine();
                                 Console.WriteLine("Categoria;");
                                 int categoria = Convert.ToInt32(Console.ReadLine());
-                                Console.WriteLine("Su fecha:[DDMMAAAA]");
-                                string date = Console.ReadLine();
-                                int ano = date[4] + date[5] + date[6] + date[7];
-                                int mes = date[2] + date[3];
-                                int dia = date[0] + date[1];
-                                DateTime dt = new DateTime(ano, mes, dia);
+                                Console.WriteLine("Su fecha:[DD/MM/AAAA]");
+                                DateTime dt = Convert.ToDateTime(Console.ReadLine());
 
                                 Console.WriteLine("Album;");
                                 string Album = Console.ReadLine();
@@ -1348,15 +1336,15 @@ namespace Proyecto_POO
 
                                 Cancion cc1 = new Cancion(titulo, categoria, dt, c1.Duracion, c1.Ranking, c1.Estado,
                                     c1.URL, c1.Cantante, c1.Compositor, Album, c1.Imagen, c1.Letra, genero);
-                                ;
-                                Spotflix.Lista_Canciones[y].Editar_Informacion(cc1);
+                                
+                                c1.Editar_Informacion(cc1);
                             }
                         }
                         Console.WriteLine("Quieres editar una Cancion denuevo? [0] si, [1] no");
                         xy = Convert.ToInt32(Console.ReadLine());
-                        if (xy == 0)
+                        if (xy == 1)
                         {
-                            xy = 1;
+                            xy = 0;
                         }
                     }
                 }
@@ -1386,20 +1374,16 @@ namespace Proyecto_POO
                                 string titulo = Console.ReadLine();
                                 Console.WriteLine("Categoria:");
                                 int categoria = Convert.ToInt32(Console.ReadLine());
-                                Console.WriteLine("Su fecha:[DDMMAAAA]");
-                                string date = Console.ReadLine();
-                                int ano = date[4] + date[5] + date[6] + date[7];
-                                int mes = date[2] + date[3];
-                                int dia = date[0] + date[1];
-                                DateTime dt = new DateTime(ano, mes, dia);
+                                Console.WriteLine("Su fecha:[DD/MM/AAAA]");
+                                DateTime dt = Convert.ToDateTime(Console.ReadLine());
 
                                 Console.WriteLine("Descripcion:");
                                 string descripcion = Console.ReadLine();
 
                                 Pelicula cc1 = new Pelicula(titulo, categoria, dt, c1.Duracion, c1.Ranking, c1.Estado,
                                     c1.URL, c1.Actor, c1.Director, c1.Estudio, c1.Resolucion, descripcion, c1.Clasificacion, c1.Genero);
-                                ;
-                                Spotflix.Lista_Peliculas[y].Editar_Informacion(cc1);
+                                
+                                c1.Editar_Informacion(cc1);
                             }
                         }
                         Console.WriteLine("Quieres editar una Pelicula denuevo? [0] si, [1] no");
@@ -1439,25 +1423,20 @@ namespace Proyecto_POO
                                 Console.WriteLine("Categoria;");
                                 int categoria = Convert.ToInt32(Console.ReadLine());
 
-                                Console.WriteLine("Su fecha:[DDMMAAAA]");
-                                string date = Console.ReadLine();
-                                int ano = date[4] + date[5] + date[6] + date[7];
-                                int mes = date[2] + date[3];
-                                int dia = date[0] + date[1];
-                                DateTime dt = new DateTime(ano, mes, dia);
-
+                                Console.WriteLine("Su fecha:[DD/MM/AAAA]");
+                                DateTime dt = Convert.ToDateTime(Console.ReadLine());
                                 Console.WriteLine("Genero;");
                                 string genero = Console.ReadLine();
 
                                 Podcast cc1 = new Podcast(titulo, categoria, dt, c1.Duracion, c1.Ranking, c1.Estado,
                                     c1.URL, c1.Locutor, c1.Imagen, genero);
                                 ;
-                                Spotflix.Lista_Podcasts[y].Editar_Informacion(cc1);
+                                c1.Editar_Informacion(cc1);
                             }
                         }
                         Console.WriteLine("Quieres editar un Podcast denuevo? [0] si, [1] no");
                         xy = Convert.ToInt32(Console.ReadLine());
-                        if (xy == 0)
+          c1            if (xy == 0)
                         {
                             xy = 3;
                         }
@@ -1489,20 +1468,15 @@ namespace Proyecto_POO
                                 string titulo = Console.ReadLine();
                                 Console.WriteLine("Categoria;");
                                 int categoria = Convert.ToInt32(Console.ReadLine());
-                                Console.WriteLine("Su fecha:[DDMMAAAA]");
-                                string date = Console.ReadLine();
-                                int ano = date[4] + date[5] + date[6] + date[7];
-                                int mes = date[2] + date[3];
-                                int dia = date[0] + date[1];
-                                DateTime dt = new DateTime(ano, mes, dia);
+                                Console.WriteLine("Su fecha:[DD/MM/AAAA]");
+                                DateTime dt = Convert.ToDateTime(Console.ReadLine());
 
                                 Console.WriteLine("Descripcion:");
-                                string descripcion = Console.ReadLine();
-                                Video cc1 = new Video(titulo, categoria, dt, c1.Duracion, c1.Ranking, c1.Estado,
-                                    c1.URL, c1.Resolucion, descripcion, c1.Clasificacion, c1.Genero);
+                                string descripcion = ConsoConsole.WriteLine("Su fecha:[DD/MM/AAAA]");
+                                DateTime dt = Convert.ToDateTime(Console.ReadLine());                                   c1.URL, c1.Resolucion, descripcion, c1.Clasificacion, c1.Genero);
                                 ;
                                 ;
-                                Spotflix.Lista_Videos[y].Editar_Informacion(cc1);
+                                c1.Editar_Informacion(cc1);
                             }
                         }
                         Console.WriteLine("Quieres editar un Video denuevo? [0] si, [1] no");
@@ -1695,7 +1669,7 @@ namespace Proyecto_POO
                 {
                     if (item.Usuario_Asociado == usuario)
                     {
-                        Console.WriteLine(item.Informacion_de_Perfil());
+                        Console.WriteLine("\n"+item.Informacion_de_Perfil());
                         Console.WriteLine("Desea [0] Cambiar Nombre, [1] Resetear todas las listas, [2] Eliminarlo");
                         int editprofile = Convert.ToInt32(Console.ReadLine());
                         if (editprofile == 0)
@@ -1733,7 +1707,6 @@ namespace Proyecto_POO
             int aarchivo = Convert.ToInt32(Console.ReadLine());
             if (aarchivo == 0)
             {
-
                 Console.WriteLine("Creando AudioLibro");
                 Console.WriteLine("Titulo;");
                 string titulo = Console.ReadLine();
@@ -1764,7 +1737,6 @@ namespace Proyecto_POO
             {
                 List<Persona> cantantes = new List<Persona>();
                 List<Persona> compositores = new List<Persona>();
-
                 Console.WriteLine("Creando Cancion:");
                 Console.WriteLine("Titulo;");
                 string titulo = Console.ReadLine();
@@ -1788,12 +1760,10 @@ namespace Proyecto_POO
                     Console.WriteLine("Creando cantantes/ compositores");
                     Console.WriteLine("[1] Cantante / [2] compositor");
                     int desicion = Convert.ToInt32(Console.ReadLine());
-
                     Console.WriteLine("Nombre:");
                     string nombre2 = Console.ReadLine();
                     Console.WriteLine("Sexo [1] H / [2] M");
                     int sexo = Convert.ToInt32(Console.ReadLine());
-
                     Console.WriteLine("Nacionalidad?");
                     string defualtstring2 = Console.ReadLine();
                     Console.WriteLine("Su fecha:[DD/MM/AAAA]");
@@ -1872,7 +1842,7 @@ namespace Proyecto_POO
                     {
                         compositores.Add(persona11);
                     }
-                    Console.WriteLine("Crear otro actor/drector? 'Si' o 'No'");
+                    Console.WriteLine("Crear otro actor/director? 'Si' o 'No'");
                     string desicion2 = Console.ReadLine();
                     if (desicion2 == "No")
                     {
@@ -1895,7 +1865,6 @@ namespace Proyecto_POO
             }
             else if (aarchivo == 3)
             {
-
                 List<Persona> Locutores = new List<Persona>();
                 Console.WriteLine("Creando Podcast");
                 Console.WriteLine("Titulo;");
@@ -1995,7 +1964,7 @@ namespace Proyecto_POO
                     {
                         compositores.Add(persona11);
                     }
-                    Console.WriteLine("Crear otro actor/drector? 'Si' o 'No'");
+                    Console.WriteLine("Crear otro actor/director? 'Si' o 'No'");
                     string desicion2 = Console.ReadLine();
                     if (desicion2 == "No")
                     {
@@ -2152,6 +2121,45 @@ namespace Proyecto_POO
                         x = 99;
                     }
 
+                }
+            }
+        }
+
+        public static void CambiodeCuenta(Perfil p)
+        {
+            Console.Clear();
+            if (p.Usuario_Asociado.Tipo_de_Membresia == 2)
+            {
+                Console.WriteLine("Desea convertir tipo de cuenta a gratis? 'Si' o 'No'");
+                string g=Console.ReadLine();
+                if (g == "Si")
+                {
+                    p.Usuario_Asociado.Tipo_de_Membresia = 1;
+                    Console.WriteLine("Realizando cambios...");
+                    Console.WriteLine("Se ha enviado la copida al email:"+ p.Usuario_Asociado.Email);
+                    Console.WriteLine("No se cobrara $100 a su cuenta bancaria al mes");
+
+                }
+                else
+                {
+                    Console.WriteLine("Cambios no realizados");
+                }
+            }
+            else if (p.Usuario_Asociado.Tipo_de_Membresia == 1)
+            {
+                Console.WriteLine("Desea convertir tipo de cuenta a premium? 'Si' o 'No'");
+                string g = Console.ReadLine();
+                if (g == "Si")
+                {
+                    p.Usuario_Asociado.Tipo_de_Membresia = 2;
+                    Console.WriteLine("Realizando cambios...");
+                    Console.WriteLine("Se ha enviado la copida al email:" + p.Usuario_Asociado.Email);
+                    Console.WriteLine("Se cobrara $100 a su cuenta bancaria al mes");
+
+                }
+                else
+                {
+                    Console.WriteLine("Cambios no realizados");
                 }
             }
         }

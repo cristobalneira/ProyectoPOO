@@ -16,7 +16,7 @@ namespace Proyecto_POO
         public static List<Usuario> Lista_Usuarios = new List<Usuario>();
         public static List<Perfil> Lista_Perfiles = new List<Perfil>();
         public static List<Persona> Lista_Personas = new List<Persona>();
-
+        
         public static List<Cancion> Lista_Canciones =  new List<Cancion>();
         public static List<Video> Lista_Videos = new List<Video>();
         public static List<Podcast> Lista_Podcasts = new List<Podcast>();
