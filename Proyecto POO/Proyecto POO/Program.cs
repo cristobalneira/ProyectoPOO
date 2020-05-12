@@ -569,10 +569,8 @@ namespace Proyecto_POO
                             break;
                         }
                     }   
-                        Console.WriteLine("Error no se ha encontrado cuenta.");
-                        break;
-                        
-                    
+                    Console.WriteLine("Error no se ha encontrado cuenta.");
+                    break;
                 }
                 else if (entrada == 2)
                 {
