@@ -25,6 +25,7 @@ namespace Proyecto_POO
         static void Main(string[] args)
         {
             //Crear Personas:
+            Persona Bad_Bunny = new Persona("Bad bunny", 1, "Puertorriqueño", new DateTime(1994, 03, 10), new List<int> { 1, 2 });
             Persona ShawnLevy = new Persona("Shawn Levy", 1, "Estadounidense", new DateTime(1968, 07, 23), new List<int> { 4 });
             Persona SteveMartin = new Persona("Steve Martin", 1, "Canadiense", new DateTime(1945, 08, 14), new List<int> { 3 });
             Persona BonnieHunt = new Persona("Bonnie Hunt", 2, "Estadounidense", new DateTime(1961, 09, 22), new List<int> { 3 });
@@ -52,6 +53,7 @@ namespace Proyecto_POO
             Persona Roxana_Gonzalez = new Persona("Roxana Gonzalez", 1, "Española", new DateTime(1998, 2, 2), new List<int> { 6 });
 
             //Agregar a lista:
+            Spotflix.Lista_Personas.Add(Bad_Bunny);
             Spotflix.Lista_Personas.Add(ShawnLevy);
             Spotflix.Lista_Personas.Add(SteveMartin);
             Spotflix.Lista_Personas.Add(BonnieHunt);
@@ -79,6 +81,9 @@ namespace Proyecto_POO
             Spotflix.Lista_Personas.Add(Roxana_Gonzalez);
 
             //Crear Canciones:
+            Cancion Como_se_siente = new Cancion("Como se siente", 11, new DateTime(2020, 05, 11), TimeSpan.Zero, 10.0, 2,
+                Directory.GetCurrentDirectory() + @"\Musica\Bad bunny - Como se siente.mp3"
+                , new List<Persona> { Bad_Bunny }, new List<Persona> { Bad_Bunny }, "Las que no iban a salir", "Imagen", "Letra", "Trap");
             Cancion Gangstas_paradise = new Cancion("Gangsta's paradise", 1, new DateTime(1995, 08, 08), TimeSpan.Zero, 10.0, 2,
                 Directory.GetCurrentDirectory() + @"\Musica\Coolio - gangstas paradise.wav",
                 new List<Persona> { Coolio }, new List<Persona> { Coolio }, "Gangsta's Paradise 2k11", "Imagen", "Letra", "RAP");
@@ -96,6 +101,7 @@ namespace Proyecto_POO
                 new List<Persona> { DripReport }, new List<Persona> { DripReport }, "Skechers", "Imagen", "Letra", "Rap");
 
             //Agregar Canciones:
+            Spotflix.Lista_Canciones.Add(Como_se_siente);
             Spotflix.Lista_Canciones.Add(Gangstas_paradise);
             Spotflix.Lista_Canciones.Add(Tres_de_abril);
             Spotflix.Lista_Canciones.Add(Keii);
@@ -251,7 +257,7 @@ namespace Proyecto_POO
                                                     Spotflix.Temporal.appendItem(new WindowsMediaPlayer().newMedia(item_4.URL));
                                                 }
                                             }
-                                            Console.WriteLine("Que playlist de canciones desea reproducir:\n1. Todas\n 2. Canciones favoritas\n0. Salir");
+                                            Console.WriteLine("Que playlist de canciones desea reproducir:\n1. Todas\n2. Canciones favoritas\n0. Salir");
                                             a_2 = Convert.ToInt32(Console.ReadLine());
                                             if (a_2 == 1)
                                             {
@@ -298,6 +304,10 @@ namespace Proyecto_POO
                                                 else if (a_3 == 4)
                                                 {
                                                     Spotflix.Retroceder();
+                                                }
+                                                else if (a_3==0)
+                                                {
+                                                    Spotflix.Detener();
                                                 }
                                             }
                                         }//Reproducir Canciones Listo
@@ -451,6 +461,11 @@ namespace Proyecto_POO
                                     else if (a == 4)
                                     {
                                         //Agregar Archivo
+                                    }
+
+                                    else if (a == 0)
+                                    {
+                                        break;
                                     }
 
                                     else

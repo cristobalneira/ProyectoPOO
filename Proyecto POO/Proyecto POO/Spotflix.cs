@@ -57,6 +57,10 @@ namespace Proyecto_POO
             spotflix.controls.previous();
 
         }
+        public static void Detener()
+        {
+            spotflix.controls.stop();
+        }
         public static void Info()
         {
             for (int i = 0; i < spotflix.currentPlaylist.count; i++)

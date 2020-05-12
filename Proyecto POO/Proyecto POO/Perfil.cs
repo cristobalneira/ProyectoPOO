@@ -24,8 +24,8 @@ namespace Proyecto_POO
         public int Tipo_de_Perfil;
         public List<Cancion> Fav_Canciones;
         public List<Pelicula> Fav_Pelicula;
-        public Playlist Fav_Videos = new Playlist("Videos Favoritas");
-        public Playlist Fav_Podcast = new Playlist("Podcast Favoritas");
+        public Playlist Fav_Videos;
+        public Playlist Fav_Podcast ;
         public List<AudioLibro> Fav_AudioLibro;
         public List<Playlist> Playlists_Propias = new List<Playlist>();
         public List<Playlist> Playlists_De_Otros = new List<Playlist>();
