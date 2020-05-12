@@ -184,7 +184,7 @@ namespace Proyecto_POO
 
                             foreach (var item in Spotflix.Lista_Playlists)
                             {
-                                if (playlist == item.Play_list.name)
+                                if (playlist == item.Nombre)
                                 {
                                     Console.WriteLine(Spotflix.Lista_Playlists[i - 1].Informacion_Playlist());
                                     Console.WriteLine("1. Seguir \n2. No seguir");
@@ -192,7 +192,7 @@ namespace Proyecto_POO
                                     int seguir = Convert.ToInt32(Console.ReadLine());
                                     if (seguir == 1)
                                     {
-                                        p.Playlists_De_Otros.Add(item);
+                                        p.Playlists_Canciones_De_Otros.Add(item);
                                     }
                                 }
                                 i++;
@@ -293,9 +293,10 @@ namespace Proyecto_POO
 
                         else if (answer4 == 2)
                         {
+                            int i = 1;
                             foreach (var item in Spotflix.Lista_Personas)
                             {
-                                int i = 1;
+                                
                                 if ((Persona.enum_Profesion)answer4 == Persona.enum_Profesion.Compositor)
                                 {
                                     Console.WriteLine(Spotflix.Lista_Personas[i - 1].Informacion_Persona());
@@ -357,7 +358,6 @@ namespace Proyecto_POO
                                 }
                                 i++;
                             }
-
                         }
 
 
@@ -382,39 +382,39 @@ namespace Proyecto_POO
                             }
                         }
                     }
+                }
 
-                    else if (a == 3)
+                else if (a == 3)
 
+                {
+
+                    int i = 1;
+                    foreach (var item in Spotflix.Lista_Perfiles)
                     {
-
-                        int i = 1;
-                        foreach (var item in Spotflix.Lista_Perfiles)
-                        {
-                            Console.WriteLine(Spotflix.Lista_Perfiles[i - 1].Nombre_perfil);
-                        }
-                        Console.WriteLine("Que perfil desea ver: ");
-                        Console.WriteLine(" ");
-                        int perfil = Convert.ToInt32(Console.ReadLine());
-
-                        Console.WriteLine(Spotflix.Lista_Perfiles[perfil - 1].Informacion_de_Perfil());
-
-                        Console.WriteLine("1. Seguir \n2. No seguir");
-                        Console.WriteLine(" ");
-                        Console.WriteLine("Desea seguir a" + Spotflix.Lista_Perfiles[perfil - 1] + ": ");
-                        int seguir = Convert.ToInt32(Console.ReadLine());
-                        if (seguir == 1)
-                        {
-                            p.Seguidos.Add(Spotflix.Lista_Perfiles[perfil - 1]);
-                            Console.WriteLine("Perfil seguido");
-                        }
-
-
+                        Console.WriteLine(Spotflix.Lista_Perfiles[i - 1].Nombre_perfil);
                     }
+                    Console.WriteLine("Que perfil desea ver: ");
+                    Console.WriteLine(" ");
+                    int perfil = Convert.ToInt32(Console.ReadLine());
+
+                    Console.WriteLine(Spotflix.Lista_Perfiles[perfil - 1].Informacion_de_Perfil());
+
+                    Console.WriteLine("1. Seguir \n2. No seguir");
+                    Console.WriteLine(" ");
+                    Console.WriteLine("Desea seguir a" + Spotflix.Lista_Perfiles[perfil - 1] + ": ");
+                    int seguir = Convert.ToInt32(Console.ReadLine());
+                    if (seguir == 1)
+                    {
+                        p.Seguidos.Add(Spotflix.Lista_Perfiles[perfil - 1]);
+                        Console.WriteLine("Perfil seguido");
+                    }
+
 
                 }
 
-            }
+                
 
+            }
             //Busqueda Compleja 
             else if (answer == 2)
             {
@@ -1246,7 +1246,7 @@ namespace Proyecto_POO
 
         }
 
-        public static void Editar_Informacion_Admin()//Admin
+        public static void Editar_Informacion_Admin()
         {
             Console.WriteLine("Quieres editar los archivos [0] o los usuarios/perfiles [1]?");
             int x = Convert.ToInt32(Console.ReadLine());
@@ -1278,8 +1278,6 @@ namespace Proyecto_POO
                                 Console.WriteLine("\nEditando AudioLibro:");
                                 Console.WriteLine("Titulo;");
                                 string titulo = Console.ReadLine();
-                                Console.WriteLine("Categoria;");
-                                int categoria = Convert.ToInt32(Console.ReadLine());
                                 Console.WriteLine("Su fecha:[DD/MM/AAAA]");
                                 DateTime dt = Convert.ToDateTime(Console.ReadLine());
                                 Console.WriteLine("Idioma;");
@@ -1288,7 +1286,7 @@ namespace Proyecto_POO
                                 Console.WriteLine("Genero;");
                                 string genero = Console.ReadLine();
 
-                                AudioLibro cc1 = new AudioLibro(titulo, categoria, dt, c1.Duracion, c1.Ranking, c1.Estado,
+                                AudioLibro cc1 = new AudioLibro(titulo, c1.Categoria, dt, c1.Duracion, c1.Ranking, c1.Estado,
                                     c1.URL, c1.URL_Texto, genero, c1.Idioma, c1.Lector);
                                 
                                 c1.Editar_Informacion(cc1);
@@ -1323,8 +1321,6 @@ namespace Proyecto_POO
                                 Console.WriteLine("Editando Cancion:");
                                 Console.WriteLine("Titulo;");
                                 string titulo = Console.ReadLine();
-                                Console.WriteLine("Categoria;");
-                                int categoria = Convert.ToInt32(Console.ReadLine());
                                 Console.WriteLine("Su fecha:[DD/MM/AAAA]");
                                 DateTime dt = Convert.ToDateTime(Console.ReadLine());
 
@@ -1334,7 +1330,7 @@ namespace Proyecto_POO
                                 Console.WriteLine("Genero;");
                                 string genero = Console.ReadLine();
 
-                                Cancion cc1 = new Cancion(titulo, categoria, dt, c1.Duracion, c1.Ranking, c1.Estado,
+                                Cancion cc1 = new Cancion(titulo, c1.Categoria, dt, c1.Duracion, c1.Ranking, c1.Estado,
                                     c1.URL, c1.Cantante, c1.Compositor, Album, c1.Imagen, c1.Letra, genero);
                                 
                                 c1.Editar_Informacion(cc1);
@@ -1372,15 +1368,13 @@ namespace Proyecto_POO
                                 Console.WriteLine("Editando Pelicula:");
                                 Console.WriteLine("Titulo:");
                                 string titulo = Console.ReadLine();
-                                Console.WriteLine("Categoria:");
-                                int categoria = Convert.ToInt32(Console.ReadLine());
                                 Console.WriteLine("Su fecha:[DD/MM/AAAA]");
                                 DateTime dt = Convert.ToDateTime(Console.ReadLine());
 
                                 Console.WriteLine("Descripcion:");
                                 string descripcion = Console.ReadLine();
 
-                                Pelicula cc1 = new Pelicula(titulo, categoria, dt, c1.Duracion, c1.Ranking, c1.Estado,
+                                Pelicula cc1 = new Pelicula(titulo, c1.Categoria, dt, c1.Duracion, c1.Ranking, c1.Estado,
                                     c1.URL, c1.Actor, c1.Director, c1.Estudio, c1.Resolucion, descripcion, c1.Clasificacion, c1.Genero);
                                 
                                 c1.Editar_Informacion(cc1);
@@ -1420,15 +1414,14 @@ namespace Proyecto_POO
                                 Console.WriteLine("Editando Podcast:");
                                 Console.WriteLine("Titulo;");
                                 string titulo = Console.ReadLine();
-                                Console.WriteLine("Categoria;");
-                                int categoria = Convert.ToInt32(Console.ReadLine());
+
 
                                 Console.WriteLine("Su fecha:[DD/MM/AAAA]");
                                 DateTime dt = Convert.ToDateTime(Console.ReadLine());
                                 Console.WriteLine("Genero;");
                                 string genero = Console.ReadLine();
 
-                                Podcast cc1 = new Podcast(titulo, categoria, dt, c1.Duracion, c1.Ranking, c1.Estado,
+                                Podcast cc1 = new Podcast(titulo, c1.Categoria, dt, c1.Duracion, c1.Ranking, c1.Estado,
                                     c1.URL, c1.Locutor, c1.Imagen, genero);
                                 ;
                                 c1.Editar_Informacion(cc1);
@@ -1436,7 +1429,7 @@ namespace Proyecto_POO
                         }
                         Console.WriteLine("Quieres editar un Podcast denuevo? [0] si, [1] no");
                         xy = Convert.ToInt32(Console.ReadLine());
-          c1            if (xy == 0)
+                        if (xy == 0)
                         {
                             xy = 3;
                         }
@@ -1466,17 +1459,16 @@ namespace Proyecto_POO
                                 Console.WriteLine("Editando Video:");
                                 Console.WriteLine("Titulo;");
                                 string titulo = Console.ReadLine();
-                                Console.WriteLine("Categoria;");
-                                int categoria = Convert.ToInt32(Console.ReadLine());
                                 Console.WriteLine("Su fecha:[DD/MM/AAAA]");
                                 DateTime dt = Convert.ToDateTime(Console.ReadLine());
-
                                 Console.WriteLine("Descripcion:");
-                                string descripcion = ConsoConsole.WriteLine("Su fecha:[DD/MM/AAAA]");
-                                DateTime dt = Convert.ToDateTime(Console.ReadLine());                                   c1.URL, c1.Resolucion, descripcion, c1.Clasificacion, c1.Genero);
-                                ;
-                                ;
+                                string descripcion = Console.ReadLine();
+                                Console.WriteLine("Su fecha:[DD/MM/AAAA]");
+                                DateTime dt2 = Convert.ToDateTime(Console.ReadLine());
+                                Video cc1=new Video(titulo,c1.Categoria,dt,c1.Duracion,c1.Ranking,c1.Estado,c1.URL, c1.Resolucion, descripcion, c1.Clasificacion, c1.Genero);
                                 c1.Editar_Informacion(cc1);
+                                Console.WriteLine("Informacion editandose...");
+                                Thread.Sleep(3000);
                             }
                         }
                         Console.WriteLine("Quieres editar un Video denuevo? [0] si, [1] no");
