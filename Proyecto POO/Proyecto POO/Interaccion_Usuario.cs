@@ -2017,5 +2017,143 @@ namespace Proyecto_POO
             }
         }
 
+        public static void Informacion(Perfil p)
+        {
+            Console.Clear();
+            int x = 0;
+            while (x == 0)
+            {
+                Console.WriteLine("Que Informacion deseas obtener?");
+                Console.WriteLine("[0] Usuarios/Perfiles \n[1] Multimedia\n[2] Persona\n[3] Salir");
+                int ojo = Convert.ToInt32(Console.ReadLine());
+                int count = 1;
+                if (ojo == 0)
+                {
+                    Console.WriteLine("Ver Informacion de: \n[0] Usuarios, [1] Perfiles");
+                    int ojo2 = Convert.ToInt32(Console.ReadLine());
+                    if (ojo2==0 && p.Usuario_Asociado.Tipo_de_Membresia == 2)
+                    {
+                        foreach (var item in Spotflix.Lista_Usuarios)
+                        {
+                            Console.WriteLine("\n" + count +". "+item.Informacion_Usuario());
+                            count += 1;
+                        }
+                    }
+                    else if (ojo2 == 0 && p.Usuario_Asociado.Tipo_de_Membresia == 1)
+                    {
+                        Console.WriteLine("Error! Su cuenta es gratis no es accesible a esta funcion!");
+                        Console.WriteLine("Pague en 'Pagar Premium' en el menu principal");
+                        Console.WriteLine("Solamente son $100 pesos al mes!");
+                    }
+                    else if (ojo2 == 1)
+                    {
+                        foreach (var item in Spotflix.Lista_Perfiles)
+                        {
+                            if (item.Tipo_de_Perfil == 3)
+                            {
+                                Console.WriteLine("\n" + count +". Perfil privado");
+                            }
+                            else
+                            {
+                                Console.WriteLine("\n" + count +". "+item.Informacion_de_Perfil());
+                            }
+                            count += 1;
+                        }
+                    }
+                    else
+                    {
+                        Console.WriteLine("Error! Valor no dentro de intervalo 0-1");
+                    }
+                    Console.WriteLine("Quiere salir de Informacion? 'Si' o 'No'");
+                    string salida = Console.ReadLine();
+                    if (salida == "Si")
+                    {
+                        x = 99;
+                    }
+                }
+                else if (ojo == 1)
+                {
+                    Console.WriteLine("Ver Informacion de:[0] AudiLibro\n[1] Cancion \n[2] Pelicula \n[3] Podcast\n[4] Video");
+                    int ojo2 = Convert.ToInt32(Console.ReadLine());
+                    if (ojo2 == 0)
+                    {
+                        foreach (var item in Spotflix.Lista_AudioLibros)
+                        {
+                            Console.WriteLine("\n" + count + ". " + item.Informacion_AudioLibro());
+                            count += 1;
+                        }
+                    }
+                    else if (ojo2 == 1)
+                    {
+                        foreach (var item in Spotflix.Lista_Canciones)
+                        {
+                            Console.WriteLine("\n" + count + ". " + item.Informacion_Cancion());
+                            count += 1;
+                        }
+                    }
+                    else if(ojo2 == 2)
+                    {
+                        foreach (var item in Spotflix.Lista_Peliculas)
+                        {
+                            Console.WriteLine("\n" + count + ". " + item.Informacion_Pelicula());
+                            count += 1;
+                        }
+                    }
+                    else if(ojo2 == 3)
+                    {
+                        foreach (var item in Spotflix.Lista_Podcasts)
+                        {
+                            Console.WriteLine("\n" + count + ". " + item.Informacion_Podcast());
+                            count += 1;
+                        }
+                    }
+                    else if(ojo2 == 4)
+                    {
+                        foreach (var item in Spotflix.Lista_Videos)
+                        {
+                            Console.WriteLine("\n" + count + ". " + item.Informacion_Video());
+                            count += 1;
+                        }
+                    }
+                    else
+                    {
+                        Console.WriteLine("Error valor no dentro de intervalo 0-4");
+                    }
+
+                    Console.WriteLine("Quiere salir de Informacion? 'Si' o 'No'");
+                    string salida = Console.ReadLine();
+                    if (salida == "Si")
+                    {
+                        x = 99;
+                    }
+                }
+                else if (ojo == 2)
+                {
+                    foreach (var item in Spotflix.Lista_Personas)
+                    {
+                        Console.WriteLine("\n"+count + ". " + item.Informacion_Persona());
+                        count += 1;
+                    }
+
+                    Console.WriteLine("Quiere salir de Informacion? 'Si' o 'No'");
+                    string salida = Console.ReadLine();
+                    if (salida == "Si")
+                    {
+                        x = 99;
+                    }
+                }
+                else
+                {
+                    Console.WriteLine("Error valor no dentro de intervalo 0-2");
+                    Console.WriteLine("Quiere salir? 'Si' o 'No'");
+                    string salida = Console.ReadLine();
+                    if (salida == "Si")
+                    {
+                        x = 99;
+                    }
+
+                }
+            }
+        }
     }
 }
