@@ -1248,12 +1248,15 @@ namespace Proyecto_POO
 
         public static void Editar_Informacion_Admin()
         {
-            Console.WriteLine("Quieres editar los archivos [0] o los usuarios/perfiles [1]?");
+            Console.Clear();
+            Console.WriteLine("Que quieres editar?\n[1] Archivos\n[2] Usuarios/Perfiles\n[0] Salir");
             int x = Convert.ToInt32(Console.ReadLine());
+            x -= 1;
             if (x == 0)
             {
-                Console.WriteLine("Quieres editar un AudiLibro [0], Cancion [1], Pelicula [2], Podcast [3], Video [4]?");
+                Console.WriteLine("Que quieres editar? \n[1] AudiLibro \n[2] Cancion \n[3] Pelicula\n[4] Podcast \n[5] Video \n [0] Salir?");
                 int xy = Convert.ToInt32(Console.ReadLine());
+                xy -= 1;
                 if (xy == 0)//AL
                 {
                     while (xy == 0)
@@ -1264,7 +1267,7 @@ namespace Proyecto_POO
                             Console.WriteLine("\n[" + i + "]. " + item.Titulo);
                             i += 1;
                         }
-                        Console.WriteLine("Cual quieres editar? [x]");
+                        Console.WriteLine("Cual quieres editar? [x]\n[0] Salir");
                         int y = Convert.ToInt32(Console.ReadLine());
                         if (y >= 1 && y <= i)
                         {
@@ -1292,12 +1295,17 @@ namespace Proyecto_POO
                                 c1.Editar_Informacion(cc1);
                             }
                         }
+                        else if (y == 0)
+                        {
+                            Console.WriteLine("Saliento...");
+                            Thread.Sleep(1000);
+                        }
 
                         Console.WriteLine("Quieres editar un AudioLibro denuevo? [0] si, [1] no");
                         xy = Convert.ToInt32(Console.ReadLine());
                     }
                 }
-                if (xy == 1)//Canciones
+                else if (xy == 1)//Canciones
                 {
                     while (xy == 1)
                     {
@@ -1307,15 +1315,16 @@ namespace Proyecto_POO
                             Console.WriteLine("[" + i + "]. " + item.Titulo);
                             i += 1;
                         }
-                        Console.WriteLine("Cual quieres editar? [x]");
+                        Console.WriteLine("Cual quieres editar? [x]\n[0] Salir");
                         int y = Convert.ToInt32(Console.ReadLine());
                         if (y >= 1 && y <= i)
                         {
                             Cancion c1 = Spotflix.Lista_Canciones[y - 1];
                             Console.WriteLine("Informacion de la cancion a editar: ");
                             Console.WriteLine(Spotflix.Lista_Canciones[y - 1].Informacion_Cancion());
-                            Console.WriteLine("Quieres editarlo? [si=0, no=1]");
+                            Console.WriteLine("Quieres editarlo? \n[1] Si\n[1] No");
                             int y2 = Convert.ToInt32(Console.ReadLine());
+                            y2 -= 1;
                             if (y2 == 0)
                             {
                                 Console.WriteLine("Editando Cancion:");
@@ -1336,15 +1345,16 @@ namespace Proyecto_POO
                                 c1.Editar_Informacion(cc1);
                             }
                         }
-                        Console.WriteLine("Quieres editar una Cancion denuevo? [0] si, [1] no");
-                        xy = Convert.ToInt32(Console.ReadLine());
-                        if (xy == 1)
+                        else if (y == 0)
                         {
-                            xy = 0;
+                            Console.WriteLine("Saliento...");
+                            Thread.Sleep(1000);
                         }
+                        Console.WriteLine("Quieres editar una Cancion denuevo?\n[1] Si\n[0] No");
+                        xy = Convert.ToInt32(Console.ReadLine());
                     }
                 }
-                if (xy == 2) //Pel
+                else if (xy == 2) //Pel
                 {
                     while (xy == 2)
                     {
@@ -1354,7 +1364,7 @@ namespace Proyecto_POO
                             Console.WriteLine("[" + i + "]. " + item.Titulo);
                             i += 1;
                         }
-                        Console.WriteLine("Cual quieres editar? [x]");
+                        Console.WriteLine("Cual quieres editar? [x]\n[0] Salir");
                         int y = Convert.ToInt32(Console.ReadLine());
                         if (y >= 1 && y <= i)
                         {
@@ -1380,8 +1390,14 @@ namespace Proyecto_POO
                                 c1.Editar_Informacion(cc1);
                             }
                         }
-                        Console.WriteLine("Quieres editar una Pelicula denuevo? [0] si, [1] no");
+                        else if (y == 0)
+                        {
+                            Console.WriteLine("Saliento...");
+                            Thread.Sleep(1000);
+                        }
+                        Console.WriteLine("Quieres editar una Pelicula denuevo? \n[1] Si\n[0] No");
                         xy = Convert.ToInt32(Console.ReadLine());
+                        xy -= 1;
                         if (xy == 0)
                         {
                             xy = 2;
@@ -1390,7 +1406,7 @@ namespace Proyecto_POO
                     }
 
                 }
-                if (xy == 3) //podcast
+                else if (xy == 3) //podcast
                 {
                     while (xy == 3)
                     {
@@ -1400,7 +1416,7 @@ namespace Proyecto_POO
                             Console.WriteLine("[" + i + "]. " + item.Titulo);
                             i += 1;
                         }
-                        Console.WriteLine("Cual quieres editar? [x]");
+                        Console.WriteLine("Cual quieres editar? [x]\n[0] Salir");
                         int y = Convert.ToInt32(Console.ReadLine());
                         if (y >= 1 && y <= i)
                         {
@@ -1423,19 +1439,25 @@ namespace Proyecto_POO
 
                                 Podcast cc1 = new Podcast(titulo, c1.Categoria, dt, c1.Duracion, c1.Ranking, c1.Estado,
                                     c1.URL, c1.Locutor, c1.Imagen, genero);
-                                ;
+                                
                                 c1.Editar_Informacion(cc1);
                             }
                         }
-                        Console.WriteLine("Quieres editar un Podcast denuevo? [0] si, [1] no");
+                        else if (y == 0)
+                        {
+                            Console.WriteLine("Saliento...");
+                            Thread.Sleep(1000);
+                        }
+                        Console.WriteLine("Quieres editar un Podcast denuevo? \n[1] Si\n[0] No");
                         xy = Convert.ToInt32(Console.ReadLine());
+                        xy -= 1;
                         if (xy == 0)
                         {
                             xy = 3;
                         }
                     }
                 }
-                if (xy == 4)//video
+                else if (xy == 4)//video
                 {
                     while (xy == 4)
                     {
@@ -1445,15 +1467,16 @@ namespace Proyecto_POO
                             Console.WriteLine("[" + i + "]. " + item.Titulo);
                             i += 1;
                         }
-                        Console.WriteLine("Cual quieres editar? [x]");
+                        Console.WriteLine("Cual quieres editar? [x]\n[0] Para salir");
                         int y = Convert.ToInt32(Console.ReadLine());
                         if (y >= 1 && y <= i)
                         {
                             Video c1 = Spotflix.Lista_Videos[y - 1];
                             Console.WriteLine("Informacion del Video a editar: ");
                             Console.WriteLine(Spotflix.Lista_Videos[y - 1].Informacion_Video());
-                            Console.WriteLine("Quieres editarlo? [si=0, no=1]");
+                            Console.WriteLine("Quieres editarlo? \n[1] Si\n[0] No");
                             int y2 = Convert.ToInt32(Console.ReadLine());
+                            y2 -= 1;
                             if (y2 == 0)
                             {
                                 Console.WriteLine("Editando Video:");
@@ -1471,23 +1494,34 @@ namespace Proyecto_POO
                                 Thread.Sleep(3000);
                             }
                         }
-                        Console.WriteLine("Quieres editar un Video denuevo? [0] si, [1] no");
+                        else if (y == 0)
+                        {
+                            Console.WriteLine("Saliento...");
+                            Thread.Sleep(1000);
+                        }
+                        Console.WriteLine("Quieres editar un Video denuevo?\n[1] Si\n[0] No ");
                         xy = Convert.ToInt32(Console.ReadLine());
-                        if (xy == 0)
+                        if (xy == 1)
                         {
                             xy = 4;
                         }
                     }
                 }
+                else if (xy == -1)
+                {
+                    Console.WriteLine("Saliendo de editar archivos");
+                    Thread.Sleep(1000);
+                }
                 else
                 {
-                    Console.WriteLine("Error, ¡valor distinto a 0 o 1!");
+                    Console.WriteLine("Error, ¡valor distinto de 0 a 5!");
                 }
             }
             else if (x == 1)
             {
-                Console.WriteLine("Quieres editar Usuarios [0] o Perfiles [1]?");
+                Console.WriteLine("Que quieres editar?\n[1] Usuarios\n[2] Perfiles\n[0] Salir");
                 int xy = Convert.ToInt32(Console.ReadLine());
+                xy -= 1;
                 if (xy == 0)//Usuario
                 {
                     while (xy == 0)
@@ -1504,8 +1538,9 @@ namespace Proyecto_POO
                         {
                             Console.WriteLine("Informacion del Usuario a editar: ");
                             Console.WriteLine(Spotflix.Lista_Usuarios[y - 1].Informacion_Usuario());
-                            Console.WriteLine("Quieres editarlo? [si=0, no=1]");
+                            Console.WriteLine("Quieres editarlo? \n[1] Si\n[0] No");
                             int y2 = Convert.ToInt32(Console.ReadLine());
+                            y2-=1;
                             if (y2 == 0)
                             {
                                 Console.WriteLine("Editando Usuario:");
@@ -1537,12 +1572,12 @@ namespace Proyecto_POO
                         }
                         else
                         {
-                            Console.WriteLine("Error, ¡valor distinto a 0 o 1!");
+                            Console.WriteLine("Error, usuario no encontrado");
+                            Thread.Sleep(1000);
                         }
-                        Console.WriteLine("Quieres editar un Usuario denuevo? [0] si, [1] no");
+                        Console.WriteLine("Quieres editar un Usuario denuevo? \n[1] Si \n[0] No");
                         xy = Convert.ToInt32(Console.ReadLine());
-
-
+                        xy -= 1;
                     }
                 }
                 else if (xy == 1)//PERF
@@ -1555,87 +1590,96 @@ namespace Proyecto_POO
                             Console.WriteLine("[" + i + "]. " + item.Nombre_perfil);
                             i += 1;
                         }
-                        Console.WriteLine("Cual quieres editar? [x]");
+                        Console.WriteLine("Cual quieres editar? [x]\n[0] Salir");
                         int y = Convert.ToInt32(Console.ReadLine());
                         if (y >= 1 && y <= i)
                         {
                             Console.WriteLine("Informacion del Perfil a editar: ");
                             Console.WriteLine(Spotflix.Lista_Perfiles[y - 1].Informacion_de_Perfil());
                             Perfil per = Spotflix.Lista_Perfiles[y - 1];
-                            Console.WriteLine("Quieres editarlo? [si=0, no=1]");
+                            Console.WriteLine("Quieres editarlo? \n[1] Si\n[2] No");
                             int y2 = Convert.ToInt32(Console.ReadLine());
+                            y2 -= 1;
                             if (y2 == 0)
                             {
                                 Console.WriteLine("Editando Perfil: ");
                                 Console.WriteLine("Su nombre:");
                                 string nomb = Console.ReadLine();
-
-
                                 Console.WriteLine("Su tipo de perfil: ");
                                 int tipoperf = Convert.ToInt32(Console.ReadLine());
-                                //escojer 1, imprima la informacion
-                                //cambiar
-                                //crear
-                                //AudioLibro a1 = new AudioLibro(año,cw,ValueTuple,base,e);
-
                                 Perfil p1 = new Perfil(per.Usuario_Asociado, nomb, tipoperf);
-                                Spotflix.Lista_Perfiles[y].Editar_Informacion(p1);
+                                per.Editar_Informacion(p1);
                             }
+                        }
+                        else if (y == 0)
+                        {
+                            Console.WriteLine("Saliendo");
+                            break;
                         }
                         else
                         {
-                            Console.WriteLine("Error, ¡valor distinto a 0 o 1!");
+                            Console.WriteLine("Error, Perfil no encontrado");
+                            Thread.slep(1000);
                         }
-
-                        Console.WriteLine("Quieres editar un Perfil denuevo? [0] si, [1] no");
+                        Console.WriteLine("Quieres editar un Perfil denuevo? \n[1] Si \n[0] No");
                         xy = Convert.ToInt32(Console.ReadLine());
+                        xy -= 1;
                         if (xy == 0)
                         {
                             xy = 1;
                         }
                     }
                 }
+                else if (xy == -1)
+                {
+                    Console.WriteLine("Saliendo");
+                    Thread.Sleep(1000);
+                }
                 else
                 {
-                    Console.WriteLine("Error, ¡valor distinto a 0 o 1!");
+                    Console.WriteLine("Error, ¡valor distinto de 1 o 2!");
+                    Thread.Sleep(1000);
                 }
+            }
+            else if (x == -1)
+            {
+                Console.WriteLine("Saliendo...");
+                Thread.Sleep(1000);
             }
             else
             {
-                Console.WriteLine("Error, ¡valor distinto a 0 o 1!");
+                Console.WriteLine("Numero no esta dentro del intervalo, Saliendo");
+                Thread.Sleep(1000);
             }
         }
 
         public static void Editar_Informacion_Usuario(Usuario usuario)
         {
-            Console.WriteLine("Deseas cambiar la informacion de: [0] usuario, [1] de algun perfil ,[otro numero] salir ?");
+            Console.Clear();
+            Console.WriteLine("Deseas cambiar la informacion de un: [1] Usuario\n[2] Perfil\n[0] Salir ?");
             int edituser = Convert.ToInt32(Console.ReadLine());
+            edituser -= 1;
             if (edituser == 0)
             {
                 Console.WriteLine("Informacion: ");
                 Console.WriteLine(usuario.Informacion_Usuario());
                 Console.WriteLine("Quieres modificarla? (Cuidado, vas a tener que modificar toda la informacion!)");
-                Console.WriteLine("Si [0], No [0]");
+                Console.WriteLine("Si [1], No [0]");
                 int edituser2 = Convert.ToInt32(Console.ReadLine());
-                if (edituser2 == 0)
+                if (edituser2 == 1)
                 {
                     Console.WriteLine("Su nombre:");
                     string nomb = Console.ReadLine();
                     Console.WriteLine("Su apellido:");
                     string apell = Console.ReadLine();
-                    Console.WriteLine("Su fecha de nacimiento:[DDMMAAAA]");
-                    string date = Console.ReadLine();
-                    int ano = date[4] + date[5] + date[6] + date[7];
-                    int mes = date[2] + date[3];
-                    int dia = date[0] + date[1];
-                    DateTime dt = new DateTime(ano, mes, dia);
+                    Console.WriteLine("Su fecha:[DD/MM/AAAA]");
+                    DateTime dt = Convert.ToDateTime(Console.ReadLine());
                     Console.WriteLine("Su sexo:");
                     int sex = Convert.ToInt32(Console.ReadLine());
                     Console.WriteLine("Su pais:");
                     string pais = Console.ReadLine();
                     Console.WriteLine("Su email:");
                     string email = Console.ReadLine();
-
                     Console.WriteLine("Su contraseña:");
                     string contra = Console.ReadLine();
                     Console.WriteLine("Su contraseña nuevamente:");
@@ -1690,13 +1734,24 @@ namespace Proyecto_POO
                     count += 1;
                 }
             }
+            else if (edituser == -1)
+            {
+                Console.WriteLine("Saliendo...");
+                Thread.Sleep(1000);
+            }
+            else
+            {
+                Console.WriteLine("Error, numero no esta dentro de intervalo.\nSaliendo...");
+                Thread.Sleep(1000);
+            }
         }
 
         public static void Agregar_Archivo(Perfil p)
         {
             Console.Clear();
-            Console.WriteLine("Quieres editar un AudiLibro [0] \nCancion [1] \nPelicula [2] \nPodcast [3] \nVideo [4]?");
+            Console.WriteLine("Que quieres editar?\n[1] AudiLibro\n[2] Cancion\n[3] Pelicula\n[4] Podcast\n[5] Video\n[0] Salir");
             int aarchivo = Convert.ToInt32(Console.ReadLine());
+            aarchivo -= 1;
             if (aarchivo == 0)
             {
                 Console.WriteLine("Creando AudioLibro");
@@ -1976,8 +2031,18 @@ namespace Proyecto_POO
                     p.Fav_Videos.Add(video1);
                 }
             }
+            else if (aarchivo == -1)
+            {
+                Console.WriteLine("Saliendo...");
+                Thread.Sleep(3000);
+            }
+            else
+            {
+                Console.WriteLine("Numero no esta dentro de intervalo de numeros!");
+                Console.WriteLine("Saliendo...");
+                Thread.Sleep(3000);
+            }
         }
-
         public static void Informacion(Perfil p)
         {
             Console.Clear();
@@ -1985,14 +2050,16 @@ namespace Proyecto_POO
             while (x == 0)
             {
                 Console.WriteLine("Que Informacion deseas obtener?");
-                Console.WriteLine("[0] Usuarios/Perfiles \n[1] Multimedia\n[2] Persona\n[3] Salir");
+                Console.WriteLine("[1] Usuarios/Perfiles \n[2] Multimedia\n[3] Persona\n[0] Salir");
                 int ojo = Convert.ToInt32(Console.ReadLine());
+                ojo -= 1;
                 int count = 1;
                 if (ojo == 0)
                 {
-                    Console.WriteLine("Ver Informacion de: \n[0] Usuarios, [1] Perfiles");
+                    Console.WriteLine("Ver Informacion de: \n[1] Usuarios\n[2] Perfiles\n[0] Salir");
                     int ojo2 = Convert.ToInt32(Console.ReadLine());
-                    if (ojo2==0 && p.Usuario_Asociado.Tipo_de_Membresia == 2)
+                    ojo2 -= 1;
+                    if (ojo2==0 && p.Usuario_Asociado.Tipo_de_Membresia == 3)
                     {
                         foreach (var item in Spotflix.Lista_Usuarios)
                         {
@@ -2000,11 +2067,10 @@ namespace Proyecto_POO
                             count += 1;
                         }
                     }
-                    else if (ojo2 == 0 && p.Usuario_Asociado.Tipo_de_Membresia == 1)
+                    else if (ojo2 == 0)
                     {
-                        Console.WriteLine("Error! Su cuenta es gratis no es accesible a esta funcion!");
-                        Console.WriteLine("Pague en 'Pagar Premium' en el menu principal");
-                        Console.WriteLine("Solamente son $100 pesos al mes!");
+                        Console.WriteLine("Error! Su cuenta no es administrador");
+                        Thread.Sleep(1000);
                     }
                     else if (ojo2 == 1)
                     {
@@ -2023,19 +2089,27 @@ namespace Proyecto_POO
                     }
                     else
                     {
-                        Console.WriteLine("Error! Valor no dentro de intervalo 0-1");
+                        Console.WriteLine("Error! Valor no disponible!");
+                        Console.WriteLine("Saliendo...");
+                        Thread.Sleep(3000);
                     }
-                    Console.WriteLine("Quiere salir de Informacion? 'Si' o 'No'");
-                    string salida = Console.ReadLine();
-                    if (salida == "Si")
+                    Console.WriteLine("Quiere salir de Informacion? \n[1] No \n[0] Si");
+                    int salida = Convert.ToInt32(Console.ReadLine());
+                    if (salida == 0)
                     {
                         x = 99;
+                    }
+                    else
+                    {
+                        Console.WriteLine("Saliendo...");
+                        Thread.Sleep(3000);
                     }
                 }
                 else if (ojo == 1)
                 {
-                    Console.WriteLine("Ver Informacion de:[0] AudiLibro\n[1] Cancion \n[2] Pelicula \n[3] Podcast\n[4] Video");
+                    Console.WriteLine("Ver Informacion de:[1] AudiLibro\n[2] Cancion \n[3] Pelicula \n[4] Podcast\n[5] Video\n[0] Salir");
                     int ojo2 = Convert.ToInt32(Console.ReadLine());
+                    ojo2 -= 1;
                     if (ojo2 == 0)
                     {
                         foreach (var item in Spotflix.Lista_AudioLibros)
@@ -2076,16 +2150,19 @@ namespace Proyecto_POO
                             count += 1;
                         }
                     }
+                   
                     else
                     {
-                        Console.WriteLine("Error valor no dentro de intervalo 0-4");
+                        Console.WriteLine("Error valor disponible");
                     }
 
-                    Console.WriteLine("Quiere salir de Informacion? 'Si' o 'No'");
-                    string salida = Console.ReadLine();
-                    if (salida == "Si")
+                    Console.WriteLine("Quiere salir de Informacion? \n[1] No\n[0] Si");
+                    int salida = Convert.ToInt32(Console.ReadLine());
+                    if (salida == 0)
                     {
                         x = 99;
+                        Console.WriteLine("Saliendo...");
+                        Thread.Sleep(1000);
                     }
                 }
                 else if (ojo == 2)
@@ -2096,19 +2173,21 @@ namespace Proyecto_POO
                         count += 1;
                     }
 
-                    Console.WriteLine("Quiere salir de Informacion? 'Si' o 'No'");
-                    string salida = Console.ReadLine();
-                    if (salida == "Si")
+                    Console.WriteLine("Quiere salir de Informacion? \n[1] No\n[0] Si");
+                    int salida = Convert.ToInt32(Console.ReadLine());
+                    if (salida == 0)
                     {
                         x = 99;
+                        Console.WriteLine("Saliendo...");
+                        Thread.Sleep(1000);
                     }
                 }
                 else
                 {
-                    Console.WriteLine("Error valor no dentro de intervalo 0-2");
-                    Console.WriteLine("Quiere salir? 'Si' o 'No'");
-                    string salida = Console.ReadLine();
-                    if (salida == "Si")
+                    Console.WriteLine("Error valor no encontrado");
+                    Console.WriteLine("Quiere salir? \n[1] No\n[0] Si");
+                    int salida = Convert.ToInt32(Console.ReadLine());
+                    if (salida == 0)
                     {
                         x = 99;
                     }
@@ -2122,37 +2201,45 @@ namespace Proyecto_POO
             Console.Clear();
             if (p.Usuario_Asociado.Tipo_de_Membresia == 2)
             {
-                Console.WriteLine("Desea convertir tipo de cuenta a gratis? 'Si' o 'No'");
-                string g=Console.ReadLine();
-                if (g == "Si")
+                Console.WriteLine("Desea convertir tipo de cuenta a gratis?\n[1] Si\n[0] No");
+                int g=Convert.ToInt32(Console.ReadLine());
+                if (g == 1)
                 {
                     p.Usuario_Asociado.Tipo_de_Membresia = 1;
                     Console.WriteLine("Realizando cambios...");
                     Console.WriteLine("Se ha enviado la copida al email:"+ p.Usuario_Asociado.Email);
                     Console.WriteLine("No se cobrara $100 a su cuenta bancaria al mes");
-
+                    Thread.Sleep(1000);
                 }
                 else
                 {
                     Console.WriteLine("Cambios no realizados");
+                    Thread.Sleep(1000);
                 }
             }
             else if (p.Usuario_Asociado.Tipo_de_Membresia == 1)
             {
-                Console.WriteLine("Desea convertir tipo de cuenta a premium? 'Si' o 'No'");
-                string g = Console.ReadLine();
-                if (g == "Si")
+                Console.WriteLine("Desea convertir tipo de cuenta a premium?\n[1] Si\n[0] No");
+                int g = Convert.ToInt32(Console.ReadLine());
+                if (g == 1)
                 {
                     p.Usuario_Asociado.Tipo_de_Membresia = 2;
                     Console.WriteLine("Realizando cambios...");
                     Console.WriteLine("Se ha enviado la copida al email:" + p.Usuario_Asociado.Email);
                     Console.WriteLine("Se cobrara $100 a su cuenta bancaria al mes");
+                    Thread.Sleep(1000);
 
                 }
                 else
                 {
                     Console.WriteLine("Cambios no realizados");
+                    Thread.Sleep(1000);
                 }
+            }
+            else if(p.Usuario_Asociado.Tipo_de_Membresia == 3)
+            {
+                Console.WriteLine("Usted es administrador. No decide eso!");
+                Thread.Sleep(1000);
             }
         }
     }
