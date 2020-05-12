@@ -49,21 +49,9 @@ namespace Proyecto_POO
         public string Informacion_Video()
         {
             string a = "Titulo: " + Titulo + "\nCategoria: " + (enum_Categoria)Categoria + "\nAño: " + Año + "\nDuracion: " + Duracion + "\nRanking: " + Ranking;
-            a+= "\nActor(es) :";
-            int i_1 = 1;
-            foreach (var item in Actor)
-            {
-                a += i_1 + ". :" + item.Nombre_y_Apellido;
-                i_1 += 1;
-            }
-            a += "\nDirector(es): ";
-            int i_2 = 1;
-            foreach (var item in Director)
-            {
-                a += i_2 + ". :" + item.Nombre_y_Apellido;
-                i_2 += 1;
-            }
-            a += "\nEstudio :" + Estudio + "\nResolucion :" + (enum_Resolucion)Resolucion + "\nDescripcion :" + Descripcion + "\nClasificacion :" + (enum_Clasificacion)Clasificacion;
+            
+
+            a +=  "\nResolucion :" + (enum_Resolucion)Resolucion + "\nDescripcion :" + Descripcion + "\nClasificacion :" + (enum_Clasificacion)Clasificacion;
             a += "\nGenero :" + Genero;
             return a;
         }
@@ -83,12 +71,6 @@ namespace Proyecto_POO
             Estado = estado;
             string url = v.URL;
             URL = url;
-            List<Persona> actor=v.Actor;
-            Actor = actor;
-            List<Persona> director=v.Director;
-            Director = director;
-            string estudio=v.Estudio;
-            Estudio = estudio;
             int resolucion=v.Resolucion;
             Resolucion = resolucion;
             string descripcion=v.Descripcion;
