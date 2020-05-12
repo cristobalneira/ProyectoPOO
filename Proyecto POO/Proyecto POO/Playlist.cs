@@ -14,30 +14,27 @@ namespace Proyecto_POO
             Publica = 1,
             Privada = 2,
         }
-        public List<IWMPPlaylist> Lista_Play_list;//listas de listas
-        public IWMPPlaylist Play_list;
+        public List<Cancion> Playlist_paralista;//listas de listas
+        public string Nombre;
+        public TimeSpan Duracion = TimeSpan.Zero;
         public int Tipo_De_Playlist;
 
-
-        public Playlist(string Nombre, int tipo_de_playlist)
+        public Playlist(List<Cancion> playlist_paralista, string nombre, int tipo_de_playlist)
         {
-            Play_list = new WindowsMediaPlayer().newPlaylist(Nombre, null);
-
-            //Lista_Play_list.Add(Play_list);
-            //Lista_Play_list.Add(Play_list);
-            //Tipo_De_Playlist = tipo_de_playlist;
-
+            Playlist_paralista = playlist_paralista;
+            Nombre = nombre;
+            Tipo_De_Playlist = tipo_de_playlist;
         }
 
         public string Informacion_Playlist()
         {
-            string a = "Nombre playlist: " + Play_list.name + "Tipo de playlist" + (enum_TipoDePlaylist)Tipo_De_Playlist;
+            string a = "Nombre playlist: " + Nombre + "Tipo de playlist" + (enum_TipoDePlaylist)Tipo_De_Playlist;
             a += "\n Nombre archivos en playlist: ";
-            double b = 0;
-            for (int i = 0; i < Play_list.count; i++)
+            TimeSpan b = TimeSpan.Zero;
+            for (int i = 0; i < Playlist_paralista.Count; i++)
             {
-                a += i + " " + Play_list.attributeName[i];
-                b+= Play_list.Item[i].duration;
+                a += (i+1) + ".  " + Playlist_paralista[i].Titulo;
+                b += Playlist_paralista[i].Duracion;
             }
             a += "\nDuracion: " + b;
             return (a);

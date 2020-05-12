@@ -27,8 +27,8 @@ namespace Proyecto_POO
         public List<Video> Fav_Videos;
         public List<Podcast> Fav_Podcast = new List<Podcast>();
         public List<AudioLibro> Fav_AudioLibro;
-        public List<Playlist> Playlists_Propias = new List<Playlist>();
-        public List<Playlist> Playlists_De_Otros = new List<Playlist>();
+        public List<Playlist> Playlists_Canciones_Propias = new List<Playlist>();
+        public List<Playlist> Playlists_Canciones_De_Otros = new List<Playlist>();
         public List<Perfil> Seguidos = new List<Perfil>();
         public List<Perfil> Seguidores = new List<Perfil>();
         public List<Persona> Personas_Seguidas = new List<Persona>();
@@ -66,14 +66,14 @@ namespace Proyecto_POO
             }
             int i_1 = 1;
             a += "\nPlaylist propias: ";
-            foreach (var item in Playlists_Propias)
+            foreach (var item in Playlists_Canciones_Propias)
             {
                 a += i_1 + ". " + item.Informacion_Playlist();
                 i_1 += 1;
             }
             int i_2 = 1;
             a += "\nPlaylist de otros: ";
-            foreach (var item in Playlists_De_Otros)
+            foreach (var item in Playlists_Canciones_De_Otros)
             {
                 a += i_2 + ". " + item.Informacion_Playlist();
                 i_2 += 1;
