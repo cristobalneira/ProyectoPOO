@@ -2383,7 +2383,7 @@ namespace Proyecto_POO
 
                                 AudioLibro cc1 = new AudioLibro(titulo, c1.Categoria, dt, c1.Duracion, c1.Ranking, c1.Estado,
                                     c1.URL, c1.URL_Texto, genero, c1.Idioma, c1.Lector);
-                                
+
                                 c1.Editar_Informacion(cc1);
                             }
                         }
@@ -2433,7 +2433,7 @@ namespace Proyecto_POO
 
                                 Cancion cc1 = new Cancion(titulo, c1.Categoria, dt, c1.Duracion, c1.Ranking, c1.Estado,
                                     c1.URL, c1.Cantante, c1.Compositor, Album, c1.Imagen, c1.Letra, genero);
-                                
+
                                 c1.Editar_Informacion(cc1);
                             }
                         }
@@ -2478,7 +2478,7 @@ namespace Proyecto_POO
 
                                 Pelicula cc1 = new Pelicula(titulo, c1.Categoria, dt, c1.Duracion, c1.Ranking, c1.Estado,
                                     c1.URL, c1.Actor, c1.Director, c1.Estudio, c1.Resolucion, descripcion, c1.Clasificacion, c1.Genero);
-                                
+
                                 c1.Editar_Informacion(cc1);
                             }
                         }
@@ -2531,7 +2531,7 @@ namespace Proyecto_POO
 
                                 Podcast cc1 = new Podcast(titulo, c1.Categoria, dt, c1.Duracion, c1.Ranking, c1.Estado,
                                     c1.URL, c1.Locutor, c1.Imagen, genero);
-                                
+
                                 c1.Editar_Informacion(cc1);
                             }
                         }
@@ -2580,7 +2580,7 @@ namespace Proyecto_POO
                                 string descripcion = Console.ReadLine();
                                 Console.WriteLine("Su fecha:[DD/MM/AAAA]");
                                 DateTime dt2 = Convert.ToDateTime(Console.ReadLine());
-                                Video cc1=new Video(titulo,c1.Categoria,dt,c1.Duracion,c1.Ranking,c1.Estado,c1.URL, c1.Resolucion, descripcion, c1.Clasificacion, c1.Genero);
+                                Video cc1 = new Video(titulo, c1.Categoria, dt, c1.Duracion, c1.Ranking, c1.Estado, c1.URL, c1.Resolucion, descripcion, c1.Clasificacion, c1.Genero);
                                 c1.Editar_Informacion(cc1);
                                 Console.WriteLine("Informacion editandose...");
                                 Thread.Sleep(3000);
@@ -2632,7 +2632,7 @@ namespace Proyecto_POO
                             Console.WriteLine(Spotflix.Lista_Usuarios[y - 1].Informacion_Usuario());
                             Console.WriteLine("Quieres editarlo? \n[1] Si\n[0] No");
                             int y2 = Convert.ToInt32(Console.ReadLine());
-                            y2-=1;
+                            y2 -= 1;
                             if (y2 == 0)
                             {
                                 Console.WriteLine("Editando Usuario:");
@@ -2748,7 +2748,7 @@ namespace Proyecto_POO
         public static void Editar_Informacion_Usuario(Usuario usuario)
         {
             Console.Clear();
-            Console.WriteLine("Deseas cambiar la informacion de un: [1] Usuario\n[2] Perfil\n[0] Salir ?");
+            Console.WriteLine("Deseas cambiar la informacion de un: \n[1] Usuario\n[2] Perfil\n[0] Salir ?");
             int edituser = Convert.ToInt32(Console.ReadLine());
             edituser -= 1;
             if (edituser == 0)
@@ -2797,7 +2797,7 @@ namespace Proyecto_POO
                 {
                     if (item.Usuario_Asociado == usuario)
                     {
-                        Console.WriteLine("\n"+item.Informacion_de_Perfil());
+                        Console.WriteLine("\n" + item.Informacion_de_Perfil());
                         Console.WriteLine("Desea [0] Cambiar Nombre, [1] Resetear todas las listas, [2] Eliminarlo");
                         int editprofile = Convert.ToInt32(Console.ReadLine());
                         if (editprofile == 0)
@@ -3142,7 +3142,7 @@ namespace Proyecto_POO
             while (x == 0)
             {
                 Console.WriteLine("Que Informacion deseas obtener?");
-                Console.WriteLine("[1] Usuarios/Perfiles \n[2] Multimedia\n[3] Persona\n[0] Salir");
+                Console.WriteLine("[1] Usuarios/Perfiles \n[2] Multimedia\n[3] Persona\n[4] Tu Perfil\n[0] Salir");
                 int ojo = Convert.ToInt32(Console.ReadLine());
                 ojo -= 1;
                 int count = 1;
@@ -3151,11 +3151,11 @@ namespace Proyecto_POO
                     Console.WriteLine("Ver Informacion de: \n[1] Usuarios\n[2] Perfiles\n[0] Salir");
                     int ojo2 = Convert.ToInt32(Console.ReadLine());
                     ojo2 -= 1;
-                    if (ojo2==0 && p.Usuario_Asociado.Tipo_de_Membresia == 3)
+                    if (ojo2 == 0 && p.Usuario_Asociado.Tipo_de_Membresia == 3)
                     {
                         foreach (var item in Spotflix.Lista_Usuarios)
                         {
-                            Console.WriteLine("\n" + count +". "+item.Informacion_Usuario());
+                            Console.WriteLine("\n" + count + ". " + item.Informacion_Usuario());
                             count += 1;
                         }
                     }
@@ -3170,11 +3170,11 @@ namespace Proyecto_POO
                         {
                             if (item.Tipo_de_Perfil == 3)
                             {
-                                Console.WriteLine("\n" + count +". Perfil privado");
+                                Console.WriteLine("\n" + count + ". Perfil privado");
                             }
                             else
                             {
-                                Console.WriteLine("\n" + count +". "+item.Informacion_de_Perfil());
+                                Console.WriteLine("\n" + count + ". " + item.Informacion_de_Perfil());
                             }
                             count += 1;
                         }
@@ -3189,12 +3189,8 @@ namespace Proyecto_POO
                     int salida = Convert.ToInt32(Console.ReadLine());
                     if (salida == 0)
                     {
-                        x = 99;
-                    }
-                    else
-                    {
-                        Console.WriteLine("Saliendo...");
                         Thread.Sleep(3000);
+                        x = 99;
                     }
                 }
                 else if (ojo == 1)
@@ -3218,7 +3214,7 @@ namespace Proyecto_POO
                             count += 1;
                         }
                     }
-                    else if(ojo2 == 2)
+                    else if (ojo2 == 2)
                     {
                         foreach (var item in Spotflix.Lista_Peliculas)
                         {
@@ -3226,7 +3222,7 @@ namespace Proyecto_POO
                             count += 1;
                         }
                     }
-                    else if(ojo2 == 3)
+                    else if (ojo2 == 3)
                     {
                         foreach (var item in Spotflix.Lista_Podcasts)
                         {
@@ -3234,7 +3230,7 @@ namespace Proyecto_POO
                             count += 1;
                         }
                     }
-                    else if(ojo2 == 4)
+                    else if (ojo2 == 4)
                     {
                         foreach (var item in Spotflix.Lista_Videos)
                         {
@@ -3242,7 +3238,7 @@ namespace Proyecto_POO
                             count += 1;
                         }
                     }
-                   
+
                     else
                     {
                         Console.WriteLine("Error valor disponible");
@@ -3261,7 +3257,7 @@ namespace Proyecto_POO
                 {
                     foreach (var item in Spotflix.Lista_Personas)
                     {
-                        Console.WriteLine("\n"+count + ". " + item.Informacion_Persona());
+                        Console.WriteLine("\n" + count + ". " + item.Informacion_Persona());
                         count += 1;
                     }
 
@@ -3273,6 +3269,12 @@ namespace Proyecto_POO
                         Console.WriteLine("Saliendo...");
                         Thread.Sleep(1000);
                     }
+                }
+                else if (ojo == 3)
+                {
+                    Console.WriteLine("Tu informacion es:");
+                    Console.WriteLine(p.Informacion_de_Perfil());
+                    Thread.Sleep(3000);
                 }
                 else
                 {
@@ -3294,12 +3296,12 @@ namespace Proyecto_POO
             if (p.Usuario_Asociado.Tipo_de_Membresia == 2)
             {
                 Console.WriteLine("Desea convertir tipo de cuenta a gratis?\n[1] Si\n[0] No");
-                int g=Convert.ToInt32(Console.ReadLine());
+                int g = Convert.ToInt32(Console.ReadLine());
                 if (g == 1)
                 {
                     p.Usuario_Asociado.Tipo_de_Membresia = 1;
                     Console.WriteLine("Realizando cambios...");
-                    Console.WriteLine("Se ha enviado la copida al email:"+ p.Usuario_Asociado.Email);
+                    Console.WriteLine("Se ha enviado la copida al email:" + p.Usuario_Asociado.Email);
                     Console.WriteLine("No se cobrara $100 a su cuenta bancaria al mes");
                     Thread.Sleep(1000);
                 }
@@ -3328,7 +3330,7 @@ namespace Proyecto_POO
                     Thread.Sleep(1000);
                 }
             }
-            else if(p.Usuario_Asociado.Tipo_de_Membresia == 3)
+            else if (p.Usuario_Asociado.Tipo_de_Membresia == 3)
             {
                 Console.WriteLine("Usted es administrador. No decide eso!");
                 Thread.Sleep(1000);
