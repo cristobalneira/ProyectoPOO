@@ -399,7 +399,7 @@ namespace Proyecto_POO
                                 Console.WriteLine(i + ". " + Spotflix.Lista_Personas[i - 1].Informacion_Persona());
                                 Console.WriteLine(" ");
                                 Console.WriteLine("1. Seguir \n2. No seguir");
-                                Console.WriteLine("Desea seguir a" + item.Nombre_y_Apellido + ": ");
+                                Console.WriteLine("Desea seguir a " + item.Nombre_y_Apellido + ": ");
                                 int seguir = Convert.ToInt32(Console.ReadLine());
                                 if (seguir == 1)
                                 {
@@ -673,7 +673,7 @@ namespace Proyecto_POO
                     int i = 1;
                     foreach (var item in Spotflix.Lista_Perfiles)
                     {
-                        Console.WriteLine(Spotflix.Lista_Perfiles[i - 1].Nombre_perfil);
+                        Console.WriteLine(i +". " + Spotflix.Lista_Perfiles[i - 1].Nombre_perfil);
                         i++;
                     }
                     Console.WriteLine("Que perfil desea ver: ");
@@ -684,7 +684,7 @@ namespace Proyecto_POO
 
                     Console.WriteLine("1. Seguir \n2. No seguir");
                     Console.WriteLine(" ");
-                    Console.WriteLine("Desea seguir a" + Spotflix.Lista_Perfiles[perfil - 1] + ": ");
+                    Console.WriteLine("Desea seguir a " + Spotflix.Lista_Perfiles[perfil - 1] + ": ");
                     int seguir = Convert.ToInt32(Console.ReadLine());
                     if (seguir == 1)
                     {
@@ -1913,7 +1913,7 @@ namespace Proyecto_POO
                                     Console.WriteLine("Sexo: " + item.Sexo);
                                     Console.WriteLine("Profesion: " + item.Profesion);
                                     Console.WriteLine("1. Seguir \n2. No seguir");
-                                    Console.WriteLine("Desea seguir a" + item.Nombre_y_Apellido + ": ");
+                                    Console.WriteLine("Desea seguir a " + item.Nombre_y_Apellido + ": ");
 
                                     int seguir = Convert.ToInt32(Console.ReadLine());
                                     if (seguir == 1)
@@ -1939,7 +1939,7 @@ namespace Proyecto_POO
                                     Console.WriteLine("Sexo: " + item.Sexo);
                                     Console.WriteLine("Profesion: " + item.Profesion);
                                     Console.WriteLine("1. Seguir \n2. No seguir");
-                                    Console.WriteLine("Desea seguir a" + item.Nombre_y_Apellido + ": ");
+                                    Console.WriteLine("Desea seguir a " + item.Nombre_y_Apellido + ": ");
                                     int seguir = Convert.ToInt32(Console.ReadLine());
                                     if (seguir == 1)
                                     {
@@ -1963,7 +1963,7 @@ namespace Proyecto_POO
                                     Console.WriteLine("Sexo: " + item.Sexo);
                                     Console.WriteLine("Profesion: " + item.Profesion);
                                     Console.WriteLine("1. Seguir \n2. No seguir");
-                                    Console.WriteLine("Desea seguir a" + item.Nombre_y_Apellido + ": ");
+                                    Console.WriteLine("Desea seguir a " + item.Nombre_y_Apellido + ": ");
                                     int seguir = Convert.ToInt32(Console.ReadLine());
                                     if (seguir == 1)
                                     {
@@ -1987,7 +1987,7 @@ namespace Proyecto_POO
                                     Console.WriteLine("Sexo: " + item.Sexo);
                                     Console.WriteLine("Profesion: " + item.Profesion);
                                     Console.WriteLine("1. Seguir \n2. No seguir");
-                                    Console.WriteLine("Desea seguir a" + item.Nombre_y_Apellido + ": ");
+                                    Console.WriteLine("Desea seguir a " + item.Nombre_y_Apellido + ": ");
                                     int seguir = Convert.ToInt32(Console.ReadLine());
                                     if (seguir == 1)
                                     {
@@ -2295,7 +2295,7 @@ namespace Proyecto_POO
                                 Console.WriteLine("Sexo: " + item.Sexo);
                                 Console.WriteLine("Profesion: " + item.Profesion);
                                 Console.WriteLine("1. Seguir \n2. No seguir");
-                                Console.WriteLine("Desea seguir a" + item.Nombre_y_Apellido + ": ");
+                                Console.WriteLine("Desea seguir a " + item.Nombre_y_Apellido + ": ");
 
                                 int seguir = Convert.ToInt32(Console.ReadLine());
                                 if (seguir == 1)
@@ -2324,7 +2324,7 @@ namespace Proyecto_POO
 
                     Console.WriteLine("1. Seguir \n2. No seguir");
                     Console.WriteLine(" ");
-                    Console.WriteLine("Desea seguir a" + Spotflix.Lista_Perfiles[perfil - 1] + ": ");
+                    Console.WriteLine("Desea seguir a " + Spotflix.Lista_Perfiles[perfil - 1] + ": ");
                     int seguir = Convert.ToInt32(Console.ReadLine());
                     if (seguir == 1)
                     {
