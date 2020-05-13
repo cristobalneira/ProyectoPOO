@@ -9,16 +9,30 @@ namespace Proyecto_POO
     {
         public static void Crear_Playlist(Perfil p)
         {
-
-        }
-        public static void Agregar_Cancion_a_Playlist(Perfil p,Cancion item)
-        {
             Console.WriteLine("Como desea que se llame la playlist");
             string nombre = Console.ReadLine();
-            Playlist temp2 = new Playlist(new List<Cancion>(), nombre, item.Categoria);
-            temp2.Playlist_paralista.Add(item);
+            Playlist temp2 = new Playlist(new List<Cancion>(), nombre, 1);
             p.Playlists_Canciones_Propias.Add(temp2);
-
+        }
+        public static void Agregar_Cancion_a_Playlist(Perfil p, Cancion item)
+        {
+            int i = 1;
+            foreach (var item_1 in p.Playlists_Canciones_Propias)
+            {
+                Console.Write(i + ". " + item_1.Nombre + " ");
+                i++;
+            }
+            Console.Write(i + ". Desea crear una nueva playlist");
+            int i_1 = Convert.ToInt32(Console.ReadLine());
+            if (i_1 == i)
+            {
+                Console.WriteLine("Como desea que se llame la playlist");
+                string nombre = Console.ReadLine();
+                Playlist temp2 = new Playlist(new List<Cancion>(), nombre, item.Categoria);
+                temp2.Playlist_paralista.Add(item);
+                p.Playlists_Canciones_Propias.Add(temp2);
+            }
+            p.Playlists_Canciones_Propias[(i_1 - 1)].Playlist_paralista.Add(item);
         }
 
         public static void Buscar(Perfil p)
