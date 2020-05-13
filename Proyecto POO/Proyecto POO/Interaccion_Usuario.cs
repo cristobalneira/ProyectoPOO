@@ -17,7 +17,7 @@ namespace Proyecto_POO
             Console.WriteLine("1. Publica \n2. Privada");
             int tipo = Convert.ToInt32(Console.ReadLine());
             List<Cancion> Playlist1 = new List<Cancion>();
-            Playlist playlistcreada = new Playlist(nombre, tipo);
+            //Playlist playlistcreada = new Playlist(nombre, tipo);
 
         }
 
@@ -37,7 +37,7 @@ namespace Proyecto_POO
                 if (a == 1)
                 {
                     Console.WriteLine("Que desea escuchar/ver? : ");
-                    Console.WriteLine("1. Canciones \n2. Videos \n3. Pelicula \n4.Podcast \n5.AudioLibro \n6.Playlist");
+                    Console.WriteLine("1. Canciones \n2. Videos \n3. Pelicula \n4. Podcast \n5. AudioLibro \n6. Playlist");
                     int answer2 = Convert.ToInt32(Console.ReadLine());
 
                     if (answer2 == 1)
@@ -49,25 +49,52 @@ namespace Proyecto_POO
                             i += 1;
                         }
                         Console.WriteLine(" ");
-                        Console.WriteLine("Que cancion desea escuchar: ");
-                        Console.WriteLine(" ");
+                        Console.WriteLine("Escoger una cancion: ");
                         int cancion = Convert.ToInt32(Console.ReadLine());
-                        p.En_Cola_cancion.Add(Spotflix.Lista_Canciones[cancion - 1]);
-                        Console.WriteLine("Cancion agregada a la cola");
+                        Console.WriteLine("1. Desea añadir a la cola? ");
+                        Console.WriteLine("2. A otra playlist");
+                        Console.WriteLine("0. Salir");
+                        int opcion = Convert.ToInt16(Console.ReadLine());
                         Console.WriteLine(" ");
-                        Console.WriteLine("Desea agregar esta cancion a favoritos?: ");
-                        Console.WriteLine("1. Si \n2. No");
-                        Console.WriteLine(" ");
-                        int agregar = Convert.ToInt32(Console.ReadLine());
-                        if (agregar == 1)
+                        if (opcion == 1)
                         {
-                            p.Fav_Canciones.Add(Spotflix.Lista_Canciones[cancion - 1]);
-                            Console.WriteLine("Cancion agregada a favoritos ");
+
+                            p.En_Cola_cancion.Add(Spotflix.Lista_Canciones[cancion - 1]);
+                            Console.WriteLine("Cancion agregada a la cola");
+                            Console.WriteLine(" ");
+                            Thread.Sleep(1000);
+
                         }
-                        else
+                        else if (opcion == 2)
                         {
-                            ;
+                            Console.WriteLine("Desea agregar esta cancion a favoritos?: ");
+                            Console.WriteLine("1. Si \n2. No");
+                            Console.WriteLine(" ");
+                            int agregar = Convert.ToInt32(Console.ReadLine());
+                            if (agregar == 1)
+                            {
+                                p.Fav_Canciones.Add(Spotflix.Lista_Canciones[cancion - 1]);
+                                Console.WriteLine("Cancion agregada a favoritos ");
+                                Thread.Sleep(2000);
+                            }
+                            else
+                            {
+                                Console.WriteLine("Desea añadir a una playlist:");
+                                Console.WriteLine("1. Si \n2. No");
+                                int añadir = Convert.ToInt32(Console.ReadLine());
+                                if (añadir == 1)
+                                {
+                                    //añadir a una playlist
+                                    Thread.Sleep(1000);
+                                }
+                            }
+
                         }
+                        else if (opcion == 0)
+                        {
+                            Thread.Sleep(1000);
+                        }
+
 
                     }
 
@@ -80,19 +107,52 @@ namespace Proyecto_POO
                             i += 1;
                         }
                         Console.WriteLine(" ");
-                        Console.WriteLine("Que video desea ver?: ");
+                        Console.WriteLine("Escoger un video: ");
                         int video = Convert.ToInt32(Console.ReadLine());
-                        p.En_Cola_video.Add(Spotflix.Lista_Videos[video - 1]);
+                        Console.WriteLine("1. Desea añadir a la cola? ");
+                        Console.WriteLine("2. Otro");
+                        Console.WriteLine("0. Salir");
+                        int opcion = Convert.ToInt16(Console.ReadLine());
                         Console.WriteLine(" ");
-                        Console.WriteLine("Desea agregar este video a favoritos?: ");
-                        Console.WriteLine("1. Si \n2. No");
-                        Console.WriteLine(" ");
-                        int agregar = Convert.ToInt32(Console.ReadLine());
-                        if (agregar == 1)
+                        if (opcion == 1)
                         {
-                            p.Fav_Videos.Add(Spotflix.Lista_Videos[video - 1]);
-                            Console.WriteLine("Video agregado a favoritos ");
+
+                            p.En_Cola_video.Add(Spotflix.Lista_Videos[video - 1]);
+                            Console.WriteLine("Video agregado a la cola");
+                            Console.WriteLine(" ");
+                            Thread.Sleep(1000);
+
                         }
+                        else if (opcion == 2)
+                        {
+                            Console.WriteLine("Desea agregar este video a favoritos?: ");
+                            Console.WriteLine("1. Si \n2. No");
+                            Console.WriteLine(" ");
+                            int agregar = Convert.ToInt32(Console.ReadLine());
+                            if (agregar == 1)
+                            {
+                                p.Fav_Videos.Add(Spotflix.Lista_Videos[video - 1]);
+                                Console.WriteLine("Video agregado a favoritos ");
+                                Thread.Sleep(2000);
+                            }
+                            else
+                            {
+                                Console.WriteLine("Desea añadir a una playlist:");
+                                Console.WriteLine("1. Si \n2. No");
+                                int añadir = Convert.ToInt32(Console.ReadLine());
+                                if (añadir == 1)
+                                {
+                                    //añadir a una playlist
+                                    Thread.Sleep(1000);
+                                }
+                            }
+
+                        }
+                        else if (opcion == 0)
+                        {
+                            Thread.Sleep(1000);
+                        }
+
 
                     }
 
@@ -105,19 +165,53 @@ namespace Proyecto_POO
                             i += 1;
                         }
                         Console.WriteLine(" ");
-                        Console.WriteLine("Que pelicula desea ver?: ");
+                        Console.WriteLine("Escoger una pelicula: ");
                         int pelicula = Convert.ToInt32(Console.ReadLine());
-                        p.En_Cola_pelicula.Add(Spotflix.Lista_Peliculas[pelicula - 1]);
+                        Console.WriteLine("1. Desea añadir a la cola? ");
+                        Console.WriteLine("2. Otro");
+                        Console.WriteLine("0. Salir");
+                        int opcion = Convert.ToInt16(Console.ReadLine());
                         Console.WriteLine(" ");
-                        Console.WriteLine("Desea agregar esta pelicula a favoritos?: ");
-                        Console.WriteLine("1. Si \n2. No");
-                        int agregar = Convert.ToInt32(Console.ReadLine());
-                        if (agregar == 1)
+                        if (opcion == 1)
                         {
+
+                            p.En_Cola_pelicula.Add(Spotflix.Lista_Peliculas[pelicula - 1]);
+                            Console.WriteLine("Pelicula agregada a la cola");
                             Console.WriteLine(" ");
-                            p.Fav_Pelicula.Add(Spotflix.Lista_Peliculas[pelicula - 1]);
-                            Console.WriteLine("Pelicula agregada a favoritos ");
+                            Thread.Sleep(1000);
+
                         }
+                        else if (opcion == 2)
+                        {
+                            Console.WriteLine("Desea agregar esta pelicula a favoritos?: ");
+                            Console.WriteLine("1. Si \n2. No");
+                            Console.WriteLine(" ");
+                            int agregar = Convert.ToInt32(Console.ReadLine());
+                            if (agregar == 1)
+                            {
+                                p.Fav_Pelicula.Add(Spotflix.Lista_Peliculas[pelicula - 1]);
+                                Console.WriteLine("Cancion agregada a favoritos ");
+                                Thread.Sleep(2000);
+                            }
+                            else
+                            {
+                                Console.WriteLine("Desea añadir a una playlist:");
+                                Console.WriteLine("1. Si \n2. No");
+                                int añadir = Convert.ToInt32(Console.ReadLine());
+                                if (añadir == 1)
+                                {
+                                    //añadir a una playlist
+                                    Thread.Sleep(1000);
+                                }
+                            }
+
+                        }
+                        else if (opcion == 0)
+                        {
+                            Thread.Sleep(1000);
+                        }
+
+
                     }
 
                     else if (answer2 == 4)
@@ -129,19 +223,53 @@ namespace Proyecto_POO
                             i += 1;
                         }
                         Console.WriteLine(" ");
-                        Console.WriteLine("Que podcast desea escuchar: ");
+                        Console.WriteLine("Escoger una podcast: ");
                         int podcast = Convert.ToInt32(Console.ReadLine());
-                        p.En_Cola_podcast.Add(Spotflix.Lista_Podcasts[podcast - 1]);
+                        Console.WriteLine("1. Desea añadir a la cola? ");
+                        Console.WriteLine("2. Otro");
+                        Console.WriteLine("0. Salir");
+                        int opcion = Convert.ToInt16(Console.ReadLine());
                         Console.WriteLine(" ");
-                        Console.WriteLine("Desea agregar este podcast a favoritos?: ");
-                        Console.WriteLine("1. Si \n2. No");
-                        int agregar = Convert.ToInt32(Console.ReadLine());
-                        if (agregar == 1)
+                        if (opcion == 1)
                         {
+
+                            p.En_Cola_podcast.Add(Spotflix.Lista_Podcasts[podcast - 1]);
+                            Console.WriteLine("Podcast agregada a la cola");
                             Console.WriteLine(" ");
-                            p.Fav_Podcast.Add(Spotflix.Lista_Podcasts[podcast - 1]);
-                            Console.WriteLine("Podcast agregado a favoritos ");
+                            Thread.Sleep(1000);
+
                         }
+                        else if (opcion == 2)
+                        {
+                            Console.WriteLine("Desea agregar este podcast a favoritos?: ");
+                            Console.WriteLine("1. Si \n2. No");
+                            Console.WriteLine(" ");
+                            int agregar = Convert.ToInt32(Console.ReadLine());
+                            if (agregar == 1)
+                            {
+                                p.Fav_Podcast.Add(Spotflix.Lista_Podcasts[podcast - 1]);
+                                Console.WriteLine("Cancion agregada a favoritos ");
+                                Thread.Sleep(2000);
+                            }
+                            else
+                            {
+                                Console.WriteLine("Desea añadir a una playlist:");
+                                Console.WriteLine("1. Si \n2. No");
+                                int añadir = Convert.ToInt32(Console.ReadLine());
+                                if (añadir == 1)
+                                {
+                                    //añadir a una playlist
+                                    Thread.Sleep(1000);
+                                }
+                            }
+;
+                        }
+                        else if (opcion == 0)
+                        {
+                            Thread.Sleep(1000);
+                        }
+
+
                     }
 
                     else if (answer2 == 5)
@@ -151,21 +279,52 @@ namespace Proyecto_POO
                         {
                             Console.WriteLine("[" + i + "]. " + item.Titulo);
                             i += 1;
-
                         }
                         Console.WriteLine(" ");
-                        Console.WriteLine("Que audiolibro desea escuchar: ");
+                        Console.WriteLine("Escoger un audiolibro: ");
                         int audiolibro = Convert.ToInt32(Console.ReadLine());
-                        p.En_Cola_audiolibro.Add(Spotflix.Lista_AudioLibros[audiolibro - 1]);
+                        Console.WriteLine("1. Desea añadir a la cola? ");
+                        Console.WriteLine("2. Otro");
+                        Console.WriteLine("0. Salir");
+                        int opcion = Convert.ToInt16(Console.ReadLine());
                         Console.WriteLine(" ");
-                        Console.WriteLine("Desea agregar este audiolibro a favoritos?: ");
-                        Console.WriteLine("1. Si \n2. No");
-                        int agregar = Convert.ToInt32(Console.ReadLine());
-                        if (agregar == 1)
+                        if (opcion == 1)
                         {
+
+                            p.En_Cola_audiolibro.Add(Spotflix.Lista_AudioLibros[audiolibro - 1]);
+                            Console.WriteLine("Audiolibro agregado a la cola");
                             Console.WriteLine(" ");
-                            p.Fav_AudioLibro.Add(Spotflix.Lista_AudioLibros[audiolibro - 1]);
-                            Console.WriteLine("Audilibro agregado a favoritos");
+                            Thread.Sleep(1000);
+
+                        }
+                        else if (opcion == 2)
+                        {
+                            Console.WriteLine("Desea agregar este audiolibro a favoritos?: ");
+                            Console.WriteLine("1. Si \n2. No");
+                            Console.WriteLine(" ");
+                            int agregar = Convert.ToInt32(Console.ReadLine());
+                            if (agregar == 1)
+                            {
+                                p.Fav_AudioLibro.Add(Spotflix.Lista_AudioLibros[audiolibro - 1]);
+                                Console.WriteLine("Audiolibro agregado a favoritos ");
+                                Thread.Sleep(2000);
+                            }
+                            else
+                            {
+                                Console.WriteLine("Desea añadir a una playlist:");
+                                Console.WriteLine("1. Si \n2. No");
+                                int añadir = Convert.ToInt32(Console.ReadLine());
+                                if (añadir == 1)
+                                {
+                                    //añadir a una playlist
+                                    Thread.Sleep(1000);
+                                }
+                            }
+
+                        }
+                        else if (opcion == 0)
+                        {
+                            Thread.Sleep(1000);
                         }
 
                     }
@@ -188,11 +347,13 @@ namespace Proyecto_POO
                                 {
                                     Console.WriteLine(Spotflix.Lista_Playlists[i - 1].Informacion_Playlist());
                                     Console.WriteLine("1. Seguir \n2. No seguir");
-                                    Console.WriteLine("Desea seguir a" + playlist + ": ");
+                                    Console.WriteLine("Desea seguir " + playlist + ": ");
                                     int seguir = Convert.ToInt32(Console.ReadLine());
                                     if (seguir == 1)
                                     {
                                         p.Playlists_Canciones_De_Otros.Add(item);
+                                        Console.WriteLine("Playlist seguida");
+                                        Thread.Sleep(2000);
                                     }
                                 }
                                 i++;
@@ -219,6 +380,7 @@ namespace Proyecto_POO
                     }
 
                 }
+
                 else if (a == 2)
                 {
                     Console.WriteLine("1. Nombre \n2. Sexo \n3. Profesion \n4. Nacionalidad \nQue desea hacer: ");
@@ -246,6 +408,8 @@ namespace Proyecto_POO
                                 if (seguir == 1)
                                 {
                                     p.Personas_Seguidas.Add(item);
+                                    Console.WriteLine("Has seguido a " + item.Nombre_y_Apellido);
+                                    Thread.Sleep(2000);
                                 }
 
                             }
@@ -265,9 +429,26 @@ namespace Proyecto_POO
                             if (sexo == item.Sexo)
                             {
                                 Console.WriteLine(i + ". " + Spotflix.Lista_Personas[i - 1].Informacion_Persona());
+
                             }
                             i += 1;
                         }
+                        Console.WriteLine(" ");
+                        Console.WriteLine("Escoger a una persona: ");
+                        int persona = Convert.ToInt32(Console.ReadLine());
+                        Console.WriteLine("1. Seguir \n2. No seguir");
+                        Console.WriteLine("Desea seguir a " + Spotflix.Lista_Personas[persona - 1] + "?: ");
+                        int seguir = Convert.ToInt32(Console.ReadLine());
+                        if (seguir == 1)
+                        {
+                            p.Personas_Seguidas.Add(Spotflix.Lista_Personas[persona - 1]);
+                            Thread.Sleep(2000);
+                        }
+                        else
+                        {
+                            Thread.Sleep(1000);
+                        }
+
                     }
 
                     else if (answer3 == 3)
@@ -277,7 +458,6 @@ namespace Proyecto_POO
                         Console.WriteLine(" ");
                         int answer4 = Convert.ToInt32(Console.ReadLine());
 
-
                         if (answer4 == 1)
                         {
                             int i = 1;
@@ -285,27 +465,56 @@ namespace Proyecto_POO
                             {
                                 if ((Persona.enum_Profesion)answer4 == Persona.enum_Profesion.Cantante)
                                 {
-                                    Console.WriteLine(Spotflix.Lista_Personas[i - 1].Informacion_Persona());
+                                    Console.WriteLine(i + ". " + Spotflix.Lista_Personas[i - 1].Informacion_Persona());
                                 }
                                 i++;
                             }
+                            Console.WriteLine(" ");
+                            Console.WriteLine("Escoger a una persona: ");
+                            int persona = Convert.ToInt32(Console.ReadLine());
+                            Console.WriteLine("1. Seguir \n2. No seguir");
+                            Console.WriteLine("Desea seguir a " + Spotflix.Lista_Personas[persona - 1] + "?: ");
+                            int seguir = Convert.ToInt32(Console.ReadLine());
+                            if (seguir == 1)
+                            {
+                                p.Personas_Seguidas.Add(Spotflix.Lista_Personas[persona - 1]);
+                                Thread.Sleep(2000);
+                            }
+                            else
+                            {
+                                Thread.Sleep(1000);
+                            }
                         }
-
                         else if (answer4 == 2)
                         {
                             int i = 1;
                             foreach (var item in Spotflix.Lista_Personas)
                             {
-                                
+
                                 if ((Persona.enum_Profesion)answer4 == Persona.enum_Profesion.Compositor)
                                 {
                                     Console.WriteLine(Spotflix.Lista_Personas[i - 1].Informacion_Persona());
+                                    Thread.Sleep(1000);
                                 }
                                 i++;
                             }
+                            Console.WriteLine(" ");
+                            Console.WriteLine("Escoger a una persona: ");
+                            int persona = Convert.ToInt32(Console.ReadLine());
+                            Console.WriteLine("1. Seguir \n2. No seguir");
+                            Console.WriteLine("Desea seguir a " + Spotflix.Lista_Personas[persona - 1] + "?: ");
+                            int seguir = Convert.ToInt32(Console.ReadLine());
+                            if (seguir == 1)
+                            {
+                                p.Personas_Seguidas.Add(Spotflix.Lista_Personas[persona - 1]);
+                                Thread.Sleep(2000);
+                            }
+                            else
+                            {
+                                Thread.Sleep(1000);
+                            }
 
                         }
-
                         else if (answer4 == 3)
                         {
                             int i = 1;
@@ -314,12 +523,27 @@ namespace Proyecto_POO
                                 if ((Persona.enum_Profesion)answer4 == Persona.enum_Profesion.Actor)
                                 {
                                     Console.WriteLine(Spotflix.Lista_Personas[i - 1].Informacion_Persona());
+                                    Thread.Sleep(1000);
                                 }
                                 i++;
                             }
+                            Console.WriteLine(" ");
+                            Console.WriteLine("Escoger a una persona: ");
+                            int persona = Convert.ToInt32(Console.ReadLine());
+                            Console.WriteLine("1. Seguir \n2. No seguir");
+                            Console.WriteLine("Desea seguir a " + Spotflix.Lista_Personas[persona - 1] + "?: ");
+                            int seguir = Convert.ToInt32(Console.ReadLine());
+                            if (seguir == 1)
+                            {
+                                p.Personas_Seguidas.Add(Spotflix.Lista_Personas[persona - 1]);
+                                Thread.Sleep(2000);
+                            }
+                            else
+                            {
+                                Thread.Sleep(1000);
+                            }
 
                         }
-
                         else if (answer4 == 4)
                         {
                             int i = 1;
@@ -328,8 +552,24 @@ namespace Proyecto_POO
                                 if ((Persona.enum_Profesion)answer4 == Persona.enum_Profesion.Director)
                                 {
                                     Console.WriteLine(Spotflix.Lista_Personas[i - 1].Informacion_Persona());
+                                    Thread.Sleep(1000);
                                 }
                                 i++;
+                            }
+                            Console.WriteLine(" ");
+                            Console.WriteLine("Escoger a una persona: ");
+                            int persona = Convert.ToInt32(Console.ReadLine());
+                            Console.WriteLine("1. Seguir \n2. No seguir");
+                            Console.WriteLine("Desea seguir a " + Spotflix.Lista_Personas[persona - 1] + "?: ");
+                            int seguir = Convert.ToInt32(Console.ReadLine());
+                            if (seguir == 1)
+                            {
+                                p.Personas_Seguidas.Add(Spotflix.Lista_Personas[persona - 1]);
+                                Thread.Sleep(2000);
+                            }
+                            else
+                            {
+                                Thread.Sleep(1000);
                             }
 
                         }
@@ -341,12 +581,27 @@ namespace Proyecto_POO
                                 if ((Persona.enum_Profesion)answer4 == Persona.enum_Profesion.Locutor)
                                 {
                                     Console.WriteLine(Spotflix.Lista_Personas[i - 1].Informacion_Persona());
+                                    Thread.Sleep(1000);
                                 }
                                 i++;
                             }
+                            Console.WriteLine(" ");
+                            Console.WriteLine("Escoger a una persona: ");
+                            int persona = Convert.ToInt32(Console.ReadLine());
+                            Console.WriteLine("1. Seguir \n2. No seguir");
+                            Console.WriteLine("Desea seguir a " + Spotflix.Lista_Personas[persona - 1] + "?: ");
+                            int seguir = Convert.ToInt32(Console.ReadLine());
+                            if (seguir == 1)
+                            {
+                                p.Personas_Seguidas.Add(Spotflix.Lista_Personas[persona - 1]);
+                                Thread.Sleep(2000);
+                            }
+                            else
+                            {
+                                Thread.Sleep(1000);
+                            }
 
                         }
-
                         else if (answer4 == 6)
                         {
                             int i = 1;
@@ -355,8 +610,24 @@ namespace Proyecto_POO
                                 if ((Persona.enum_Profesion)answer4 == Persona.enum_Profesion.Lector)
                                 {
                                     Console.WriteLine(Spotflix.Lista_Personas[i - 1].Informacion_Persona());
+                                    Thread.Sleep(1000);
                                 }
                                 i++;
+                            }
+                            Console.WriteLine(" ");
+                            Console.WriteLine("Escoger a una persona: ");
+                            int persona = Convert.ToInt32(Console.ReadLine());
+                            Console.WriteLine("1. Seguir \n2. No seguir");
+                            Console.WriteLine("Desea seguir a " + Spotflix.Lista_Personas[persona - 1] + "?: ");
+                            int seguir = Convert.ToInt32(Console.ReadLine());
+                            if (seguir == 1)
+                            {
+                                p.Personas_Seguidas.Add(Spotflix.Lista_Personas[persona - 1]);
+                                Thread.Sleep(2000);
+                            }
+                            else
+                            {
+                                Thread.Sleep(1000);
                             }
                         }
 
@@ -381,6 +652,21 @@ namespace Proyecto_POO
                                 Console.WriteLine(" ");
                             }
                         }
+                        Console.WriteLine(" ");
+                        Console.WriteLine("Escoger a una persona: ");
+                        int persona = Convert.ToInt32(Console.ReadLine());
+                        Console.WriteLine("1. Seguir \n2. No seguir");
+                        Console.WriteLine("Desea seguir a " + Spotflix.Lista_Personas[persona - 1] + "?: ");
+                        int seguir = Convert.ToInt32(Console.ReadLine());
+                        if (seguir == 1)
+                        {
+                            p.Personas_Seguidas.Add(Spotflix.Lista_Personas[persona - 1]);
+                            Thread.Sleep(2000);
+                        }
+                        else
+                        {
+                            Thread.Sleep(1000);
+                        }
                     }
                 }
 
@@ -392,6 +678,7 @@ namespace Proyecto_POO
                     foreach (var item in Spotflix.Lista_Perfiles)
                     {
                         Console.WriteLine(Spotflix.Lista_Perfiles[i - 1].Nombre_perfil);
+                        i++;
                     }
                     Console.WriteLine("Que perfil desea ver: ");
                     Console.WriteLine(" ");
@@ -407,12 +694,11 @@ namespace Proyecto_POO
                     {
                         p.Seguidos.Add(Spotflix.Lista_Perfiles[perfil - 1]);
                         Console.WriteLine("Perfil seguido");
+                        Thread.Sleep(2000);
                     }
 
 
                 }
-
-                
 
             }
             //Busqueda Compleja 
@@ -442,6 +728,7 @@ namespace Proyecto_POO
                         Console.WriteLine("1.Canciones \n2.Videos \n3.Podcast \n4.Pelicula \n5.AudioLibro");
                         Console.WriteLine("Categoria:");
                         int categoria = Convert.ToInt32(Console.ReadLine());
+
                         if (categoria == 1)
                         {
                             int i_1 = 1;
@@ -454,6 +741,51 @@ namespace Proyecto_POO
                                 }
 
                             }
+                            Console.WriteLine(" ");
+                            Console.WriteLine("1. Desea añadir a la cola? ");
+                            Console.WriteLine("2. Otro");
+                            Console.WriteLine("0. Salir");
+                            int opcion = Convert.ToInt16(Console.ReadLine());
+                            Console.WriteLine(" ");
+                            if (opcion == 1)
+                            {
+
+                                p.En_Cola_cancion.Add(Spotflix.Lista_Canciones[i_1 - 1]);
+                                Console.WriteLine("Cancion agregada a la cola");
+                                Console.WriteLine(" ");
+                                Thread.Sleep(1000);
+
+                            }
+                            else if (opcion == 2)
+                            {
+                                Console.WriteLine("Desea agregar esta cancion a favoritos?: ");
+                                Console.WriteLine("1. Si \n2. No");
+                                Console.WriteLine(" ");
+                                int agregar = Convert.ToInt32(Console.ReadLine());
+                                if (agregar == 1)
+                                {
+                                    p.Fav_Canciones.Add(Spotflix.Lista_Canciones[i_1 - 1]);
+                                    Console.WriteLine("Cancion agregada a favoritos ");
+                                    Thread.Sleep(2000);
+                                }
+                                else
+                                {
+                                    Console.WriteLine("Desea añadir a una playlist:");
+                                    Console.WriteLine("1. Si \n2. No");
+                                    int añadir = Convert.ToInt32(Console.ReadLine());
+                                    if (añadir == 1)
+                                    {
+                                        //añadir a una playlist
+                                        Thread.Sleep(1000);
+                                    }
+                                }
+    ;
+                            }
+                            else if (opcion == 0)
+                            {
+                                Thread.Sleep(1000);
+                            }
+
                         }
                         else if (categoria == 2)
                         {
@@ -467,6 +799,51 @@ namespace Proyecto_POO
                                 }
 
                             }
+                            Console.WriteLine(" ");
+                            Console.WriteLine("1. Desea añadir a la cola? ");
+                            Console.WriteLine("2. Otro");
+                            Console.WriteLine("0. Salir");
+                            int opcion = Convert.ToInt16(Console.ReadLine());
+                            Console.WriteLine(" ");
+                            if (opcion == 1)
+                            {
+
+                                p.En_Cola_video.Add(Spotflix.Lista_Videos[i_1 - 1]);
+                                Console.WriteLine("Video agregado a la cola");
+                                Console.WriteLine(" ");
+                                Thread.Sleep(1000);
+
+                            }
+                            else if (opcion == 2)
+                            {
+                                Console.WriteLine("Desea agregar este video a favoritos?: ");
+                                Console.WriteLine("1. Si \n2. No");
+                                Console.WriteLine(" ");
+                                int agregar = Convert.ToInt32(Console.ReadLine());
+                                if (agregar == 1)
+                                {
+                                    p.Fav_Videos.Add(Spotflix.Lista_Videos[i_1 - 1]);
+                                    Console.WriteLine("Video agregado a favoritos ");
+                                    Thread.Sleep(2000);
+                                }
+                                else
+                                {
+                                    Console.WriteLine("Desea añadir a una playlist:");
+                                    Console.WriteLine("1. Si \n2. No");
+                                    int añadir = Convert.ToInt32(Console.ReadLine());
+                                    if (añadir == 1)
+                                    {
+                                        //añadir a una playlist
+                                        Thread.Sleep(1000);
+                                    }
+                                }
+    
+                            }
+                            else if (opcion == 0)
+                            {
+                                Thread.Sleep(1000);
+                            }
+
                         }
                         else if (categoria == 3)
                         {
@@ -480,6 +857,52 @@ namespace Proyecto_POO
                                 }
 
                             }
+                            Console.WriteLine(" ");
+                            Console.WriteLine("1. Desea añadir a la cola? ");
+                            Console.WriteLine("2. Otro");
+                            Console.WriteLine("0. Salir");
+                            int opcion = Convert.ToInt16(Console.ReadLine());
+                            Console.WriteLine(" ");
+                            if (opcion == 1)
+                            {
+
+                                p.En_Cola_podcast.Add(Spotflix.Lista_Podcasts[i_1 - 1]);
+                                Console.WriteLine("Podcast agregada a la cola");
+                                Console.WriteLine(" ");
+                                Thread.Sleep(1000);
+
+                            }
+                            else if (opcion == 2)
+                            {
+                                Console.WriteLine("Desea agregar este podcast a favoritos?: ");
+                                Console.WriteLine("1. Si \n2. No");
+                                Console.WriteLine(" ");
+                                int agregar = Convert.ToInt32(Console.ReadLine());
+                                if (agregar == 1)
+                                {
+                                    p.Fav_Podcast.Add(Spotflix.Lista_Podcasts[i_1 - 1]);
+                                    Console.WriteLine("Cancion agregada a favoritos ");
+                                    Thread.Sleep(2000);
+                                }
+                                else
+                                {
+                                    Console.WriteLine("Desea añadir a una playlist:");
+                                    Console.WriteLine("1. Si \n2. No");
+                                    int añadir = Convert.ToInt32(Console.ReadLine());
+                                    if (añadir == 1)
+                                    {
+                                        //añadir a una playlist
+                                        Thread.Sleep(1000);
+                                    }
+                                }
+    
+                            }
+                            else if (opcion == 0)
+                            {
+                                Thread.Sleep(1000);
+                            }
+
+
                         }
                         else if (categoria == 4)
                         {
@@ -492,6 +915,50 @@ namespace Proyecto_POO
                                     i_1 += 1;
                                 }
 
+                            }
+                            Console.WriteLine(" ");
+                            Console.WriteLine("1. Desea añadir a la cola? ");
+                            Console.WriteLine("2. Otro");
+                            Console.WriteLine("0. Salir");
+                            int opcion = Convert.ToInt16(Console.ReadLine());
+                            Console.WriteLine(" ");
+                            if (opcion == 1)
+                            {
+
+                                p.En_Cola_pelicula.Add(Spotflix.Lista_Peliculas[i_1 - 1]);
+                                Console.WriteLine("Pelicula agregada a la cola");
+                                Console.WriteLine(" ");
+                                Thread.Sleep(1000);
+
+                            }
+                            else if (opcion == 2)
+                            {
+                                Console.WriteLine("Desea agregar esta pelicula a favoritos?: ");
+                                Console.WriteLine("1. Si \n2. No");
+                                Console.WriteLine(" ");
+                                int agregar = Convert.ToInt32(Console.ReadLine());
+                                if (agregar == 1)
+                                {
+                                    p.Fav_Pelicula.Add(Spotflix.Lista_Peliculas[i_1 - 1]);
+                                    Console.WriteLine("Cancion agregada a favoritos ");
+                                    Thread.Sleep(2000);
+                                }
+                                else
+                                {
+                                    Console.WriteLine("Desea añadir a una playlist:");
+                                    Console.WriteLine("1. Si \n2. No");
+                                    int añadir = Convert.ToInt32(Console.ReadLine());
+                                    if (añadir == 1)
+                                    {
+                                        //añadir a una playlist
+                                        Thread.Sleep(1000);
+                                    }
+                                }
+    
+                            }
+                            else if (opcion == 0)
+                            {
+                                Thread.Sleep(1000);
                             }
                         }
                         else if (categoria == 5)
@@ -507,8 +974,51 @@ namespace Proyecto_POO
                                 }
 
                             }
-                        }
+                            Console.WriteLine(" ");
+                            Console.WriteLine("1. Desea añadir a la cola? ");
+                            Console.WriteLine("2. Otro");
+                            Console.WriteLine("0. Salir");
+                            int opcion = Convert.ToInt16(Console.ReadLine());
+                            Console.WriteLine(" ");
+                            if (opcion == 1)
+                            {
 
+                                p.En_Cola_audiolibro.Add(Spotflix.Lista_AudioLibros[i_1 - 1]);
+                                Console.WriteLine("Audiolibro agregado a la cola");
+                                Console.WriteLine(" ");
+                                Thread.Sleep(1000);
+
+                            }
+                            else if (opcion == 2)
+                            {
+                                Console.WriteLine("Desea agregar este audiolibro a favoritos?: ");
+                                Console.WriteLine("1. Si \n2. No");
+                                Console.WriteLine(" ");
+                                int agregar = Convert.ToInt32(Console.ReadLine());
+                                if (agregar == 1)
+                                {
+                                    p.Fav_AudioLibro.Add(Spotflix.Lista_AudioLibros[i_1 - 1]);
+                                    Console.WriteLine("Audiolibro agregado a favoritos ");
+                                    Thread.Sleep(2000);
+                                }
+                                else
+                                {
+                                    Console.WriteLine("Desea añadir a una playlist:");
+                                    Console.WriteLine("1. Si \n2. No");
+                                    int añadir = Convert.ToInt32(Console.ReadLine());
+                                    if (añadir == 1)
+                                    {
+                                        //añadir a una playlist
+                                        Thread.Sleep(1000);
+                                    }
+                                }
+
+                            }
+                            else if (opcion == 0)
+                            {
+                                Thread.Sleep(1000);
+                            }
+                        }
 
                     }
                     else if (opcion1 == 1 && opcion2 == 3 || opcion1 == 3 && opcion2 == 1)
@@ -518,61 +1028,67 @@ namespace Proyecto_POO
                         Console.WriteLine("Año: ");
                         int año = Convert.ToInt32(Console.ReadLine());
 
-                        foreach(var item in Spotflix.Lista_Canciones)
+                        int i_1 = 1;
+                        foreach (var item in Spotflix.Lista_Canciones)
                         {
-                            int i_1 = 1;
+
                             if (titulo == item.Titulo && año == item.Año.Year)
                             {
                                 Console.WriteLine("Canciones");
                                 Console.WriteLine(" ");
-                                Console.WriteLine(i + ". " + item.Titulo);
+                                Console.WriteLine(i_1 + ". " + item.Titulo);
                                 i_1 += 1;
                             }
                         }
+                        int i_2 = 1;
                         foreach (var item in Spotflix.Lista_Videos)
                         {
-                            int i_1 = 1;
+
                             if (titulo == item.Titulo && año == item.Año.Year)
                             {
                                 Console.WriteLine("Videos");
                                 Console.WriteLine(" ");
-                                Console.WriteLine(i + ". " + item.Titulo);
-                                i_1 += 1;
+                                Console.WriteLine(i_2 + ". " + item.Titulo);
+                                i_2 += 1;
                             }
                         }
+                        int i_3 = 1;
                         foreach (var item in Spotflix.Lista_Podcasts)
                         {
-                            int i_1 = 1;
+
                             if (titulo == item.Titulo && año == item.Año.Year)
                             {
                                 Console.WriteLine("Podcast");
                                 Console.WriteLine(" ");
-                                Console.WriteLine(i + ". " + item.Titulo);
-                                i_1 += 1;
+                                Console.WriteLine(i_3 + ". " + item.Titulo);
+                                i_3 += 1;
                             }
                         }
+                        int i_4 = 1;
                         foreach (var item in Spotflix.Lista_Peliculas)
                         {
-                            int i_1 = 1;
+
                             if (titulo == item.Titulo && año == item.Año.Year)
                             {
                                 Console.WriteLine("Peliculas");
                                 Console.WriteLine(" ");
-                                Console.WriteLine(i + ". " + item.Titulo);
-                                i_1 += 1;
+                                Console.WriteLine(i_4 + ". " + item.Titulo);
+                                i_4 += 1;
                             }
                         }
+                        int i_5 = 1;
                         foreach (var item in Spotflix.Lista_AudioLibros)
                         {
-                            int i_1 = 1;
+
                             if (titulo == item.Titulo && año == item.Año.Year)
                             {
                                 Console.WriteLine("Audiolibros");
                                 Console.WriteLine(" ");
-                                Console.WriteLine(i + ". " + item.Titulo);
-                                i_1 += 1;
+                                Console.WriteLine(i_5 + ". " + item.Titulo);
+                                i_5 += 1;
                             }
                         }
+                        Thread.Sleep(2000);
                     }
                     else if (opcion1 == 1 && opcion2 == 4 || opcion1 == 4 && opcion2 == 1)
                     {
@@ -580,62 +1096,67 @@ namespace Proyecto_POO
                         string titulo = Console.ReadLine();
                         Console.WriteLine("Ranking: ");
                         double ranking = Convert.ToDouble(Console.ReadLine());
-
+                        int i_1 = 1;
                         foreach (var item in Spotflix.Lista_Canciones)
                         {
-                            int i_1 = 1;
+
                             if (titulo == item.Titulo && ranking == item.Ranking)
                             {
                                 Console.WriteLine("Canciones");
                                 Console.WriteLine(" ");
-                                Console.WriteLine(i + ". " + item.Titulo);
+                                Console.WriteLine(i_1 + ". " + item.Titulo);
                                 i_1 += 1;
                             }
                         }
+                        int i_2 = 1;
                         foreach (var item in Spotflix.Lista_Videos)
                         {
-                            int i_1 = 1;
+
                             if (titulo == item.Titulo && ranking == item.Ranking)
                             {
                                 Console.WriteLine("Videos");
                                 Console.WriteLine(" ");
-                                Console.WriteLine(i + ". " + item.Titulo);
-                                i_1 += 1;
+                                Console.WriteLine(i_2 + ". " + item.Titulo);
+                                i_2 += 1;
                             }
                         }
+                        int i_3 = 1;
                         foreach (var item in Spotflix.Lista_Podcasts)
                         {
-                            int i_1 = 1;
+
                             if (titulo == item.Titulo && ranking == item.Ranking)
                             {
                                 Console.WriteLine("Podcast");
                                 Console.WriteLine(" ");
-                                Console.WriteLine(i + ". " + item.Titulo);
-                                i_1 += 1;
+                                Console.WriteLine(i_3 + ". " + item.Titulo);
+                                i_3 += 1;
                             }
                         }
+                        int i_4 = 1;
                         foreach (var item in Spotflix.Lista_Peliculas)
                         {
-                            int i_1 = 1;
+
                             if (titulo == item.Titulo && ranking == item.Ranking)
                             {
                                 Console.WriteLine("Peliculas");
                                 Console.WriteLine(" ");
-                                Console.WriteLine(i + ". " + item.Titulo);
-                                i_1 += 1;
+                                Console.WriteLine(i_4 + ". " + item.Titulo);
+                                i_4 += 1;
                             }
                         }
+                        int i_5 = 1;
                         foreach (var item in Spotflix.Lista_AudioLibros)
                         {
-                            int i_1 = 1;
+
                             if (titulo == item.Titulo && ranking == item.Ranking)
                             {
                                 Console.WriteLine("Audiolibros");
                                 Console.WriteLine(" ");
-                                Console.WriteLine(i + ". " + item.Titulo);
-                                i_1 += 1;
+                                Console.WriteLine(i_5 + ". " + item.Titulo);
+                                i_5 += 1;
                             }
                         }
+                        Thread.Sleep(2000);
                     }
                     else if (opcion1 == 2 && opcion2 == 3 || opcion1 == 4 && opcion2 == 2)
                     {
@@ -654,12 +1175,61 @@ namespace Proyecto_POO
                                 {
                                     Console.WriteLine("Canciones");
                                     Console.WriteLine(" ");
-                                    Console.WriteLine(i + ". " + item.Titulo);
+                                    Console.WriteLine(i_1 + ". " + item.Titulo);
                                     Console.WriteLine(" " + item.Año);
                                     i_1 += 1;
                                 }
 
                             }
+                            Console.WriteLine(" ");
+                            Console.WriteLine("Escoger una cancion: ");
+                            int cancion = Convert.ToInt32(Console.ReadLine());
+                            Console.WriteLine("1. Desea añadir a la cola? ");
+                            Console.WriteLine("2. A otra playlist");
+                            Console.WriteLine("0. Salir");
+                            int opcion = Convert.ToInt16(Console.ReadLine());
+                            Console.WriteLine(" ");
+                            if (opcion == 1)
+                            {
+
+                                p.En_Cola_cancion.Add(Spotflix.Lista_Canciones[cancion - 1]);
+                                Console.WriteLine("Cancion agregada a la cola");
+                                Console.WriteLine(" ");
+                                Thread.Sleep(1000);
+
+                            }
+                            else if (opcion == 2)
+                            {
+                                Console.WriteLine("Desea agregar esta cancion a favoritos?: ");
+                                Console.WriteLine("1. Si \n2. No");
+                                Console.WriteLine(" ");
+                                int agregar = Convert.ToInt32(Console.ReadLine());
+                                if (agregar == 1)
+                                {
+                                    p.Fav_Canciones.Add(Spotflix.Lista_Canciones[cancion - 1]);
+                                    Console.WriteLine("Cancion agregada a favoritos ");
+                                    Thread.Sleep(2000);
+                                }
+                                else
+                                {
+                                    Console.WriteLine("Desea añadir a una playlist:");
+                                    Console.WriteLine("1. Si \n2. No");
+                                    int añadir = Convert.ToInt32(Console.ReadLine());
+                                    if (añadir == 1)
+                                    {
+                                        //añadir a una playlist
+                                        Thread.Sleep(1000);
+                                    }
+                                }
+    
+                            }
+                            else if (opcion == 0)
+                            {
+                                Thread.Sleep(1000);
+                            }
+
+
+
                         }
                         else if (categoria == 2)
                         {
@@ -670,12 +1240,59 @@ namespace Proyecto_POO
                                 {
                                     Console.WriteLine("Videos");
                                     Console.WriteLine(" ");
-                                    Console.WriteLine(i + ". " + item.Titulo);
+                                    Console.WriteLine(i_1 + ". " + item.Titulo);
                                     Console.WriteLine(" " + item.Año);
                                     i_1 += 1;
                                 }
 
                             }
+                            Console.WriteLine(" ");
+                            Console.WriteLine("Escoger un video: ");
+                            int video = Convert.ToInt32(Console.ReadLine());
+                            Console.WriteLine("1. Desea añadir a la cola? ");
+                            Console.WriteLine("2. Otro");
+                            Console.WriteLine("0. Salir");
+                            int opcion = Convert.ToInt16(Console.ReadLine());
+                            Console.WriteLine(" ");
+                            if (opcion == 1)
+                            {
+
+                                p.En_Cola_video.Add(Spotflix.Lista_Videos[video - 1]);
+                                Console.WriteLine("Video agregado a la cola");
+                                Console.WriteLine(" ");
+                                Thread.Sleep(1000);
+
+                            }
+                            else if (opcion == 2)
+                            {
+                                Console.WriteLine("Desea agregar este video a favoritos?: ");
+                                Console.WriteLine("1. Si \n2. No");
+                                Console.WriteLine(" ");
+                                int agregar = Convert.ToInt32(Console.ReadLine());
+                                if (agregar == 1)
+                                {
+                                    p.Fav_Videos.Add(Spotflix.Lista_Videos[video - 1]);
+                                    Console.WriteLine("Video agregado a favoritos ");
+                                    Thread.Sleep(2000);
+                                }
+                                else
+                                {
+                                    Console.WriteLine("Desea añadir a una playlist:");
+                                    Console.WriteLine("1. Si \n2. No");
+                                    int añadir = Convert.ToInt32(Console.ReadLine());
+                                    if (añadir == 1)
+                                    {
+                                        //añadir a una playlist
+                                        Thread.Sleep(1000);
+                                    }
+                                }
+    ;
+                            }
+                            else if (opcion == 0)
+                            {
+                                Thread.Sleep(1000);
+                            }
+
                         }
                         else if (categoria == 3)
                         {
@@ -686,11 +1303,57 @@ namespace Proyecto_POO
                                 {
                                     Console.WriteLine("Podcast");
                                     Console.WriteLine(" ");
-                                    Console.WriteLine(i + ". " + item.Titulo);
+                                    Console.WriteLine(i_1 + ". " + item.Titulo);
                                     Console.WriteLine(" " + item.Año);
                                     i_1 += 1;
                                 }
 
+                            }
+                            Console.WriteLine(" ");
+                            Console.WriteLine("Escoger una podcast: ");
+                            int podcast = Convert.ToInt32(Console.ReadLine());
+                            Console.WriteLine("1. Desea añadir a la cola? ");
+                            Console.WriteLine("2. Otro");
+                            Console.WriteLine("0. Salir");
+                            int opcion = Convert.ToInt16(Console.ReadLine());
+                            Console.WriteLine(" ");
+                            if (opcion == 1)
+                            {
+
+                                p.En_Cola_podcast.Add(Spotflix.Lista_Podcasts[podcast - 1]);
+                                Console.WriteLine("Podcast agregada a la cola");
+                                Console.WriteLine(" ");
+                                Thread.Sleep(1000);
+
+                            }
+                            else if (opcion == 2)
+                            {
+                                Console.WriteLine("Desea agregar este podcast a favoritos?: ");
+                                Console.WriteLine("1. Si \n2. No");
+                                Console.WriteLine(" ");
+                                int agregar = Convert.ToInt32(Console.ReadLine());
+                                if (agregar == 1)
+                                {
+                                    p.Fav_Podcast.Add(Spotflix.Lista_Podcasts[podcast - 1]);
+                                    Console.WriteLine("Cancion agregada a favoritos ");
+                                    Thread.Sleep(2000);
+                                }
+                                else
+                                {
+                                    Console.WriteLine("Desea añadir a una playlist:");
+                                    Console.WriteLine("1. Si \n2. No");
+                                    int añadir = Convert.ToInt32(Console.ReadLine());
+                                    if (añadir == 1)
+                                    {
+                                        //añadir a una playlist
+                                        Thread.Sleep(1000);
+                                    }
+                                }
+    ;
+                            }
+                            else if (opcion == 0)
+                            {
+                                Thread.Sleep(1000);
                             }
                         }
                         else if (categoria == 4)
@@ -702,11 +1365,57 @@ namespace Proyecto_POO
                                 {
                                     Console.WriteLine("Peliculas");
                                     Console.WriteLine(" ");
-                                    Console.WriteLine(i + ". " + item.Titulo);
+                                    Console.WriteLine(i_1 + ". " + item.Titulo);
                                     Console.WriteLine(" " + item.Año);
                                     i_1 += 1;
                                 }
 
+                            }
+                            Console.WriteLine(" ");
+                            Console.WriteLine("Escoger una pelicula: ");
+                            int pelicula = Convert.ToInt32(Console.ReadLine());
+                            Console.WriteLine("1. Desea añadir a la cola? ");
+                            Console.WriteLine("2. Otro");
+                            Console.WriteLine("0. Salir");
+                            int opcion = Convert.ToInt16(Console.ReadLine());
+                            Console.WriteLine(" ");
+                            if (opcion == 1)
+                            {
+
+                                p.En_Cola_pelicula.Add(Spotflix.Lista_Peliculas[pelicula - 1]);
+                                Console.WriteLine("Pelicula agregada a la cola");
+                                Console.WriteLine(" ");
+                                Thread.Sleep(1000);
+
+                            }
+                            else if (opcion == 2)
+                            {
+                                Console.WriteLine("Desea agregar esta pelicula a favoritos?: ");
+                                Console.WriteLine("1. Si \n2. No");
+                                Console.WriteLine(" ");
+                                int agregar = Convert.ToInt32(Console.ReadLine());
+                                if (agregar == 1)
+                                {
+                                    p.Fav_Pelicula.Add(Spotflix.Lista_Peliculas[pelicula - 1]);
+                                    Console.WriteLine("Cancion agregada a favoritos ");
+                                    Thread.Sleep(2000);
+                                }
+                                else
+                                {
+                                    Console.WriteLine("Desea añadir a una playlist:");
+                                    Console.WriteLine("1. Si \n2. No");
+                                    int añadir = Convert.ToInt32(Console.ReadLine());
+                                    if (añadir == 1)
+                                    {
+                                        //añadir a una playlist
+                                        Thread.Sleep(1000);
+                                    }
+                                }
+    ;
+                            }
+                            else if (opcion == 0)
+                            {
+                                Thread.Sleep(1000);
                             }
                         }
                         else if (categoria == 5)
@@ -718,12 +1427,59 @@ namespace Proyecto_POO
                                 {
                                     Console.WriteLine("Audiolibros");
                                     Console.WriteLine(" ");
-                                    Console.WriteLine(i + ". " + item.Titulo);
+                                    Console.WriteLine(i_1 + ". " + item.Titulo);
                                     Console.WriteLine(" " + item.Año);
                                     i_1 += 1;
                                 }
 
                             }
+                            Console.WriteLine(" ");
+                            Console.WriteLine("Escoger un audiolibro: ");
+                            int audiolibro = Convert.ToInt32(Console.ReadLine());
+                            Console.WriteLine("1. Desea añadir a la cola? ");
+                            Console.WriteLine("2. Otro");
+                            Console.WriteLine("0. Salir");
+                            int opcion = Convert.ToInt16(Console.ReadLine());
+                            Console.WriteLine(" ");
+                            if (opcion == 1)
+                            {
+
+                                p.En_Cola_audiolibro.Add(Spotflix.Lista_AudioLibros[audiolibro - 1]);
+                                Console.WriteLine("Audiolibro agregado a la cola");
+                                Console.WriteLine(" ");
+                                Thread.Sleep(1000);
+
+                            }
+                            else if (opcion == 2)
+                            {
+                                Console.WriteLine("Desea agregar este audiolibro a favoritos?: ");
+                                Console.WriteLine("1. Si \n2. No");
+                                Console.WriteLine(" ");
+                                int agregar = Convert.ToInt32(Console.ReadLine());
+                                if (agregar == 1)
+                                {
+                                    p.Fav_AudioLibro.Add(Spotflix.Lista_AudioLibros[audiolibro - 1]);
+                                    Console.WriteLine("Audiolibro agregado a favoritos ");
+                                    Thread.Sleep(2000);
+                                }
+                                else
+                                {
+                                    Console.WriteLine("Desea añadir a una playlist:");
+                                    Console.WriteLine("1. Si \n2. No");
+                                    int añadir = Convert.ToInt32(Console.ReadLine());
+                                    if (añadir == 1)
+                                    {
+                                        //añadir a una playlist
+                                        Thread.Sleep(1000);
+                                    }
+                                }
+
+                            }
+                            else if (opcion == 0)
+                            {
+                                Thread.Sleep(1000);
+                            }
+
                         }
                     }
                     else if (opcion1 == 2 && opcion2 == 4 || opcion1 == 4 && opcion2 == 2)
@@ -743,12 +1499,61 @@ namespace Proyecto_POO
                                 {
                                     Console.WriteLine("Canciones");
                                     Console.WriteLine(" ");
-                                    Console.WriteLine(i + ". " + item.Titulo);
+                                    Console.WriteLine(i_1 + ". " + item.Titulo);
                                     Console.WriteLine(" " + item.Ranking);
                                     i_1 += 1;
                                 }
 
                             }
+                            Console.WriteLine(" ");
+                            Console.WriteLine("Escoger una cancion: ");
+                            int cancion = Convert.ToInt32(Console.ReadLine());
+                            Console.WriteLine("1. Desea añadir a la cola? ");
+                            Console.WriteLine("2. A otra playlist");
+                            Console.WriteLine("0. Salir");
+                            int opcion = Convert.ToInt16(Console.ReadLine());
+                            Console.WriteLine(" ");
+                            if (opcion == 1)
+                            {
+
+                                p.En_Cola_cancion.Add(Spotflix.Lista_Canciones[cancion - 1]);
+                                Console.WriteLine("Cancion agregada a la cola");
+                                Console.WriteLine(" ");
+                                Thread.Sleep(1000);
+
+                            }
+                            else if (opcion == 2)
+                            {
+                                Console.WriteLine("Desea agregar esta cancion a favoritos?: ");
+                                Console.WriteLine("1. Si \n2. No");
+                                Console.WriteLine(" ");
+                                int agregar = Convert.ToInt32(Console.ReadLine());
+                                if (agregar == 1)
+                                {
+                                    p.Fav_Canciones.Add(Spotflix.Lista_Canciones[cancion - 1]);
+                                    Console.WriteLine("Cancion agregada a favoritos ");
+                                    Thread.Sleep(2000);
+                                }
+                                else
+                                {
+                                    Console.WriteLine("Desea añadir a una playlist:");
+                                    Console.WriteLine("1. Si \n2. No");
+                                    int añadir = Convert.ToInt32(Console.ReadLine());
+                                    if (añadir == 1)
+                                    {
+                                        //añadir a una playlist
+                                        Thread.Sleep(1000);
+                                    }
+                                }
+    ;
+                            }
+                            else if (opcion == 0)
+                            {
+                                Thread.Sleep(1000);
+                            }
+
+
+
                         }
                         else if (categoria == 2)
                         {
@@ -759,12 +1564,60 @@ namespace Proyecto_POO
                                 {
                                     Console.WriteLine("Videos");
                                     Console.WriteLine(" ");
-                                    Console.WriteLine(i + ". " + item.Titulo);
+                                    Console.WriteLine(i_1 + ". " + item.Titulo);
                                     Console.WriteLine(" " + item.Ranking);
                                     i_1 += 1;
                                 }
 
                             }
+                            Console.WriteLine(" ");
+                            Console.WriteLine("Escoger un video: ");
+                            int video = Convert.ToInt32(Console.ReadLine());
+                            Console.WriteLine("1. Desea añadir a la cola? ");
+                            Console.WriteLine("2. Otro");
+                            Console.WriteLine("0. Salir");
+                            int opcion = Convert.ToInt16(Console.ReadLine());
+                            Console.WriteLine(" ");
+                            if (opcion == 1)
+                            {
+
+                                p.En_Cola_video.Add(Spotflix.Lista_Videos[video - 1]);
+                                Console.WriteLine("Video agregado a la cola");
+                                Console.WriteLine(" ");
+                                Thread.Sleep(1000);
+
+                            }
+                            else if (opcion == 2)
+                            {
+                                Console.WriteLine("Desea agregar este video a favoritos?: ");
+                                Console.WriteLine("1. Si \n2. No");
+                                Console.WriteLine(" ");
+                                int agregar = Convert.ToInt32(Console.ReadLine());
+                                if (agregar == 1)
+                                {
+                                    p.Fav_Videos.Add(Spotflix.Lista_Videos[video - 1]);
+                                    Console.WriteLine("Video agregado a favoritos ");
+                                    Thread.Sleep(2000);
+                                }
+                                else
+                                {
+                                    Console.WriteLine("Desea añadir a una playlist:");
+                                    Console.WriteLine("1. Si \n2. No");
+                                    int añadir = Convert.ToInt32(Console.ReadLine());
+                                    if (añadir == 1)
+                                    {
+                                        //añadir a una playlist
+                                        Thread.Sleep(1000);
+                                    }
+                                }
+    ;
+                            }
+                            else if (opcion == 0)
+                            {
+                                Thread.Sleep(1000);
+                            }
+
+
                         }
                         else if (categoria == 3)
                         {
@@ -775,12 +1628,61 @@ namespace Proyecto_POO
                                 {
                                     Console.WriteLine("Podcast");
                                     Console.WriteLine(" ");
-                                    Console.WriteLine(i + ". " + item.Titulo);
+                                    Console.WriteLine(i_1 + ". " + item.Titulo);
                                     Console.WriteLine(" " + item.Ranking);
                                     i_1 += 1;
                                 }
 
                             }
+                            Console.WriteLine(" ");
+                            Console.WriteLine("Escoger una podcast: ");
+                            int podcast = Convert.ToInt32(Console.ReadLine());
+                            Console.WriteLine("1. Desea añadir a la cola? ");
+                            Console.WriteLine("2. Otro");
+                            Console.WriteLine("0. Salir");
+                            int opcion = Convert.ToInt16(Console.ReadLine());
+                            Console.WriteLine(" ");
+                            if (opcion == 1)
+                            {
+
+                                p.En_Cola_podcast.Add(Spotflix.Lista_Podcasts[podcast - 1]);
+                                Console.WriteLine("Podcast agregada a la cola");
+                                Console.WriteLine(" ");
+                                Thread.Sleep(1000);
+
+                            }
+                            else if (opcion == 2)
+                            {
+                                Console.WriteLine("Desea agregar este podcast a favoritos?: ");
+                                Console.WriteLine("1. Si \n2. No");
+                                Console.WriteLine(" ");
+                                int agregar = Convert.ToInt32(Console.ReadLine());
+                                if (agregar == 1)
+                                {
+                                    p.Fav_Podcast.Add(Spotflix.Lista_Podcasts[podcast - 1]);
+                                    Console.WriteLine("Cancion agregada a favoritos ");
+                                    Thread.Sleep(2000);
+                                }
+                                else
+                                {
+                                    Console.WriteLine("Desea añadir a una playlist:");
+                                    Console.WriteLine("1. Si \n2. No");
+                                    int añadir = Convert.ToInt32(Console.ReadLine());
+                                    if (añadir == 1)
+                                    {
+                                        //añadir a una playlist
+                                        Thread.Sleep(1000);
+                                    }
+                                }
+    
+                            }
+                            else if (opcion == 0)
+                            {
+                                Thread.Sleep(1000);
+                            }
+
+
+
                         }
                         else if (categoria == 4)
                         {
@@ -791,12 +1693,60 @@ namespace Proyecto_POO
                                 {
                                     Console.WriteLine("Peliculas");
                                     Console.WriteLine(" ");
-                                    Console.WriteLine(i + ". " + item.Titulo);
+                                    Console.WriteLine(i_1 + ". " + item.Titulo);
                                     Console.WriteLine(" " + item.Ranking);
                                     i_1 += 1;
                                 }
 
                             }
+                            Console.WriteLine(" ");
+                            Console.WriteLine("Escoger una pelicula: ");
+                            int pelicula = Convert.ToInt32(Console.ReadLine());
+                            Console.WriteLine("1. Desea añadir a la cola? ");
+                            Console.WriteLine("2. Otro");
+                            Console.WriteLine("0. Salir");
+                            int opcion = Convert.ToInt16(Console.ReadLine());
+                            Console.WriteLine(" ");
+                            if (opcion == 1)
+                            {
+
+                                p.En_Cola_pelicula.Add(Spotflix.Lista_Peliculas[pelicula - 1]);
+                                Console.WriteLine("Pelicula agregada a la cola");
+                                Console.WriteLine(" ");
+                                Thread.Sleep(1000);
+
+                            }
+                            else if (opcion == 2)
+                            {
+                                Console.WriteLine("Desea agregar esta pelicula a favoritos?: ");
+                                Console.WriteLine("1. Si \n2. No");
+                                Console.WriteLine(" ");
+                                int agregar = Convert.ToInt32(Console.ReadLine());
+                                if (agregar == 1)
+                                {
+                                    p.Fav_Pelicula.Add(Spotflix.Lista_Peliculas[pelicula - 1]);
+                                    Console.WriteLine("Cancion agregada a favoritos ");
+                                    Thread.Sleep(2000);
+                                }
+                                else
+                                {
+                                    Console.WriteLine("Desea añadir a una playlist:");
+                                    Console.WriteLine("1. Si \n2. No");
+                                    int añadir = Convert.ToInt32(Console.ReadLine());
+                                    if (añadir == 1)
+                                    {
+                                        //añadir a una playlist
+                                        Thread.Sleep(1000);
+                                    }
+                                }
+    ;
+                            }
+                            else if (opcion == 0)
+                            {
+                                Thread.Sleep(1000);
+                            }
+
+
                         }
                         else if (categoria == 5)
                         {
@@ -807,12 +1757,60 @@ namespace Proyecto_POO
                                 {
                                     Console.WriteLine("Audiolibros");
                                     Console.WriteLine(" ");
-                                    Console.WriteLine(i + ". " + item.Titulo);
+                                    Console.WriteLine(i_1 + ". " + item.Titulo);
                                     Console.WriteLine(" " + item.Ranking);
                                     i_1 += 1;
                                 }
 
                             }
+                            Console.WriteLine(" ");
+                            Console.WriteLine("Escoger un audiolibro: ");
+                            int audiolibro = Convert.ToInt32(Console.ReadLine());
+                            Console.WriteLine("1. Desea añadir a la cola? ");
+                            Console.WriteLine("2. Otro");
+                            Console.WriteLine("0. Salir");
+                            int opcion = Convert.ToInt16(Console.ReadLine());
+                            Console.WriteLine(" ");
+                            if (opcion == 1)
+                            {
+
+                                p.En_Cola_audiolibro.Add(Spotflix.Lista_AudioLibros[audiolibro - 1]);
+                                Console.WriteLine("Audiolibro agregado a la cola");
+                                Console.WriteLine(" ");
+                                Thread.Sleep(1000);
+
+                            }
+                            else if (opcion == 2)
+                            {
+                                Console.WriteLine("Desea agregar este audiolibro a favoritos?: ");
+                                Console.WriteLine("1. Si \n2. No");
+                                Console.WriteLine(" ");
+                                int agregar = Convert.ToInt32(Console.ReadLine());
+                                if (agregar == 1)
+                                {
+                                    p.Fav_AudioLibro.Add(Spotflix.Lista_AudioLibros[audiolibro - 1]);
+                                    Console.WriteLine("Audiolibro agregado a favoritos ");
+                                    Thread.Sleep(2000);
+                                }
+                                else
+                                {
+                                    Console.WriteLine("Desea añadir a una playlist:");
+                                    Console.WriteLine("1. Si \n2. No");
+                                    int añadir = Convert.ToInt32(Console.ReadLine());
+                                    if (añadir == 1)
+                                    {
+                                        //añadir a una playlist
+                                        Thread.Sleep(1000);
+                                    }
+                                }
+
+                            }
+                            else if (opcion == 0)
+                            {
+                                Thread.Sleep(1000);
+                            }
+
+
                         }
                     }
                     else if (opcion1 == 3 && opcion2 == 4 || opcion1 == 4 && opcion2 == 3)
@@ -913,7 +1911,7 @@ namespace Proyecto_POO
                             int i_1 = 1;
                             foreach (var item in Spotflix.Lista_Personas)
                             {
-                                if (nombre == item.Nombre_y_Apellido && sexo == item.Sexo && item.Profesion[0] == 1 || item.Profesion[0]== 2 )
+                                if (nombre == item.Nombre_y_Apellido && sexo == item.Sexo && item.Profesion[0] == 1 || item.Profesion[0] == 2)
                                 {
                                     Console.WriteLine(i_1 + ". " + item.Nombre_y_Apellido);
                                     Console.WriteLine("Sexo: " + item.Sexo);
@@ -987,7 +1985,7 @@ namespace Proyecto_POO
                             int i_1 = 1;
                             foreach (var item in Spotflix.Lista_Personas)
                             {
-                                if (nombre == item.Nombre_y_Apellido &&sexo == item.Sexo && item.Profesion[0] == 6)
+                                if (nombre == item.Nombre_y_Apellido && sexo == item.Sexo && item.Profesion[0] == 6)
                                 {
                                     Console.WriteLine(i_1 + ". " + item.Nombre_y_Apellido);
                                     Console.WriteLine("Sexo: " + item.Sexo);
@@ -1006,7 +2004,7 @@ namespace Proyecto_POO
                         }
 
                     }
-                    else if (opcion1 == 1 && opcion2 == 3 || opcion1 == 3 && opcion2 ==1)
+                    else if (opcion1 == 1 && opcion2 == 3 || opcion1 == 3 && opcion2 == 1)
                     {
                         Console.WriteLine("1.Canciones \n2.Videos \n3.Podcast \n4.Pelicula \n5.AudioLibro");
                         Console.WriteLine("Categoria: ");
@@ -1021,20 +2019,69 @@ namespace Proyecto_POO
                             string nombre = Console.ReadLine();
 
                             int x = 1;
-                            foreach(var item in Spotflix.Lista_Personas)
+                            foreach (var item in Spotflix.Lista_Personas)
                             {
                                 if (nombre == item.Nombre_y_Apellido && profesion == item.Profesion[0])
                                 {
                                     foreach (var item1 in Spotflix.Lista_Canciones)
                                     {
                                         Console.WriteLine("Cantante: " + item1.Cantante);
-                                        Console.WriteLine(x +". "+ item1.Titulo);
+                                        Console.WriteLine(x + ". " + item1.Titulo);
                                     }
                                     x++;
 
                                 }
                             }
-                            
+                            Console.WriteLine(" ");
+                            Console.WriteLine("Escoger una cancion: ");
+                            int cancion = Convert.ToInt32(Console.ReadLine());
+                            Console.WriteLine("1. Desea añadir a la cola? ");
+                            Console.WriteLine("2. A otra playlist");
+                            Console.WriteLine("0. Salir");
+                            int opcion = Convert.ToInt16(Console.ReadLine());
+                            Console.WriteLine(" ");
+                            if (opcion == 1)
+                            {
+
+                                p.En_Cola_cancion.Add(Spotflix.Lista_Canciones[cancion - 1]);
+                                Console.WriteLine("Cancion agregada a la cola");
+                                Console.WriteLine(" ");
+                                Thread.Sleep(1000);
+
+                            }
+                            else if (opcion == 2)
+                            {
+                                Console.WriteLine("Desea agregar esta cancion a favoritos?: ");
+                                Console.WriteLine("1. Si \n2. No");
+                                Console.WriteLine(" ");
+                                int agregar = Convert.ToInt32(Console.ReadLine());
+                                if (agregar == 1)
+                                {
+                                    p.Fav_Canciones.Add(Spotflix.Lista_Canciones[cancion - 1]);
+                                    Console.WriteLine("Cancion agregada a favoritos ");
+                                    Thread.Sleep(2000);
+                                }
+                                else
+                                {
+                                    Console.WriteLine("Desea añadir a una playlist:");
+                                    Console.WriteLine("1. Si \n2. No");
+                                    int añadir = Convert.ToInt32(Console.ReadLine());
+                                    if (añadir == 1)
+                                    {
+                                        //añadir a una playlist
+                                        Thread.Sleep(1000);
+                                    }
+                                }
+
+                            }
+                            else if (opcion == 0)
+                            {
+                                Thread.Sleep(1000);
+                            }
+
+
+
+
                         }
                         else if (profesion == 2 && categoria == 1)
                         {
@@ -1055,6 +2102,53 @@ namespace Proyecto_POO
 
                                 }
                             }
+                            Console.WriteLine(" ");
+                            Console.WriteLine("Escoger una cancion: ");
+                            int cancion = Convert.ToInt32(Console.ReadLine());
+                            Console.WriteLine("1. Desea añadir a la cola? ");
+                            Console.WriteLine("2. A otra playlist");
+                            Console.WriteLine("0. Salir");
+                            int opcion = Convert.ToInt16(Console.ReadLine());
+                            Console.WriteLine(" ");
+                            if (opcion == 1)
+                            {
+
+                                p.En_Cola_cancion.Add(Spotflix.Lista_Canciones[cancion - 1]);
+                                Console.WriteLine("Cancion agregada a la cola");
+                                Console.WriteLine(" ");
+                                Thread.Sleep(1000);
+
+                            }
+                            else if (opcion == 2)
+                            {
+                                Console.WriteLine("Desea agregar esta cancion a favoritos?: ");
+                                Console.WriteLine("1. Si \n2. No");
+                                Console.WriteLine(" ");
+                                int agregar = Convert.ToInt32(Console.ReadLine());
+                                if (agregar == 1)
+                                {
+                                    p.Fav_Canciones.Add(Spotflix.Lista_Canciones[cancion - 1]);
+                                    Console.WriteLine("Cancion agregada a favoritos ");
+                                    Thread.Sleep(2000);
+                                }
+                                else
+                                {
+                                    Console.WriteLine("Desea añadir a una playlist:");
+                                    Console.WriteLine("1. Si \n2. No");
+                                    int añadir = Convert.ToInt32(Console.ReadLine());
+                                    if (añadir == 1)
+                                    {
+                                        //añadir a una playlist
+                                        Thread.Sleep(1000);
+                                    }
+                                }
+
+                            }
+                            else if (opcion == 0)
+                            {
+                                Thread.Sleep(1000);
+                            }
+
 
                         }
                         else if (profesion == 3 && categoria == 2)
@@ -1076,6 +2170,8 @@ namespace Proyecto_POO
 
                                 }
                             }
+
+
 
                         }
                         else if (profesion == 3 && categoria == 4)
@@ -1183,7 +2279,7 @@ namespace Proyecto_POO
                         }
 
                     }
-                    else if (opcion1 == 2 && opcion2==3 || opcion1 == 3 && opcion2 == 2)
+                    else if (opcion1 == 2 && opcion2 == 3 || opcion1 == 3 && opcion2 == 2)
                     {
                         Console.WriteLine("1. Hombre \n2. Mujer");
                         Console.WriteLine("Sexo: ");
@@ -1242,7 +2338,7 @@ namespace Proyecto_POO
 
                 }
             }
-        
+
 
         }
 
@@ -1619,7 +2715,7 @@ namespace Proyecto_POO
                         else
                         {
                             Console.WriteLine("Error, Perfil no encontrado");
-                            Thread.slep(1000);
+                            Thread.Sleep(1000);
                         }
                         Console.WriteLine("Quieres editar un Perfil denuevo? \n[1] Si \n[0] No");
                         xy = Convert.ToInt32(Console.ReadLine());
