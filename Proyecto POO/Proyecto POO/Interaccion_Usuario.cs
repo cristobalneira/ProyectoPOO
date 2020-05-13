@@ -7,6 +7,10 @@ namespace Proyecto_POO
 {
     public static class Interaccion_Usuario
     {
+        public static void Crear_Playlist(Perfil p)
+        {
+
+        }
         public static void Agregar_Cancion_a_Playlist(Perfil p,Cancion item)
         {
             Console.WriteLine("Como desea que se llame la playlist");
@@ -3076,40 +3080,6 @@ namespace Proyecto_POO
                 string genero = Console.ReadLine();
                 Console.WriteLine("Descripcion;");
                 string descrip = Console.ReadLine();
-                int looop = 0;
-                while (looop == 0)
-                {
-                    Console.WriteLine("Creando actores/ directores");
-                    Console.WriteLine("[1] actor / [2] director");
-                    int desicion = Convert.ToInt32(Console.ReadLine());
-
-                    Console.WriteLine("Nombre:");
-                    string nombre2 = Console.ReadLine();
-                    Console.WriteLine("Sexo [1] H / [2] M");
-                    int sexo = Convert.ToInt32(Console.ReadLine());
-
-                    Console.WriteLine("Nacionalidad?");
-                    string defualtstring2 = Console.ReadLine();
-                    Console.WriteLine("Su fecha:[DD/MM/AAAA]");
-                    DateTime date2 = Convert.ToDateTime(Console.ReadLine());
-                    DateTime dt2 = date2;
-                    Persona persona11 = new Persona(nombre2, sexo, defualtstring2, dt2, new List<int> { desicion + 1 });
-                    Spotflix.Lista_Personas.Add(persona11);
-                    if (desicion == 1)
-                    {
-                        cantantes.Add(persona11);
-                    }
-                    else if (desicion == 2)
-                    {
-                        compositores.Add(persona11);
-                    }
-                    Console.WriteLine("Crear otro actor/director? 'Si' o 'No'");
-                    string desicion2 = Console.ReadLine();
-                    if (desicion2 == "No")
-                    {
-                        looop = 3;
-                    }
-                }
 
                 Video video1 = new Video(titulo, 2, date, TimeSpan.Zero, 10.0, 2, url1, 2, descrip, 2, genero);
                 Spotflix.Lista_Videos.Add(video1);

@@ -25,8 +25,6 @@ namespace Proyecto_POO
         public string Descripcion;
         public int Clasificacion;
         public string Genero;
-
-
         //Contructor:
         public Video() { }
         public Video(string titulo, int categoria, DateTime año, TimeSpan duracion, double ranking,
