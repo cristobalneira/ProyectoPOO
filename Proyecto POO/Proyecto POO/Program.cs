@@ -28,7 +28,7 @@ namespace Proyecto_POO
         static void Main(string[] args)
         {
             //Crear Personas:
-            Persona Bad_Bunny = new Persona("Bad bunny", 1, "Puertorriqueño", new DateTime(1994, 03, 10), new List<int> { 1, 2 });
+            Persona Bad_Bunny = new Persona("Bad Bunny", 1, "Puertorriqueño", new DateTime(1994, 03, 10), new List<int> { 1, 2 });
             Persona ShawnLevy = new Persona("Shawn Levy", 1, "Estadounidense", new DateTime(1968, 07, 23), new List<int> { 4 });
             Persona SteveMartin = new Persona("Steve Martin", 1, "Canadiense", new DateTime(1945, 08, 14), new List<int> { 3 });
             Persona BonnieHunt = new Persona("Bonnie Hunt", 2, "Estadounidense", new DateTime(1961, 09, 22), new List<int> { 3 });
@@ -175,8 +175,6 @@ namespace Proyecto_POO
             //Agregar perfil:
             Spotflix.Lista_Perfiles.Add(Perfil_Ronca);
 
-
-
             Spotflix.Lista_Perfiles = null;
             Spotflix.Lista_Usuarios = null;
             
@@ -260,7 +258,20 @@ namespace Proyecto_POO
                                     int tipoperf = 1;
                                     perfilesdeusuario.Add(new Perfil(item, nperfil, tipoperf));
                                     Spotflix.Lista_Perfiles.Add(new Perfil(item, nperfil, tipoperf));
-                                    Console.WriteLine("Nuevo perfil creado ");
+
+                                    int c_1 = 1;
+                                    Console.WriteLine("Perfil/es disponible:");
+                                    foreach (var item3 in perfilesdeusuario)
+                                    {
+                                        Console.WriteLine(c_1 + ". " + item3.Nombre_perfil);
+                                        c_1 += 1;
+                                    }
+                                    Console.WriteLine("A cual perfil deseas ingresar?");
+                                    int perfilingresar = Convert.ToInt32(Console.ReadLine());
+                                    perfilenlinea = perfilesdeusuario[perfilingresar - 1];
+                                    usuarioenlinea = perfilenlinea.Usuario_Asociado;
+                                    Console.WriteLine("Ingresando a " + perfilenlinea.Nombre_perfil + "...");
+                                    Thread.Sleep(1000);
                                     verperfiles += 1;
                                 }
                                 else
