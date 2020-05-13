@@ -13,6 +13,7 @@ namespace Proyecto_POO
         public string Letra;
         public string Genero;
         //Constructor:
+        public Cancion(){}
         public Cancion(string titulo, int categoria, DateTime año, TimeSpan duracion, double ranking,
             int estado, string url, List<Persona> cantante, List<Persona> compositor, string album, string imagen, string letra, string genero)
         {

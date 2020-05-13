@@ -29,6 +29,7 @@ namespace Proyecto_POO
         public string Genero;
 
         //Contructor:
+        public Pelicula() { }
         public Pelicula(string titulo, int categoria, DateTime año, TimeSpan duracion, double ranking,
             int estado, string url, List<Persona> actor, List<Persona> director, string estudio, int resolucion, string descripcion,
             int clasificacion, string genero)

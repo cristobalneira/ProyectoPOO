@@ -28,7 +28,7 @@ namespace Proyecto_POO
         public List<int> Profesion;
 
         //Constructor
-
+        public Persona() { }
         public Persona(string nombre_y_Apellido, int sexo, string nacionalidad, DateTime fecha_de_nacimiento, List<int> profesion)
         {
             Nombre_y_Apellido = nombre_y_Apellido;

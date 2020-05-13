@@ -19,6 +19,8 @@ namespace Proyecto_POO
         public TimeSpan Duracion = TimeSpan.Zero;
         public int Tipo_De_Playlist;
 
+        //Constructor
+        public Playlist() { }
         public Playlist(List<Cancion> playlist_paralista, string nombre, int tipo_de_playlist)
         {
             Playlist_paralista = playlist_paralista;

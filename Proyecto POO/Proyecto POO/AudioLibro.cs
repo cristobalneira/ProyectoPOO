@@ -19,7 +19,7 @@ namespace Proyecto_POO
         public Persona Lector;
 
         //Constructor
-
+        public AudioLibro() { }
         public AudioLibro(string titulo, int categoria, DateTime año, TimeSpan duracion, double ranking,
             int estado, string url, string url_texto, string genero, int idioma, Persona lector)
         {

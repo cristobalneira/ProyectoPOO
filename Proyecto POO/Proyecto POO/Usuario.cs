@@ -6,6 +6,7 @@ using System.Runtime.InteropServices.WindowsRuntime;
 using System.Text;
 using System.Threading.Tasks;
 using WMPLib;
+using System.Runtime.Serialization;
 
 namespace Proyecto_POO
 {
@@ -14,7 +15,8 @@ namespace Proyecto_POO
         Gratis = 1,
         Premium = 2,
     }
-    public class Usuario
+    [Serializable()]
+    public class Usuario: ISerializable
     {
         //Atributos:
 
@@ -69,6 +71,29 @@ namespace Proyecto_POO
             Tipo_de_Membresia = memb;
             return "Cambios actualizados";
     }
+        public void GetObjectData(SerializationInfo info, StreamingContext context)
+        {
+            info.AddValue("Nombre", Nombre);
+            info.AddValue("Apellido", Apellido);
+            info.AddValue("Fecha_De_Nacimiento", Fecha_De_Nacimiento);
+            info.AddValue("Sexo", Sexo);
+            info.AddValue("Pais", Pais);
+            info.AddValue("Email", Email);
+            info.AddValue("Contraseña", Contraseña);
+            info.AddValue("Tipo_de_Membresia", Tipo_de_Membresia);
+        }
+        public Usuario(SerializationInfo info, StreamingContext context)
+        {
+            Nombre = (string)info.GetValue("Nombre", typeof(string));
+            Apellido = (string)info.GetValue("Apellido", typeof(string));
+            Fecha_De_Nacimiento = (DateTime)info.GetValue("Fecha_De_Nacimiento", typeof(DateTime));
+            Sexo = (int)info.GetValue("Sexo", typeof(int));
+            Pais = (string)info.GetValue("Pais", typeof(string));
+            Email = (string)info.GetValue("Email", typeof(string));
+            Contraseña = (string)info.GetValue("Contraseña", typeof(string));
+            Tipo_de_Membresia = (int)info.GetValue("Tipo_de_Membresia", typeof(int));
+        }
+
     }
 
     

@@ -10,6 +10,8 @@ namespace Proyecto_POO
         public string Imagen;
         public string Genero;
 
+        //Constructor
+        public Podcast() { }
         public Podcast(string titulo, int categoria, DateTime año, TimeSpan duracion, double ranking,
             int estado, string url, List<Persona> locutor, string imagen, string genero)
         {

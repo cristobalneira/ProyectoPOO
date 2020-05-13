@@ -13,6 +13,8 @@ using System.ComponentModel;
 using System.Runtime.InteropServices;
 using System.Threading;
 using System.Diagnostics;
+using System.Runtime.Serialization.Formatters.Binary;
+using System.Xml.Serialization;
 
 namespace Proyecto_POO
 {
@@ -175,10 +177,24 @@ namespace Proyecto_POO
 
 
 
+            Spotflix.Lista_Perfiles = null;
+            Spotflix.Lista_Usuarios = null;
             
-            
-            
-            
+            //Deserializar info perfil
+
+            XmlSerializer serializer1 = new XmlSerializer(typeof(List<Perfil>));
+            using (FileStream fs3 = File.OpenRead(Directory.GetCurrentDirectory() + @"\Informacion\Perfiles\Data_Perfiles.xml"))
+            {
+                Spotflix.Lista_Perfiles = (List<Perfil>)serializer1.Deserialize(fs3);
+            }
+            ////Deserializar info perfil
+            XmlSerializer serializer2 = new XmlSerializer(typeof(List<Usuario>));
+            using (FileStream fs3 = File.OpenRead(Directory.GetCurrentDirectory() + @"\Informacion\Usuarios\Data_Usuarios.xml"))
+            {
+                Spotflix.Lista_Usuarios = (List<Usuario>)serializer2.Deserialize(fs3);
+            }
+
+
 
 
 
@@ -223,17 +239,19 @@ namespace Proyecto_POO
                             {
                                 b_1++;
                                 Console.WriteLine("Ingresando a sesion...");
-                                Thread.Sleep(2000);
+                                Thread.Sleep(1000);
                                 int verperfiles = 1;
                                 List<Perfil> perfilesdeusuario = new List<Perfil>();
                                 foreach (var item2 in Spotflix.Lista_Perfiles)
                                 {
-                                    if (item2.Usuario_Asociado == item)
+                                    if (item2.Usuario_Asociado.Email == item.Email && item2.Usuario_Asociado.Contraseña == item.Contraseña)
                                     {
                                         perfilesdeusuario.Add(item2);
                                         verperfiles += 1;
                                     }
                                 }
+                                Perfil perfilenlinea = new Perfil();
+                                Usuario usuarioenlinea = new Usuario();
                                 if (verperfiles == 1)
                                 {
                                     Console.WriteLine("No hay perfiles en su usuario, creando uno!");
@@ -242,6 +260,7 @@ namespace Proyecto_POO
                                     int tipoperf = 1;
                                     perfilesdeusuario.Add(new Perfil(item, nperfil, tipoperf));
                                     Spotflix.Lista_Perfiles.Add(new Perfil(item, nperfil, tipoperf));
+                                    Console.WriteLine("Nuevo perfil creado ");
                                     verperfiles += 1;
                                 }
                                 else
@@ -255,17 +274,18 @@ namespace Proyecto_POO
                                     }
                                     Console.WriteLine("A cual perfil deseas ingresar?");
                                     int perfilingresar = Convert.ToInt32(Console.ReadLine());
-                                    Perfil perfilenlinea = perfilesdeusuario[perfilingresar - 1];
-                                    Usuario usuarioenlinea = perfilenlinea.Usuario_Asociado;
+                                    perfilenlinea = perfilesdeusuario[perfilingresar - 1];
+                                    usuarioenlinea = perfilenlinea.Usuario_Asociado;
                                     Console.WriteLine("Ingresando a " + perfilenlinea.Nombre_perfil + "...");
-                                    Thread.Sleep(2000);
-                                    //Menu Principal
-                                    int a = -1;
-                                    while (a != 0)
+                                    Thread.Sleep(1000);
+                                }
+                                //Menu Principal
+                                 int a = -1;
+                                 while (a != 0)
                                     {
                                         Console.Clear();
                                         Console.WriteLine("Bienvenido " + perfilenlinea.Nombre_perfil + "\nQue desea hacer?");
-                                        Console.WriteLine("1. Reproducir multimedia, 2. Buscar/seguir, 3. Editar informacion, 4. Agregar archivo, 5. Mostrar informacion, 0 Salir");
+                                        Console.WriteLine("1. Reproducir multimedia,\n2. Buscar/seguir.\n3. Editar informacion.\n4. Agregar archivo.\n5. Mostrar informacion.\n6. Cambiar tipo de membresia.\n0 Salir");
                                         a = Convert.ToInt32(Console.ReadLine());
                                         if (a == 1)
                                         {
@@ -913,7 +933,7 @@ namespace Proyecto_POO
                                         else if (a == 2)
                                         {
                                             Interaccion_Usuario.Buscar(perfilenlinea);
-                                        }//Buscar y seguir Listo
+                                        }//Buscar y seguir Test
 
                                         else if (a == 3)
                                         {
@@ -926,17 +946,22 @@ namespace Proyecto_POO
                                             {
                                                 Interaccion_Usuario.Editar_Informacion_Usuario(usuarioenlinea);
                                             }
-                                        }//Editar informacion
+                                        }//Editar informacion Test
 
                                         else if (a == 4)
                                         {
-                                            //Agregar Archivo
-                                        }//Agregar archivo
+                                            Interaccion_Usuario.Agregar_Archivo(perfilenlinea);
+                                        }//Agregar archivo Test
 
                                         else if (a == 5)
                                         {
+                                            Interaccion_Usuario.Informacion(perfilenlinea);
+                                        }//Mostrar informacion Test 
 
-                                        }//Mostrar informacion:
+                                        else if (a ==6)
+                                        {
+                                            Interaccion_Usuario.CambiodeCuenta(perfilenlinea);
+                                        }//Cambio de cuenta Test
 
                                         else if (a == 0)
                                         {
@@ -948,8 +973,8 @@ namespace Proyecto_POO
                                             Console.WriteLine("Opcion invalida, intente nuevamente.");
                                         }
                                     }
-                                    //Fin del menu principal.
-                                }
+                                //Fin del menu principal.
+                                
                                 break;
                             }//Iniciar sesion
                         }
@@ -957,8 +982,11 @@ namespace Proyecto_POO
                         {
                             Console.WriteLine("Error no se ha encontrado cuenta. intente nueamente o presione 0 para volver atras y crear una cuenta.");
                         }
+                        Console.WriteLine("¡Muchas gracias, nos vemos!");
+                        Thread.Sleep(2000);
+                        Console.Clear();
+                        break;
                     }
-                    
                 }//Ingresar y usar cuenta.
                 else if (entrada == 2)
                 {
@@ -1041,11 +1069,32 @@ namespace Proyecto_POO
                         Console.Clear();
                     }
                 }//Crear cuenta
+                else if (entrada ==0)
+                {
+                    break;
+                }//Salir
                 else
                 {
                     Console.WriteLine("Error, introduzca opcion valida.");
                 }//En caso de opcion invalida
             }
+
+            //Serializar la info de perfil.
+            using (Stream fs1 = new FileStream(Directory.GetCurrentDirectory() + @"\Informacion\Perfiles\Data_Perfiles.xml",FileMode.Create,
+                FileAccess.Write,FileShare.None))
+            {
+                XmlSerializer serializer = new XmlSerializer(typeof(List<Perfil>));
+                serializer.Serialize(fs1, Spotflix.Lista_Perfiles);
+            }
+            //Serializar la info de usuario
+            using (Stream fs2 = new FileStream(Directory.GetCurrentDirectory() + @"\Informacion\Usuarios\Data_Usuarios.xml", FileMode.Create,
+                FileAccess.Write, FileShare.None))
+            {
+                XmlSerializer serializer = new XmlSerializer(typeof(List<Usuario>));
+                serializer.Serialize(fs2, Spotflix.Lista_Usuarios);
+            }
+
+
         }
     }
 }
