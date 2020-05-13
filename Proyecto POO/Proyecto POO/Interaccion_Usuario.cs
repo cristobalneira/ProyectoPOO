@@ -673,7 +673,7 @@ namespace Proyecto_POO
                     int i = 1;
                     foreach (var item in Spotflix.Lista_Perfiles)
                     {
-                        Console.WriteLine(Spotflix.Lista_Perfiles[i - 1].Nombre_perfil);
+                        Console.WriteLine(i +". " + Spotflix.Lista_Perfiles[i - 1].Nombre_perfil);
                         i++;
                     }
                     Console.WriteLine("Que perfil desea ver: ");
