@@ -14,7 +14,7 @@ namespace Proyecto_POO
             Publica = 1,
             Privada = 2,
         }
-        public List<Cancion> Playlist_paralista;//listas de listas
+        public List<Cancion> Playlist_paralista = new List<Cancion>();//listas de listas
         public string Nombre;
         public TimeSpan Duracion = TimeSpan.Zero;
         public int Tipo_De_Playlist;

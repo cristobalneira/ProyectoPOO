@@ -983,7 +983,7 @@ namespace Proyecto_POO
                             Console.WriteLine("Error no se ha encontrado cuenta. intente nueamente o presione 0 para volver atras y crear una cuenta.");
                         }
                         Console.WriteLine("¡Muchas gracias, nos vemos!");
-                        Thread.Sleep(2000);
+                        Thread.Sleep(1000);
                         Console.Clear();
                         break;
                     }

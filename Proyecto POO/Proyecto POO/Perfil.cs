@@ -25,8 +25,10 @@ namespace Proyecto_POO
         public List<Video> Fav_Videos = new List<Video>();
         public List<Podcast> Fav_Podcast = new List<Podcast>();
         public List<AudioLibro> Fav_AudioLibro = new List<AudioLibro>();
+
         public List<Playlist> Playlists_Canciones_Propias = new List<Playlist>();
         public List<Playlist> Playlists_Canciones_De_Otros = new List<Playlist>();
+
         public List<Perfil> Seguidos = new List<Perfil>();
         public List<Perfil> Seguidores = new List<Perfil>();
         public List<Persona> Personas_Seguidas = new List<Persona>();

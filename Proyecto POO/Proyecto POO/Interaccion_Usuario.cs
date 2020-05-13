@@ -7,17 +7,13 @@ namespace Proyecto_POO
 {
     public static class Interaccion_Usuario
     {
-        public static void Agregar_Playlist(Perfil p)
+        public static void Agregar_Cancion_a_Playlist(Perfil p,Cancion item)
         {
-            Console.WriteLine("De que desea crear la playlist?: ");
-            Console.WriteLine("1. Cancion \n2. Video \n3. Podcast \n4. Pelicula \n5. Audiolibro");
-            Console.WriteLine("Nombre: ");
+            Console.WriteLine("Como desea que se llame la playlist");
             string nombre = Console.ReadLine();
-            Console.WriteLine("Tipo de Playlist");
-            Console.WriteLine("1. Publica \n2. Privada");
-            int tipo = Convert.ToInt32(Console.ReadLine());
-            List<Cancion> Playlist1 = new List<Cancion>();
-            //Playlist playlistcreada = new Playlist(nombre, tipo);
+            Playlist temp2 = new Playlist(new List<Cancion>(), nombre, item.Categoria);
+            temp2.Playlist_paralista.Add(item);
+            p.Playlists_Canciones_Propias.Add(temp2);
 
         }
 
