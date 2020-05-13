@@ -80,7 +80,7 @@ namespace Proyecto_POO
                                 int añadir = Convert.ToInt32(Console.ReadLine());
                                 if (añadir == 1)
                                 {
-                                    //añadir a una playlist
+                                    Agregar_Cancion_a_Playlist(p, Spotflix.Lista_Canciones[cancion - 1]);
                                     Thread.Sleep(1000);
                                 }
                             }
@@ -771,7 +771,7 @@ namespace Proyecto_POO
                                     int añadir = Convert.ToInt32(Console.ReadLine());
                                     if (añadir == 1)
                                     {
-                                        //añadir a una playlist
+                                        Agregar_Cancion_a_Playlist(p, Spotflix.Lista_Canciones[i_1 - 1]);
                                         Thread.Sleep(1000);
                                     }
                                 }
@@ -1213,7 +1213,7 @@ namespace Proyecto_POO
                                     int añadir = Convert.ToInt32(Console.ReadLine());
                                     if (añadir == 1)
                                     {
-                                        //añadir a una playlist
+                                        Agregar_Cancion_a_Playlist(p, Spotflix.Lista_Canciones[cancion - 1]);
                                         Thread.Sleep(1000);
                                     }
                                 }
@@ -1537,7 +1537,7 @@ namespace Proyecto_POO
                                     int añadir = Convert.ToInt32(Console.ReadLine());
                                     if (añadir == 1)
                                     {
-                                        //añadir a una playlist
+                                        Agregar_Cancion_a_Playlist(p, Spotflix.Lista_Canciones[cancion - 1]);
                                         Thread.Sleep(1000);
                                     }
                                 }
@@ -2064,7 +2064,7 @@ namespace Proyecto_POO
                                     int añadir = Convert.ToInt32(Console.ReadLine());
                                     if (añadir == 1)
                                     {
-                                        //añadir a una playlist
+                                        Agregar_Cancion_a_Playlist(p, Spotflix.Lista_Canciones[cancion - 1]);
                                         Thread.Sleep(1000);
                                     }
                                 }
@@ -2134,7 +2134,7 @@ namespace Proyecto_POO
                                     int añadir = Convert.ToInt32(Console.ReadLine());
                                     if (añadir == 1)
                                     {
-                                        //añadir a una playlist
+                                        Agregar_Cancion_a_Playlist(p, Spotflix.Lista_Canciones[cancion - 1]);
                                         Thread.Sleep(1000);
                                     }
                                 }
