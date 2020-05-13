@@ -22,7 +22,7 @@ namespace Proyecto_POO
                 Console.Write(i + ". " + item_1.Nombre + " ");
                 i++;
             }
-            Console.Write(i + ". Desea crear una nueva playlist");
+            Console.WriteLine(i + ". Desea crear una nueva playlist");
             int i_1 = Convert.ToInt32(Console.ReadLine());
             if (i_1 == i)
             {

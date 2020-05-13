@@ -314,7 +314,7 @@ namespace Proyecto_POO
                                                         Spotflix.Temporal.appendItem(new WindowsMediaPlayer().newMedia(item_4.URL));
                                                     }
                                                 }
-                                                Console.WriteLine("Que playlist de canciones desea reproducir:\n1. Todas\n2. Canciones favoritas\n3. Playlist propias\n4 Playlist de otros\n5. En cola\n0. Salir");
+                                                Console.WriteLine("Que playlist de canciones desea reproducir:\n1. Todas\n2. Canciones favoritas\n3. Playlist propias\n4. Playlist de otros\n5. En cola\n6. Crear playlist\n0. Salir");
                                                 a_2 = Convert.ToInt32(Console.ReadLine());
                                                 if (a_2 == 1)
                                                 {
@@ -618,6 +618,12 @@ namespace Proyecto_POO
                                                         }
                                                     }
                                                 }//En cola
+                                                else if (a_2 == 6)
+                                                {
+                                                Interaccion_Usuario.Crear_Playlist(perfilenlinea);
+                                                Console.WriteLine("Playlist creada correctamente");
+                                                Thread.Sleep(1000);
+                                                }//Crear playlist
                                                 else if (a_2 == 0)
                                                 {
                                                     break;
